@@ -1,39 +1,68 @@
 <!DOCTYPE html>
-   <html>
-       <head>
-          <link type="text/css" rel="stylesheet" href="style.css"/>
-          <link type="text/css" rel="stylesheet" href="jquery-ui.min.css"/>
-          <title>Festival Panorama </title>
-          <script type="text/javascript" src="jquery.min.js"></script>
-          <script type="text/javascript" src="jquery-ui.min.js"></script>
-        </head>
-        <body>
-        	<nav class="nav">
-        		<a href="#" class="nav-logo">
-        			<img src="images/icon.png" alt="Panorama 18"/>
-        		</a>
-                <ul class="nav-items">
-                	<li class="nav-item">
-                		<a href="#" class="nav-iconContainer">
-                			<img src="images/icon1.png" alt="nav"/>
-                		</a>
-                	</li>
-                	<li class="nav-item">
-                		<a href="#" class="nav-iconContainer">
-                			<img src="images/icon2.png" alt="nav"/>
-                		</a>
-                	</li>
-                	<li class="nav-item">
-                		<a href="#" class="nav-iconContainer">
-                			<img src="images/icon3.png" alt="nav"/>
-                		</a>
-                	</li>
-                	<li class="nav-item">
-                		<a href="#" class="nav-iconContainer">
-                			<img src="images/icon4.png" alt="nav"/>
-                		</a>
-                	</li>
-            </nav>  
-        </body>
-    </html>  	
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="style.css"/>
+  <link type="text/css" rel="stylesheet" href="jquery-ui.min.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300' rel='stylesheet' type='text/css'>
+  <title>Festival Panorama </title>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript" src="jquery-ui.min.js"></script>
+</head>
+<body>
+ <nav class="nav">
+  <a href="#" class="nav-logo">
+   <img src="images/icon.png" alt="Panorama 18"/>
+</a>
+<ul class="nav-items">
+ <li class="nav-item">
+  <a href="#" class="nav-iconContainer">
+   <img src="images/icon1.png" alt="nav"/>
+</a>
+</li>
+<li class="nav-item">
+  <a href="#" class="nav-iconContainer">
+   <img src="images/icon2.png" alt="nav"/>
+</a>
+</li>
+<li class="nav-item">
+  <a href="#" class="nav-iconContainer">
+   <img src="images/icon3.png" id="medley" alt="nav"/>
+</a>
+</li>
+<li class="nav-item">
+  <a href="#" class="nav-iconContainer last">
+   <img src="images/icon4.png" id="info" alt="nav"/>
+</a>
+</li>
+</ul>	
+</nav>
+<div class="content">  
+    <div class="sub_menu" id="menu_billeterie">
+     <div class="head">
+         <h2> BILLETERIE </h2>
+         <hr/>
+         <div class="subtitle">
+             <p> Choisissez le billet qui vous convient. </p>
+         </div>
+     </div>
+     <div class="arrow">
+        <img src="images/arrow.png"/>
+    </div>
+    <form class="inputs">
+       <div id="day1" class="input_container">
+          <div class="input">
+            <p class="pass">Pass 1 jour <input type="radio" name="day" id="d1" class="day"></p>
+          </div>
+      </div>
+      <div id="day2" class="input_container">
+          <div class="input">
+             <p class="pass">Pass 2 jour <input type="radio" name="day" id="d2" class="day"></p>
+         </div>
+     </div>
+ </form>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="js/script.js"></script>
+</html>  	
 
