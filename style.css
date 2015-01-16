@@ -2,6 +2,29 @@
     font-family: 'Farray';
     src: url('fonts/farray.otf');
 }
+@font-face {
+    font-family: 'PT Mono';
+    src: url('fonts/ptmono.ttf');
+}
+@font-face {
+    font-family: 'PT Mono Bold';
+    src: url('fonts/ptmonob.ttf');
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+input[type="checkbox"]{
+    background: blue;
+    border: 2px solid #35bfbf;
+}
+input[type="radio"]{
+    border-radius: 9px;
+    border: 2px solid #35bfbf;   
+}
+body{
+    margin: 0;
+}
 p, label{
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
@@ -94,7 +117,7 @@ p, label{
     margin-left: auto;
     margin-right: auto;
 }
-h2{
+h2, h3{
     font-family: 'Farray', sans-serif;
 }
 hr{
@@ -166,4 +189,56 @@ hr{
     width: 100%;
     background-size: cover;
     background-position: center;
+}
+.widget{
+    height:auto;
+    margin-top: 10%;
+    width: 20%;
+    background-color: #ffffff;
+    padding: 0px;
+    text-align: center;
+    margin-left: 2%;
+    display:inline-block;
+}
+.first{
+    margin-left: 7%;
+}
+.head_wg{
+    background-color: #e6e6e6;
+    padding: 7px;
+}
+.widget .list{
+    font-family: 'PT Mono', sans-serif;
+    font-size: 12px;
+    margin: 10px;
+    font-weight: 100;
+    color: #363636; 
+}
+.arrow_grey{
+    margin-bottom: 20px;
+}
+.price{
+    font-family: 'PT Mono Bold';
+    padding-top: 20px;
+    font-size: 20px
+}
+.book{
+    margin-top: 50px;
+    position: relative;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #35bfbf; 
+}
+.button{
+    padding: 5px 25px;
+    border: 2px solid #35bfbf;
+}
+.button:hover{
+    background-color: #35bfbf;
+    color:#ffffff;
+}
+.bottom_btn{
+    float: right;
+    height: 50px;
 }
