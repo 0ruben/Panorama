@@ -2,7 +2,7 @@
     font-family: 'Farray';
     src: url('fonts/farray.otf');
 }
-p{
+p, label{
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
 }
@@ -128,6 +128,7 @@ hr{
 }
 .input{
     margin-left: 20px;
+    padding-top: 10px;
 }
 .input_container{
     width: 200px;
@@ -137,8 +138,9 @@ hr{
 .input_container:hover{
     background-color: #f3f3f3;
 }
-.day{
+.day, #c1{
     margin-left: 60px;
+    cursor: pointer;
 }
 .pass{
     padding-top: 10px;
@@ -148,4 +150,20 @@ hr{
 }
 .active:hover{
     background-color: #ffffff;
+}
+#camp{
+    margin-top: 90px;
+}
+#c1{
+    margin-left: 76px;
+    cursor:pointer;
+}
+.tickets{
+    position: absolute;
+    left: 200px;
+    background-image: url(images/bg-billet.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
 }
