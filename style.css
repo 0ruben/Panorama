@@ -29,6 +29,9 @@ p, label{
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
 }
+.hidden{
+    display: none !important;
+}
 .nav {
     background-color: #141414;
     position: absolute;
@@ -191,17 +194,18 @@ hr{
     background-position: center;
 }
 .widget{
-    height:auto;
     margin-top: 10%;
-    width: 20%;
     background-color: #ffffff;
     padding: 0px;
     text-align: center;
     margin-left: 2%;
     display:inline-block;
 }
+.pass1{
+    width: 20%;
+}
 .first{
-    margin-left: 7%;
+    margin-left: 10%;
 }
 .head_wg{
     background-color: #e6e6e6;
@@ -225,7 +229,7 @@ hr{
 .book{
     margin-top: 50px;
     position: relative;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     color: #35bfbf; 
@@ -242,3 +246,28 @@ hr{
     float: right;
     height: 50px;
 }
+pass1c{
+    
+}
+.open_sans{
+    font-family: 'Open Sans', sans-serif;
+    color: #a8a8a8;
+}
+#disabled{
+    color:#a8a8a8;
+    border: 2px solid #a8a8a8;
+    cursor: default;
+}
+.pass2{
+    width: 40%;
+}
+.only{
+    margin-left: 23%;
+}
+.pass1c{
+    width: 25%;
+}
+.first2{
+    margin-left: 15%;
+}
+    

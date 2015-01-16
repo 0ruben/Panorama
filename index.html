@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" lang="fr"/>
   <link type="text/css" rel="stylesheet" href="style.css"/>
   <link type="text/css" rel="stylesheet" href="jquery-ui.min.css"/>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300' rel='stylesheet' type='text/css'>
@@ -9,6 +10,7 @@
   <script type="text/javascript" src="jquery-ui.min.js"></script>
 </head>
 <body>
+<!-- SIDE MENU -->
  <nav class="nav">
   <a href="#" class="nav-logo">
    <img src="images/icon.png" alt="Panorama 18"/>
@@ -36,6 +38,9 @@
 </li>
 </ul>	
 </nav>
+    
+    
+<!-- SUB MENU TICKETS -->    
 <div class="content">  
     <div class="sub_menu" id="menu_billeterie">
      <div class="head">
@@ -66,8 +71,12 @@
     </div>
  </form>
 </div>
+    
+    
+<!-- MAIN -->    
 <div class="tickets">
-    <div class="widget pass1 first">
+    <!-- PASS 1 DAY NO CAMPING -->
+    <div class="widget pass1 first" style="display:none;">
         <div class="head_wg">
             <h3>PASS VENDREDI</h3>
         </div>
@@ -87,7 +96,7 @@
             </div>
         </div>           
     </div>
-        <div class="widget pass1 second">
+    <div class="widget pass1 second" style="display:none;">
         <div class="head_wg">
             <h3>PASS SAMEDI</h3>
         </div>
@@ -108,7 +117,7 @@
             </div>
         </div>           
     </div>
-            <div class="widget pass1 second">
+    <div class="widget pass1 third" style="display:none;">
         <div class="head_wg">
             <h3>PASS DIMANCHE</h3>
         </div>
@@ -122,6 +131,80 @@
             <p class="price">- 20,99 € -</p>
             <div class="book">
                 <a class="button" href="#">Reserver</a>
+                <div>
+                    <a href="#"><img class="bottom_btn" src="images/icon5.png"/></a>
+                </div>
+            </div>
+        </div>           
+    </div>
+    
+    
+    
+    <!-- PASS 1 DAY CAMP -->
+    <div class="widget pass1c first2" style="display:none;">
+        <div class="head_wg">
+            <h3>PASS SAMEDI</h3>
+        </div>
+        <div class="arrow_grey">
+           <img src="images/arrow_grey.png"/>
+        </div>
+        <div class="info_t">
+            <p class="list">
+               S-crew / Bakermat / Klingande / Mr Oizo / Rone / Who Made Who / Boys Noize / The Popopopops / Worakls / Amine Edge / Kolsch (Rune Reilly Kolsch) / Goldfish / Blind Digital Citizen / Marie Prieux 
+
+            </p>
+            <p class="price">- 40,50 € -</p>
+            <div class="book">
+                <a class="button" href="#">Reserver</a>
+                <div>
+                    <a href="#"><img class="bottom_btn" src="images/icon5.png"/></a>
+                </div>
+            </div>
+        </div>           
+    </div>
+      <div class="widget pass1c" style="display:none;">
+        <div class="head_wg">
+            <h3>PASS SAMEDI</h3>
+        </div>
+        <div class="arrow_grey">
+           <img src="images/arrow_grey.png"/>
+        </div>
+        <div class="info_t">
+            <p class="list">
+                 Parov Stelar / Daniel Avery / Fakear / Sarah W Papsun / N'To / Cashmere Cat / Zeds Dead / Claptone / Danton Eeprom / Pan Pot / Bondax / Doist ! / Valentin Marlin / Encore / Dombrance
+
+            </p>
+            <p class="price">- 40,50 € -</p>
+            <div class="book">
+                <a class="button" href="#">Reserver</a>
+                <div>
+                    <a href="#"><img class="bottom_btn" src="images/icon5.png"/></a>
+                </div>
+            </div>
+        </div>           
+    </div>
+    
+    
+    
+    <!-- PASS 2 DAYS -->
+    <div class="widget pass2 only" style="display:none;">
+        <div class="head_wg">
+            <h3>PASS VENDREDI + SAMEDI</h3>
+        </div>
+        <div class="arrow_grey">
+           <img src="images/arrow_grey.png"/>
+        </div>
+        <div class="info_t">
+            <p class="list">
+               Kaytranada / The Bloody Beetroots (dj Set) / Infected Mushroom / Noisia / Boris Brejcha / Lido / Savant / Salut C’est Cool / Joke / Kink (live) / Far Too Loud / Don Rimini B2b / Surfing Leons / Stwo / Mmmmm / Midside
+            </p>
+            <p class="open_sans">+</p>
+            <p class="list">
+              Laurent Garnier / Tale Of Us / Brodinski / Tchami / Super Discount 3 / Mod3rn / Max Cooper / Superpoze / Fkj Live / Alesia / Point Point / Joachim Pastor / Coely / The Geek & Vrv / Madben Cymatics / Cotton Claw / Dbfc / Falabella
+            </p>
+            <p class="price">- épuisé -</p>
+            <div class="book">
+                <a class="button" id="disabled" href="#">Reserver</a>
                 <div>
                     <a href="#"><img class="bottom_btn" src="images/icon5.png"/></a>
                 </div>
