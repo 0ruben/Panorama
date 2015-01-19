@@ -258,6 +258,9 @@ pass1c{
     border: 2px solid #a8a8a8;
     cursor: default;
 }
+#disabled:hover{
+    background-color: inherit;
+}
 .pass2{
     width: 40%;
 }
