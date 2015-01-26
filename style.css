@@ -1,3 +1,9 @@
+*, :before, :after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 @font-face {
     font-family: 'Farray';
     src: url('fonts/farray.otf');
@@ -14,20 +20,15 @@ a{
     text-decoration: none;
     color: inherit;
 }
-input[type="checkbox"]{
-    background: blue;
-    border: 2px solid #35bfbf;
-}
-input[type="radio"]{
-    border-radius: 9px;
-    border: 2px solid #35bfbf;   
-}
+
+
+
 body{
     margin: 0;
 }
 p, label{
     font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
 }
 .hidden{
     display: none !important;
@@ -53,7 +54,7 @@ p, label{
 .nav-logo {
     display: block;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .nav-items {
     position: absolute;
@@ -87,10 +88,11 @@ p, label{
     position: relative;
     width: 60px;
     height: 45px;
-    border-bottom: 1px solid #35bfbf;
+    border-bottom: 1px;
 }
 .nav-iconContainer:hover{
     background-color: #1e1e1e;
+   
 }
 .nav-iconContainer img{
     width:25px;
@@ -102,6 +104,66 @@ p, label{
 #info{
     width:auto;
 }
+
+
+.day:checked + .pass {
+     font-weight: 700;
+}
+
+.cmp:checked + .labcamp {
+     font-weight: 700;
+}
+
+
+
+label {
+    cursor: pointer;
+}
+input[type=radio],
+input[type=checkbox] {
+    display: none;
+}
+label:before {
+    content: "";
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    margin-left: 140px;
+    position: absolute;
+    background-color: #35BFBF;
+}
+
+.input label:before {
+    border-radius: 8px;
+}
+.input2 label {
+    margin-bottom: 10px;
+}
+.checkbox label:before {
+    border-radius: 3px;
+}
+
+input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #f3f3f3;
+    font-size: 32px;
+    text-align: center;
+    line-height: 16px;
+    margin-left: 140px;
+    margin-top: 3px;
+}
+
+input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    font-size: 15px;
+    color: #f3f3f3;
+    text-align: center;
+    line-height: 15px;
+}
+
+
+
+
 .sub_menu{
     background-color: #e6e6e6;
     width: 200px;
@@ -122,6 +184,7 @@ p, label{
 }
 h2, h3{
     font-family: 'Farray', sans-serif;
+	color:#696969;
 }
 hr{
     width: 25px;
@@ -151,8 +214,11 @@ hr{
 .inputs{
     position: absolute;
     top: 300px;
+    float: left;
+    width: auto;
+    display: inline;
 }
-.input{
+.input, .input2{
     margin-left: 20px;
     padding-top: 10px;
 }
@@ -161,20 +227,26 @@ hr{
     height: 40px;
     cursor: pointer;
 }
+
 .input_container:hover{
     background-color: #f3f3f3;
 }
+
 .day, #c1{
     margin-left: 60px;
     cursor: pointer;
 }
 .pass{
     padding-top: 10px;
+    cursor: pointer;
 }
 .active{
     background-color: #ffffff;
 }
 .active:hover{
+    background-color: #ffffff;
+}
+.active:after{
     background-color: #ffffff;
 }
 #camp{
@@ -194,6 +266,7 @@ hr{
     background-position: center;
 }
 .widget{
+        margin-bottom: 40%;
     margin-top: 10%;
     background-color: #ffffff;
     padding: 0px;
@@ -214,7 +287,7 @@ hr{
 .widget .list{
     font-family: 'PT Mono', sans-serif;
     font-size: 12px;
-    margin: 10px;
+    margin: 20px;
     font-weight: 100;
     color: #363636; 
 }
@@ -234,14 +307,61 @@ hr{
     text-transform: uppercase;
     color: #35bfbf; 
 }
+
 .button{
-    padding: 5px 25px;
-    border: 2px solid #35bfbf;
+
 }
-.button:hover{
+
+/* 1er effet */
+.hvr-float {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+
+.hvr-float:hover,
+.hvr-float:focus,
+.hvr-float:active {
+    transform: translateY(-8px);
+}
+
+/* 2eme effet */
+.button,
+[class*="button-"] {
+    padding: 0px 10px;
+    border: 2px solid #35bfbf;
+    position: relative;
+    overflow: hidden;
+    margin: 0 1em 1em 0;
+    height: 2.0em;
+    font: 600 1.0em/2.0em 'Open Sans', sans-serif;
+    border-radius: 2px;
+    -moz-transition: 0.35s ease all;
+    -o-transition: 0.35s ease all;
+    -webkit-transition: 0.35s ease all;
+    transition: 0.35s ease all;
+}
+
+.button-hover:hover {
+    line-height: 7.4em;
     background-color: #35bfbf;
     color:#ffffff;
 }
+.button-hover:before {
+  content: attr(data-text);
+  position: absolute;
+  top: -2.75em;
+}
+
+
+
+
 .bottom_btn{
     float: right;
     height: 50px;
