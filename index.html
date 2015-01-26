@@ -4,6 +4,7 @@
   <meta charset="utf-8" lang="fr"/>
   <link type="text/css" rel="stylesheet" href="style.css"/>
   <link type="text/css" rel="stylesheet" href="jquery-ui.min.css"/>
+  <link rel="stylesheet" href="css/normalize.css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300' rel='stylesheet' type='text/css'>
   <title>Festival Panorama </title>
   <script type="text/javascript" src="jquery.min.js"></script>
@@ -12,7 +13,7 @@
 <body>
 <!-- SIDE MENU -->
  <nav class="nav">
-  <a href="#" class="nav-logo">
+  <a href="#" class="nav-logo"> 
    <img src="images/icon.png" alt="Panorama 18"/>
 </a>
 <ul class="nav-items">
@@ -42,9 +43,9 @@
     
 <!-- SUB MENU TICKETS -->    
 <div class="content">  
-    <div class="sub_menu" id="menu_billeterie">
+    <div class="sub_menu" id="menu_billetterie">
      <div class="head">
-         <h2> BILLETERIE </h2>
+         <h2> BILLETTERIE </h2>
          <hr/>
          <div class="subtitle">
              <p> Choisissez le billet qui vous convient. </p>
@@ -56,17 +57,17 @@
     <form class="inputs">
        <div id="day1" class="input_container">
           <div class="input">
-              <label for="day" class="pass radio">Pass 1 jour </label> <input id="d1" class="day" type="radio" name="day">
+             <input id="d1" class="day" type="radio" name="day"> <label for="day" class="pass radio">Pass 1 jour</label> 
           </div>
       </div>
       <div id="day2" class="input_container">
           <div class="input">
-              <label for ="day" class="pass radio">Pass 2 jour </label><input type="radio" name="day" id="d2" class="day">
+              <input type="radio" name="day" id="d2" class="day"><label for ="day" class="pass radio">Pass 2 jours </label>
          </div>
      </div>
      <div id="camp" class="input_container">
-        <div class="input">
-            <label for="camp">Camping</label> <input id="c1" type="checkbox" name="camp">
+        <div class="input2">
+            <input id="c1" type="checkbox" name="camp" class ="cmp"><label class="labcamp" for="camp">Camping</label> 
         </div>
     </div>
  </form>
@@ -89,7 +90,7 @@
             </p>
             <p class="price">- 36,50 € -</p>
             <div class="book">
-                <a class="button" href="#">Reserver</a>
+                <a data-text="Réserver" class="button-hover hvr-float" href="#">Réserver</a>
                 <div>
                     <a href="#"><img class="bottom_btn" src="images/icon5.png"/></a>
                 </div>
@@ -110,7 +111,7 @@
             </p>
             <p class="price">- 36,50 € -</p>
             <div class="book">
-                <a class="button" href="#">Reserver</a>
+                <a data-text="Réserver" class="button-hover hvr-float" href="#">Réserver</a>
                 <div>
                     <a href="#"><img class="bottom_btn" src="images/icon5.png"/></a>
                 </div>
@@ -130,7 +131,7 @@
             </p>
             <p class="price">- 20,99 € -</p>
             <div class="book">
-                <a class="button" href="#">Reserver</a>
+                <a data-text="Réserver" class="button-hover hvr-float" href="#">Réserver</a>
                 <div>
                     <a href="#"><img class="bottom_btn" src="images/icon5.png"/></a>
                 </div>
@@ -143,7 +144,7 @@
     <!-- PASS 1 DAY CAMP -->
     <div class="widget pass1c first2" style="display:none;">
         <div class="head_wg">
-            <h3>PASS VENDREDI</h3>
+            <h3>PASS VENDREDI + CAMPING</h3>
         </div>
         <div class="arrow_grey">
            <img src="images/arrow_grey.png"/>
@@ -155,7 +156,7 @@
             </p>
             <p class="price">- 40,50 € -</p>
             <div class="book">
-                <a class="button" href="#">Reserver</a>
+                <a data-text="Réserver" class="button-hover hvr-float" href="#">Réserver</a>
                 <div>
                     <a href="#"><img class="bottom_btn" src="images/icon5.png"/></a>
                 </div>
@@ -164,7 +165,7 @@
     </div>
       <div class="widget pass1c" style="display:none;">
         <div class="head_wg">
-            <h3>PASS SAMEDI</h3>
+            <h3>PASS SAMEDI + CAMPING</h3>
         </div>
         <div class="arrow_grey">
            <img src="images/arrow_grey.png"/>
@@ -176,7 +177,7 @@
             </p>
             <p class="price">- 40,50 € -</p>
             <div class="book">
-                <a class="button" href="#">Reserver</a>
+                <a data-text="Réserver" class="button-hover hvr-float" href="#">Réserver</a>
                 <div>
                     <a href="#"><img class="bottom_btn" src="images/icon5.png"/></a>
                 </div>
@@ -204,7 +205,7 @@
             </p>
             <p class="price">- épuisé -</p>
             <div class="book">
-                <a class="button" id="disabled" href="#">Reserver</a>
+                <a data-text="Réserver" class="button" id="disabled" href="#">Réserver</a>
                 <div>
                     <a href="#"><img class="bottom_btn" src="images/icon5.png"/></a>
                 </div>
