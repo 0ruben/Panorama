@@ -115,7 +115,7 @@ p, label{
 }
 
 
-
+/* Button effects*/
 label {
     cursor: pointer;
 }
@@ -123,7 +123,7 @@ input[type=radio],
 input[type=checkbox] {
     display: none;
 }
-label:before {
+.label1:before {
     content: "";
     margin-top: 3px;
     width: 16px;
@@ -161,7 +161,7 @@ input[type=checkbox]:checked + label:before {
     line-height: 15px;
 }
 
-
+/*End button*/
 
 
 .sub_menu{
@@ -359,16 +359,11 @@ hr{
   top: -2.75em;
 }
 
-
-
-
 .bottom_btn{
     float: right;
     height: 50px;
 }
-pass1c{
-    
-}
+
 .open_sans{
     font-family: 'Open Sans', sans-serif;
     color: #a8a8a8;
@@ -390,4 +385,56 @@ pass1c{
 .first2{
     margin-left: 15%;
 }
-    
+#mation{
+    text-align: left;
+    margin-left: 26px;
+    position: relative;
+    bottom: 20px;
+}
+.inputs_art{
+    position: absolute;
+    top:250px;
+    margin-left: 10px;
+}
+.title_art{
+    color:#000000;
+    font-size: 25px;
+    margin-left: 12px;
+    margin-bottom: 10px; 
+}
+.title_art:hover{
+    background-color: #e6e6e6;
+}
+
+.input_container_art{
+    width: 190px;
+    height: 30px;
+}
+
+.input_container_art label:before {
+    border-radius: 6px;
+}
+.label2{
+    font-weight: thin;
+}
+
+.label2:before {
+    content: "";
+    margin-top: 3px;
+    width: 12px;
+    height: 12px;
+    margin-left: 150px;
+    position: absolute;
+    background-color: #35BFBF;
+}
+.input_art{
+    margin-left: 15px;
+    padding-top: 5px;
+}
+.art_content{
+    position: absolute;
+    left: 200px;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
