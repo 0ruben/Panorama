@@ -71,10 +71,10 @@ $(document).ready(function(){
       if(id_b<3 && id_b!=0){
         $('#camp').addClass('active');
         $('#c1').prop('checked', true);
-        if(id_b==1){                              //Probleme avec le clique le if
-            id_b=3;
+        if(id_b==1){                              
+             id_b=3;
              hideIt('.pass1');
-             showItAfter('pass1c');
+             showItAfter('.pass1c');
         }
         if(id_b==2)                         
             id_b=4

@@ -408,7 +408,8 @@ hr{
 
 .input_container_art{
     width: 190px;
-    height: 30px;
+    height: 22px;
+    font-size: 14px;
 }
 
 .input_container_art label:before {
@@ -429,7 +430,7 @@ hr{
 }
 .input_art{
     margin-left: 15px;
-    padding-top: 5px;
+    padding-top: 2px;
 }
 .art_content{
     position: absolute;
