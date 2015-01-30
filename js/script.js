@@ -110,6 +110,7 @@ $(document).ready(function(){
 //       $('.opened').removeClass('opened');
 //     });
 $('#art').click(function(){
+  if(!($('.art').hasClass('opened'))){
   $('.art').show();
   $('.opened_menu').hide("slide",{},500,function(){
       $(this).removeClass('opened_menu');
@@ -126,9 +127,11 @@ $('#art').click(function(){
           });
       });
   });
+}
 });
 
 $('#bte').click(function(){
+  if(!($('.bte').hasClass('opened'))){
   $('.bte').show();
   $('.opened_menu').hide("slide",{},500,function(){
       $(this).removeClass('opened_menu');
@@ -145,5 +148,6 @@ $('#bte').click(function(){
           });
       });
   });
+}
 });
 });
