@@ -393,7 +393,7 @@ hr{
 }
 .inputs_art{
     position: absolute;
-    top:250px;
+    top:225px;
     margin-left: 10px;
 }
 .title_art{
@@ -413,7 +413,7 @@ hr{
 }
 
 .input_container_art label:before {
-    border-radius: 6px;
+    border-radius: 5px;
 }
 .label2{
     font-weight: thin;
@@ -421,15 +421,15 @@ hr{
 
 .label2:before {
     content: "";
-    margin-top: 3px;
-    width: 12px;
-    height: 12px;
+    margin-top: 4px;
+    width: 10px;
+    height: 10px;
     margin-left: 150px;
     position: absolute;
     background-color: #35BFBF;
 }
 .input_art{
-    margin-left: 15px;
+    margin-left: 10px;
     padding-top: 2px;
 }
 .art_content{
@@ -438,4 +438,9 @@ hr{
     height: 100%;
     width: 100%;
     background-color: #ffffff;
+}
+.inputs_art2{
+    position: absolute;
+    top:400px;
+    margin-left: 10px;
 }
