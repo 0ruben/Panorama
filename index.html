@@ -5,11 +5,15 @@
   <link type="text/css" rel="stylesheet" href="style.css"/>
   <link type="text/css" rel="stylesheet" href="jquery-ui.min.css"/>
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/ion.rangeSlider.css">
+      <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300' rel='stylesheet' type='text/css'>
   <title>Festival Panorama </title>
   <script type="text/javascript" src="jquery.min.js"></script>
   <script type="text/javascript" src="jquery-ui.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  <script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
+  
 </head>
 <body>
 <!-- SIDE MENU -->
@@ -58,17 +62,17 @@
     <form class="inputs">
        <div id="day1" class="input_container">
           <div class="input">
-             <input id="d1" class="day" type="radio" name="day"> <label for="day" class="pass label1 radio">Pass 1 jour</label> 
+             <input id="d1" class="day" type="radio" name="day"> <label for="d1" class="label1 radio">Pass 1 jour</label> 
           </div>
       </div>
       <div id="day2" class="input_container">
           <div class="input">
-              <input type="radio" name="day" id="d2" class="day"><label for ="day" class="pass label1 radio">Pass 2 jours </label>
+              <input type="radio" name="day" id="d2" class="day"><label for ="d2" class="label1 radio">Pass 2 jours </label>
          </div>
      </div>
      <div id="camp" class="input_container">
         <div class="input2">
-            <input id="c1" type="checkbox" name="camp" class ="cmp"><label class="label1 labcamp" for="camp">Camping</label> 
+            <input id="c1" type="checkbox" name="camp" class ="cmp"><label class="label1" for="cmp">Camping</label> 
         </div>
     </div>
  </form>
@@ -233,25 +237,61 @@
       <h3 class="title_art open_sans">Jour</h3>
        <div class="input_container input_container_art">
           <div class="input input_art">
-            <label class="label2 radio">Tous</label> <input class="day_art" type="radio" name="day_art">
+             <input class="day_art" type="radio" name="day_art" id="jall"> <label for="jall" class="label2 radio">Tous</label>
           </div>
       </div>
        <div class="input_container input_container_art">
           <div class="input input_art">
-            <label class="label2 radio">Vendredi</label> <input class="day_art" type="radio" name="day_art">
+             <input class="day_art" type="radio" name="day_art" id="j1"> <label for="j1" class="label2 radio">Vendredi</label>
           </div>
       </div>
       <div class="input_container input_container_art">
           <div class="input input_art">
-            <label class="label2 radio">Samedi</label> <input class="day_art" type="radio" name="day_art">
+            <input class="day_art" type="radio" name="day_art" id="j2"> <label for="j2" class="label2 radio">Samedi</label> 
           </div>
       </div>
       <div class="input_container input_container_art">
           <div class="input input_art">
-            <label class="label2 radio">Dimanche</label> <input class="day_art" type="radio" name="day_art">
+            <input class="day_art" type="radio" name="day_art" id="j3"> <label for="j3" class="label2 radio">Dimanche</label> 
           </div>
       </div>
  </form>
+
+ <form class="inputs_sal">
+      <h3 class="title_art open_sans">Salle</h3>
+       <div class="input_container input_container_art">
+          <div class="input input_art">
+             <input class="sal_art" type="radio" name="sal_art" id="sall"> <label for="sall" class="label2 radio">Toutes</label>
+          </div>
+      </div>
+       <div class="input_container input_container_art">
+          <div class="input input_art">
+             <input class="sal_art" type="radio" name="sal_art" id="s1"> <label for="s1" class="label2 radio">Grand Club</label>
+          </div>
+      </div>
+      <div class="input_container input_container_art">
+          <div class="input input_art">
+            <input class="sal_art" type="radio" name="sal_art" id="s2"> <label for="s2" class="label2 radio">Le Club</label> 
+          </div>
+      </div>
+      <div class="input_container input_container_art">
+          <div class="input input_art">
+            <input class="sal_art" type="radio" name="sal_art" id="s3"> <label for="s3" class="label2 radio">Club Sesame</label> 
+          </div>
+      </div>
+      <div class="input_container input_container_art">
+          <div class="input input_art">
+            <input class="sal_art" type="radio" name="sal_art" id="s4"> <label for="s4" class="label2 radio">Club Coatelan</label> 
+          </div>
+      </div>
+ </form>
+
+
+ <div class="input_h">
+  <h3 class="title_art open_sans">Horaires</h3>
+  <div class="slider"><input type="text" id="range" value="" name="range"/>
+  </div>
+</div>
 </div>
 <div class="art_content" style="display:none;">
 </div>

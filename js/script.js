@@ -150,4 +150,37 @@ $('#bte').click(function(){
   });
 }
 });
+
+$('#mdl').click(function(){
+  if(!($('.mdl').hasClass('opened'))){
+  $('.mdl').show();
+  $('.opened_menu').hide("slide",{},500,function(){
+      $(this).removeClass('opened_menu');
+      $('.billeterie').addClass('opened_menu');
+      $('.billeterie').show("slide",{},500,function(){
+        $('.opened_content').hide("blind",{},500,function(){
+          $(this).removeClass('opened_content');
+          $('.tickets').addClass('opened_content');          
+          $('.tickets').show("blind",{},500,function(){
+                $('.opened').hide();
+                $('.opened').removeClass('opened');
+                $('.mdl').addClass('opened');
+          });
+          });
+      });
+  });
+}
+});
+
+});
+
+//Range Slider, TODO : transformer unité en heure
+$("#range").ionRangeSlider({
+    type: "double",
+    grid: true,
+    values: ["19h30", "20h30", "21h30", "22h30", "23h30", "00h30", "01h30", "02h30", "03h30", "04h30"],
+    from: 0,
+    to: 9,
+    grid: false,
+    hide_min_max: true
 });
