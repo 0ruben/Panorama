@@ -205,3 +205,41 @@ $("#range").ionRangeSlider({
     hide_min_max: true
 });
 });
+
+//Animation sur artiste
+
+var widthImg = Math.min(1280, window.innerWidth);
+
+TweenLite.set($('.row__img__wrapper--color'), {x : -widthImg});
+TweenLite.set($('.row__img__wrapper--color .row__img'), {x : widthImg});
+
+var DURATION = 0.7,
+    EASE = Power4.easeInOut;
+
+
+
+$('.list').on('mouseenter', '.row1', function(e) {
+    console.log('hello');
+    var $imgWrapper = $(e.currentTarget).children('.row__img__wrapper--color');
+    var $img = $imgWrapper.children('.row__img');
+  
+    TweenLite.set($imgWrapper, {x : -widthImg});
+    TweenLite.set($img, {x : widthImg});
+  
+    TweenLite.to($imgWrapper, DURATION, {x : 0, ease : EASE});
+    TweenLite.to($img, DURATION, {x : 0, ease : EASE});
+
+  
+  }).on('mouseleave', '.row1', function(e) {
+      var $imgWrapper = $(e.currentTarget).children('.row__img__wrapper--color');
+      var $img = $imgWrapper.children('.row__img');
+  
+      /*
+      TweenLite.to($imgWrapper, DURATION, {x : widthImg, ease : EASE});
+      TweenLite.to($img, DURATION, {x : -widthImg, ease : EASE});
+      */
+  
+      TweenLite.to($imgWrapper, DURATION, {x : -widthImg, ease : Power4.easeOut});
+      TweenLite.to($img, DURATION, {x : widthImg, ease : Power4.easeOut});
+  
+  })

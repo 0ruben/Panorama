@@ -478,3 +478,87 @@ hr{
     width:150px;
 
 }
+.list {
+  width:100%;  
+  max-width:1280px;
+} 
+ .row1 {
+    cursor:pointer;
+    width:100%;
+    height:200px;
+    position:relative;
+    overflow:hidden;
+  }
+  
+  .row__img__wrapper {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    overflow:hidden;
+    left:0;
+    
+    &.row__img__wrapper--nb {
+      z-index:1;
+      -webkit-filter: grayscale(100%); 
+      filter: grayscale(100%);
+    }
+    
+    &.row__img__wrapper--color {
+      z-index:10;
+    }
+  }
+    
+  .row__img {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-size:cover;
+  }
+  .container_img{
+    width: 100%;
+    height: 100%;
+  }
+  .art_name{
+    z-index: 1000;
+    position: absolute;
+    left: 20%;
+    font-size: 85px;
+    font-family: 'Farray';
+    color: #ffffff;
+    bottom:0%;
+  }
+  .dropdown{
+    display: inline-block;
+  }
+  .row_art{
+    height: 300px;
+    top: 100px;
+    position: absolute;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 2000;
+    color:#6f6f6f;
+  }
+  .time{
+    padding: 5px 15px;
+    border: 2px solid #35bfbf;
+    width: 83px;
+  }
+  .art_vid{
+    width: 45%;
+  }
+  .art_main{
+    width: 35%;
+  }
+  .art_social{
+    width: 20%;
+  }
+  .art_day{
+    padding-top: 14px;
+    color: #000000;
+    font-size: 18px;
+    font-family: 'PT MONO BOLD', sans-serif;
+  }
