@@ -5,6 +5,18 @@
 }
 
 @font-face {
+    font-family: 'socicon';
+    src: url('fonts/socicon-webfont.eot');
+    src: url('fonts/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/socicon-webfont.woff') format('woff'),
+         url('fonts/socicon-webfont.ttf') format('truetype'),
+         url('fonts/socicon-webfont.svg#sociconregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    text-transform: initial;
+}
+
+@font-face {
     font-family: 'Farray';
     src: url('fonts/farray.otf');
 }
@@ -534,8 +546,7 @@ hr{
     display: inline-block;
   }
   .row_art{
-    height: 300px;
-    top: 100px;
+    max-height: 400px;
     position: absolute;
     width: 100%;
     background-color: #ffffff;
@@ -546,19 +557,62 @@ hr{
     padding: 5px 15px;
     border: 2px solid #35bfbf;
     width: 83px;
+    font-weight: bold;
   }
   .art_vid{
-    width: 45%;
+    width: 35%;
+    display: inline-block;
   }
   .art_main{
     width: 35%;
+    display: inline-block;
+    margin-top: 30px;
   }
   .art_social{
-    width: 20%;
+    width: 15%;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 4%;
+    margin-top: 50px;
   }
   .art_day{
-    padding-top: 14px;
+    padding-top: 6px;
     color: #000000;
     font-size: 18px;
     font-family: 'PT MONO BOLD', sans-serif;
+  }
+  .repeat{
+    height: auto;
+  }
+  .art_style{
+    position: relative;
+    bottom: 15px;
+    font-family: 'PT MONO',sans-serif;
+    color: #000000;
+  }
+  .description{
+    font-size: 13px;
+    position: relative;
+    bottom: 10px;
+  }
+  .add_pano{
+    padding-top: 30px;
+    font-family: 'Open Sans',sans-serif;
+  }
+  .add_img{
+    width: 15px;
+  }
+  .socicon{
+    font-family: 'socicon';
+  }
+  .social{
+    font-size: 35px;
+    color:#959595;
+    display: block;
+    margin-bottom: 15px;
+  }
+  .leave{
+    width: 35px;
+    margin-top: 100%;
+    cursor: pointer;
   }

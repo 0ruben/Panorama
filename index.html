@@ -82,7 +82,7 @@
     
     
 <!-- MAIN-->    
-<div class="tickets opened_content" style="display:none;">
+<div class="tickets opened_content">
     <!-- PASS 1 DAY NO CAMPING -->
     <div class="widget pass1 first" style="display:none; opacity:0;">
         <div class="head_wg">
@@ -298,8 +298,8 @@
 </div>
 <div class="art_content" ng-controller="artistCtrl" style="display:none;" >
   <div class="list">
-  
-  <div class="row1" ng-repeat="artist in artistes">
+  <div class="repeat" ng-repeat="artist in artistes">
+  <div class="row1">
     <div class="row__img__wrapper row__img__wrapper--nb">
       <div class="row__img row__img--nb" style="background:url({{artist.pic_link_black}}) no-repeat center center;"></div>
     </div> 
@@ -308,17 +308,29 @@
     <div class="row__img row__img--color">
       <div class="container_img" style="background:url({{artist.pic_link_color}}) no-repeat center center;"></div>
     </div>
-    </div>  
-    <div class="row_art">
+    </div>
+  </div>  
+    <div class="row_art" style="display:none; top:{{100+200*$index}}px">
       <div class="art_vid dropdown">
       </div>
       <div class="art_main dropdown">
         <p class="time">{{artist.heure}}</p>
         <p class="art_day">{{artist.jour}}</p>
-      </div>
-      <div class="art_social">
-      </div>
+        <p class="art_style">{{artist.style}}</p>
+        <div class="description">
+          <p>{{artist.description}}</p>
+        </div>
+        <div class="add_pano">
+          <a class="add"><img class="add_img" src="images/add.png"/>                        Ajouter a MON PANO </a>
+        </div>
     </div>
+    <div class="art_social">
+      <a href="#" class="socicon social">a</a>
+      <a href="#" class="socicon social">b</a>  
+      <a href="#" class="socicon social">n</a> 
+      <img class="leave" src="images/leave.png"/>         
+    </div>
+  </div>
   </div> 
 </div>
 </div>

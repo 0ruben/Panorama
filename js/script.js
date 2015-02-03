@@ -8,12 +8,10 @@ $(document).ready(function(){
   }
   showIt= function(elem){      // Affiche
     TweenLite.to(elem,0, {display:'inline-block',onComplete:appear(elem,0)});
-    console.log('hello'+elem);
   }
   showItAfter= function(elem){   //Affiche après avoir terminé un précédent
     TweenLite.to(elem,0,{display:'inline-block'});
     appear(elem,0.5);
-    console.log('hello'+elem);
   }
   hideIt=function(elem,callback){  //Cache
     TweenLite.to(elem,0.5, {opacity:0, display:'none'});
@@ -150,49 +148,64 @@ $('#bte').click(function(){
   });
 }
 });
-$('#info').click(function(){
-  if(!($('.inf').hasClass('opened'))){
-  $('.inf').show();
-  $('.opened_menu').hide("slide",{},500,function(){
-      $(this).removeClass('opened_menu');
-      $('.info').addClass('opened_menu');
-      $('.info').show("slide",{},500,function(){
-        $('.opened_content').hide("blind",{},500,function(){
-          $(this).removeClass('opened_content');
-          $('.info_content').addClass('opened_content');          
-          $('.info_content').show("blind",{},500,function(){
-                $('.opened').hide();
-                $('.opened').removeClass('opened');
-                $('.inf').addClass('opened');
-          });
-          });
-      });
-  });
-}
-});                
+// $('#info').click(function(){
+//   if(!($('.inf').hasClass('opened'))){
+//   $('.inf').show();
+//   $('.opened_menu').hide("slide",{},500,function(){
+//       $(this).removeClass('opened_menu');
+//       $('.info').addClass('opened_menu');
+//       $('.info').show("slide",{},500,function(){
+//         $('.opened_content').hide("blind",{},500,function(){
+//           $(this).removeClass('opened_content');
+//           $('.info_content').addClass('opened_content');          
+//           $('.info_content').show("blind",{},500,function(){
+//                 $('.opened').hide();
+//                 $('.opened').removeClass('opened');
+//                 $('.inf').addClass('opened');
+//           });
+//           });
+//       });
+//   });
+// }
+// });                
 
-$('#mdl').click(function(){
-  if(!($('.mdl').hasClass('opened'))){
-  $('.mdl').show();
-  $('.opened_menu').hide("slide",{},500,function(){
-      $(this).removeClass('opened_menu');
-      $('.billeterie').addClass('opened_menu');
-      $('.billeterie').show("slide",{},500,function(){
-        $('.opened_content').hide("blind",{},500,function(){
-          $(this).removeClass('opened_content');
-          $('.tickets').addClass('opened_content');          
-          $('.tickets').show("blind",{},500,function(){
-                $('.opened').hide();
-                $('.opened').removeClass('opened');
-                $('.mdl').addClass('opened');
-          });
-          });
-      });
-  });
-}
+// $('#mdl').click(function(){
+//   if(!($('.mdl').hasClass('opened'))){
+//   $('.mdl').show();
+//   $('.opened_menu').hide("slide",{},500,function(){
+//       $(this).removeClass('opened_menu');
+//       $('.billeterie').addClass('opened_menu');
+//       $('.billeterie').show("slide",{},500,function(){
+//         $('.opened_content').hide("blind",{},500,function(){
+//           $(this).removeClass('opened_content');
+//           $('.tickets').addClass('opened_content');          
+//           $('.tickets').show("blind",{},500,function(){
+//                 $('.opened').hide();
+//                 $('.opened').removeClass('opened');
+//                 $('.mdl').addClass('opened');
+//           });
+//           });
+//       });
+//   });
+// }
+// });
+
+// Dropdown artiste TODO Desactiver les click une fois ouvert, laisser en bleu, gérer la descente sur la page
+$('.row1').click(function(){
+  var parent = $(this).parent('.repeat');
+  var $target = $(this).children('.art_name');
+  parent.children('.row_art').slideDown(500);
+    console.log($target.hasClass('art_name')); 
+   TweenLite.to($target, 0.5, {fontSize : "50",bottom:"45%",left:"30%"});
 });
 
-
+$('.leave').click(function(){
+  var parent = $(this).parents('.repeat');
+  var $target = parent.find('.art_name'); 
+  parent.children('.row_art').slideToggle(500);
+  console.log($target.hasClass('art_name')); 
+  TweenLite.to($target, 0.5, {fontSize : "85",bottom:"0%",left:"20%"});
+});
 
 //Range Slider, TODO : transformer unité en heure
 $("#range").ionRangeSlider({
@@ -219,7 +232,6 @@ var DURATION = 0.7,
 
 
 $('.list').on('mouseenter', '.row1', function(e) {
-    console.log('hello');
     var $imgWrapper = $(e.currentTarget).children('.row__img__wrapper--color');
     var $img = $imgWrapper.children('.row__img');
   
@@ -242,4 +254,4 @@ $('.list').on('mouseenter', '.row1', function(e) {
       TweenLite.to($imgWrapper, DURATION, {x : -widthImg, ease : Power4.easeOut});
       TweenLite.to($img, DURATION, {x : widthImg, ease : Power4.easeOut});
   
-  })
+  });
