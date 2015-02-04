@@ -308,13 +308,20 @@ hr{
     width: auto;
     display: inline;
 }
-.inputs_j1j2{
+.inputs_j1j2j3{
     position: absolute;
     top: 150px;
     float: left;
     width: auto;
     display: inline;
+}
 
+.inputs_pano_art{
+    position: absolute;
+    top: 270px;
+    float: left;
+    width: auto;
+    display: inline;  
 }
 .input, .input2{
     margin-left: 20px;
@@ -366,7 +373,7 @@ hr{
 
 .pano_content{
     position: absolute;
-    left: 300px;
+    left: 200px;
     background-image: url(images/bg-pano.jpg);
     height: 100%;
     width: 100%;
@@ -528,9 +535,10 @@ hr{
     margin-left: 12px;
     margin-bottom: 10px; 
 }
-.title_art:hover{
+
+/*.title_art:hover{
     background-color: #e6e6e6;
-}
+}*/
 
 .input_container_art{
     width: 190px;
@@ -712,13 +720,13 @@ hr{
     position: relative;
   }
   .odd .icon_timeline{
-    top:9px;
-    margin-left: 95px;
-  }
-  .even .icon_timeline{
     -ms-transform: rotate(180deg); /* IE 9 */
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
     transform: rotate(180deg);
+    top:17px;
+    margin-left: 95px;
+  }
+  .even .icon_timeline{
     margin-left: 94px;
   }
   .even .art_heure_pano{

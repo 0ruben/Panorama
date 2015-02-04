@@ -223,7 +223,7 @@
 </div>
 <!-- MAIN PANO-->
 <div class="content mdl" id="pano" style="display:none;">  
-  <div class="sub_menu_pano pano" id="menu_billetterie" style="display:none;">
+  <div class="sub_menu pano" id="menu_billetterie" style="display:none;">
    <div class="head">
      <h2> MON PANO </h2>
      <hr/>
@@ -231,34 +231,49 @@
       <p> Imaginez votre soirée idéale et partagez-la à vos amis. </p>
     </div>
   </div>
-  <div class="arrow_pano">
+  <div class="arrow">
     <img src="images/arrow.png"/>
   </div>
-  <div class="inputs_j1j2" ng-controller="PanoCtrl">
-            <div ng-repeat="ar in artiste">
+    <div class="inputs_j1j2j3">
+    <h3 class="title_art open_sans">Jour</h3>
+    <div class="input_container input_container_art">
+    <div class="input input_art">
+     <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="1" id="pano1"> <label for="pano1" class="label2 radio">Jour 1</label>
+   </div>
+   </div>
+   <div class="input_container input_container_art">
+   <div class="input input_art">
+     <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="2" id="pano2"> <label for="pano2" class="label2 radio">Jour 2</label>
+   </div>
+   </div>
+   <div class="input_container input_container_art">
+   <div class="input input_art">
+     <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="3" id="pano3"> <label for="pano3" class="label2 radio">Jour 3</label>
+   </div>
+   </div>
+</div>
+  <div class="inputs_pano_art" ng-controller="PanoCtrl">
+  <h3 class="title_art open_sans">Artistes</h3>
+            <div ng-repeat="ar in artiste | filter: dayFilter">
+                <div class="input_container input_container_art">
                 <div class="input input_art">
-                <input type="checkbox" ng-model="ar.isChecked" ng-click="includeArtiste(ar.id)" />
-                <label class="label2 checkbox">{{ar.name}}</label>
+                <input class="day_art" type="checkbox" ng-model="ar.isChecked" ng-click="includeArtiste(ar.id)" />
+                <label class="label1">{{ar.name}}</label>
+                </div>
                 </div>
     </div>
     </div>
-  <div class="input_j1j2">
-   <div id="camp" class="input_container input_container_art">
-    <div class="input input_art">
-     <input class="day_art" type="radio" name="day_pano" id="pano1"> <label for="pano1" class="label2 radio">Jour 1</label>
-   </div>
-   <div class="input input_art">
-     <input class="day_art" type="radio" name="day_pano" id="pano2"> <label for="pano2" class="label2 radio">Jour 2</label>
-   </div>
-   <div class="input input_art">
-     <input class="day_art" type="radio" name="day_pano" id="pano3"> <label for="pano3" class="label2 radio">Jour 3</label>
-   </div>
-   
- </div>
-</div>
+
 </div>
 <div class="pano_content" style="display:none;">
   <div class="timeline_container" style="display:none;">
+  <ul>
+            <div ng-repeat="a in artiste | filter:artisteFilter">
+                {{a.name}} {{a.heure}}
+            </div>
+            
+        </ul>
+        Filtre: {{artisteIncludes}}
     <div class="art_pano_container odd" style="margin-left:0%">
       <div class="art_heure_pano"> -01h30- </div>
       <div class="art_name_pano"> ARTISTE </div>
@@ -276,8 +291,11 @@
     </div>
   </div>
 </div>
-
 </div>
+
+
+
+
 <!-- MAIN ARTIST -->
 <div class="content art" id="artiste" style="display:none;">
   <div class="sub_menu artiste" id="menu_billetterie" style="display:none;">
