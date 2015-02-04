@@ -728,7 +728,5 @@ hr{
   }
   .even .icon_timeline{
     margin-left: 94px;
-  }
-  .even .art_heure_pano{
-    margin-top: 7px;
+    bottom: 8px;
   }
