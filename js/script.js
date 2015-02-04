@@ -171,7 +171,26 @@ $('#mdl').click(function(){
     });
   }
 });
-
+$('#inf').click(function(){
+  if(!($('.inf').hasClass('opened'))){
+    $('.inf').show();
+    $('.opened_menu').hide("slide",{},500,function(){
+      $(this).removeClass('opened_menu');
+      $('.info').addClass('opened_menu');
+      $('.info').show("slide",{},500,function(){
+        $('.opened_content').hide("blind",{},500,function(){
+          $(this).removeClass('opened_content');
+          $('.info_content').addClass('opened_content');
+          $('.info_content').show("blind",{},500,function(){
+            $('.opened').hide();
+            $('.opened').removeClass('opened');
+            $('.inf').addClass('opened');          
+          });
+        });
+      });
+    });
+  }
+});
 
 // $('#info').click(function(){
 //   if(!($('.inf').hasClass('opened'))){
