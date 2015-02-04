@@ -17,3 +17,32 @@ app.controller("artistCtrl",function($scope){
 	 	},
 	 ];
 });
+
+
+app.controller("PanoCtrl",function($scope) {
+    $scope.artiste = [
+        {'name': 'KAYTRANADA', 'id':'1', 'heure':'19h30', 'isChecked' : false},
+        {'name': 'TEST', 'id':'2', 'heure':'20h30', 'isChecked' : false},
+        {'name': 'TEST2', 'id':'3', 'heure':'21h30', 'isChecked' : false}];
+    
+    $scope.artisteIncludes = [];
+    
+    $scope.includeArtiste = function(artisteID) {
+        var i = $.inArray(artisteID, $scope.artisteIncludes);
+        if (i > -1) {
+            $scope.artisteIncludes.splice(i, 1);
+        } else {
+            $scope.artisteIncludes.push(artisteID);
+        }
+    
+    } 
+    
+    $scope.artisteFilter = function(artiste) {
+        if ($scope.artisteIncludes.length >= 0) {
+            if ($.inArray(artiste.id, $scope.artisteIncludes) < 0)
+                return;
+        }
+        
+        return artiste;
+    }     
+});

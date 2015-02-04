@@ -191,6 +191,14 @@ input[type=checkbox]:checked + label:before {
     position: absolute;
     top:0;
 }
+
+.sub_menu_pano{
+    background-color: #e6e6e6;
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top:0;
+}
 .head{
     height:175px;
     background-color: #ffffff;
@@ -206,10 +214,61 @@ h2, h3{
     font-family: 'Farray', sans-serif;
 	color:#696969;
 }
+
+.timeline_container{
+    margin: 10% 10% 10% 10%;
+    background-color: #ffffff;
+    width:100%;
+}
+
+.art_pano_container{
+    width: 200px;
+    height: 100px;
+}
+.art_heure_pano{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color:#9C9C9C;
+    text-align: center;
+    font-weight:700;
+}
+
+.art_name_pano{
+    position: relative;
+    margin-top:5px;
+    font-family: 'Farray', sans-serif;
+    color:#000000;
+    text-align: center;
+}
+
+.art_salle_pano{
+    position: relative;
+    margin-top:7px;
+    font-family: 'PT Mono', sans-serif;
+    font-size: 12px;
+    font-weight:500;
+    color: #000000;
+    text-align: center; 
+}
+
+
+
 hr{
     width: 25px;
     border:1px solid black;
     margin-left: 16px;
+}
+
+.line_container{
+    margin: 0 auto;
+    width:600px;
+    height:3px;
+}
+.blue_line{
+    width:100%; 
+    height:3px;
+    background-color: #35bfbf;
+    border-style:none;
 }
 .subtitle{
     font-family: 'Open Sans', sans-serif;
@@ -224,6 +283,14 @@ hr{
     width: 30px;
     margin-left: 85px;
 }
+
+.arrow_pano{
+    position: absolute;
+    top:175px;
+    width: 30px;
+    margin-left: 140px;
+}
+
 .content{
     position: absolute;
     left: 60px;
@@ -237,6 +304,14 @@ hr{
     float: left;
     width: auto;
     display: inline;
+}
+.inputs_j1j2{
+    position: absolute;
+    top: 150px;
+    float: left;
+    width: auto;
+    display: inline;
+
 }
 .input, .input2{
     margin-left: 20px;
@@ -285,6 +360,16 @@ hr{
     background-size: cover;
     background-position: center;
 }
+
+.pano_content{
+    position: absolute;
+    left: 300px;
+    background-image: url(images/bg-pano.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
 .widget{
     margin-bottom: 40%;
     margin-top: 10%;
@@ -312,6 +397,9 @@ hr{
     font-weight: 100;
     color: #363636; 
 }
+
+
+
 .arrow_grey{
     margin-bottom: 20px;
 }
