@@ -271,4 +271,13 @@ $('.list').on('mouseleave', '.row1', function(e) {
       TweenLite.to($img, DURATION, {x : widthImg, ease : Power4.easeOut});
     }
   });
+$('.content_art').mousemove(function(e) {
+    $("html, body").scrollTop(function(i, v) {
+        var h = $(window).height();
+        var y = e.clientY - h / 2;
+        return v + y * 0.1;
+    });
 });
+});
+
+

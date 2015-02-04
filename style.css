@@ -47,7 +47,7 @@ p, label{
 }
 .nav {
     background-color: #141414;
-    position: absolute;
+    position: fixed;
     width: 60px;
     height: 100%;
     text-align: center;
@@ -299,7 +299,6 @@ hr{
     left: 60px;
     right:0;
     height: 100%;
-    overflow: hidden;
 }
 .inputs{
     position: absolute;
