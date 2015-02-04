@@ -191,20 +191,29 @@ $('#bte').click(function(){
 // });
 
 // Dropdown artiste TODO Desactiver les click une fois ouvert, laisser en bleu, gérer la descente sur la page
+var rowOpen=false;
 $('.row1').click(function(){
   var parent = $(this).parent('.repeat');
   var $target = $(this).children('.art_name');
-  parent.children('.row_art').slideDown(500);
+  parent.children('.row_art').slideToggle(500);
     console.log($target.hasClass('art_name')); 
-   TweenLite.to($target, 0.5, {fontSize : "50",bottom:"45%",left:"30%"});
+  if(!rowOpen){
+   TweenLite.to($target, 0.5, {scale : 0.5,bottom:"20%"});
+  }
+  if(rowOpen){
+    TweenLite.to($target, 1, {scale : 1,bottom:"0%"});
+  }
+  rowOpen=!rowOpen;
 });
 
 $('.leave').click(function(){
   var parent = $(this).parents('.repeat');
+  $('.list').trigger();
   var $target = parent.find('.art_name'); 
   parent.children('.row_art').slideToggle(500);
   console.log($target.hasClass('art_name')); 
-  TweenLite.to($target, 0.5, {fontSize : "85",bottom:"0%",left:"20%"});
+  TweenLite.to($target, 1, {scale : 1,bottom:"0%"});
+  rowOpen=!rowOpen;
 });
 
 //Range Slider, TODO : transformer unité en heure
@@ -217,21 +226,21 @@ $("#range").ionRangeSlider({
     grid: false,
     hide_min_max: true
 });
-});
+
 
 //Animation sur artiste
 
 var widthImg = Math.min(1280, window.innerWidth);
 
-TweenLite.set($('.row__img__wrapper--color'), {x : -widthImg});
+TweenLite.set($('.row__img__wrapper--color'), {x : widthImg});
 TweenLite.set($('.row__img__wrapper--color .row__img'), {x : widthImg});
 
 var DURATION = 0.7,
     EASE = Power4.easeInOut;
 
 
-
 $('.list').on('mouseenter', '.row1', function(e) {
+  if(rowOpen==false){
     var $imgWrapper = $(e.currentTarget).children('.row__img__wrapper--color');
     var $img = $imgWrapper.children('.row__img');
   
@@ -241,8 +250,10 @@ $('.list').on('mouseenter', '.row1', function(e) {
     TweenLite.to($imgWrapper, DURATION, {x : 0, ease : EASE});
     TweenLite.to($img, DURATION, {x : 0, ease : EASE});
 
-  
-  }).on('mouseleave', '.row1', function(e) {
+  }
+  });
+$('.list').on('mouseleave', '.row1', function(e) {
+  if(rowOpen==false){
       var $imgWrapper = $(e.currentTarget).children('.row__img__wrapper--color');
       var $img = $imgWrapper.children('.row__img');
   
@@ -253,5 +264,6 @@ $('.list').on('mouseenter', '.row1', function(e) {
   
       TweenLite.to($imgWrapper, DURATION, {x : -widthImg, ease : Power4.easeOut});
       TweenLite.to($img, DURATION, {x : widthImg, ease : Power4.easeOut});
-  
+    }
+  });
   });
