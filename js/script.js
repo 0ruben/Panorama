@@ -293,7 +293,7 @@ $('.list').on('mouseleave', '.row1', function(e) {
 
 //Déplacement sur artist
 $('.art_content').mousemove(function(e) {
-        var h = $('.art_content').height();
+        var h = $('.art_content').height()-$(window).height();
         var z = e.clientY - h/2;
         var v = e.clientY - $(window).height()/2;
         var vit = Math.abs(v);
@@ -312,7 +312,7 @@ $('.artiste').mousemove(function(e) {
         var vit = Math.abs(v);
         var ind=0;
         if(v>0)
-          ind=-50;
+          ind=-30;
         if(vit>150)
         TweenLite.to('.artiste',500/vit,{y:ind+'px',ease:Cubic.easeOut,});
         if(vit<150)

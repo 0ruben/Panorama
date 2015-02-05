@@ -574,7 +574,6 @@ hr{
 .art_content{
     position: absolute;
     left: 200px;
-    height: 100%;
     width: 100%;
     background-color: #ffffff;
 }
