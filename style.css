@@ -47,7 +47,7 @@ p, label{
 }
 .nav {
     background-color: #141414;
-    position: absolute;
+    position: fixed;
     width: 60px;
     height: 100%;
     text-align: center;
@@ -597,7 +597,6 @@ hr{
 .art_content{
     position: absolute;
     left: 200px;
-    height: 100%;
     width: 100%;
     background-color: #ffffff;
 }
@@ -753,5 +752,45 @@ hr{
   .even .icon_timeline{
     z-index:10;
     margin-left: 94px;
+<<<<<<< HEAD
     bottom: 116px;
   }
+=======
+    bottom: 8px;
+  }
+  .info_content{
+    top: 0;
+    margin-left:200px;
+    height: 100%;
+    width: 10000px;
+    position: absolute;
+}
+.info_line{
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #a8a8a8;
+}
+.title-line{
+    background-color:#e6e6e6;
+    position: absolute;
+    width: 100%;
+    margin-top: 5px;
+}
+.info_title{
+    margin-left: 80px;
+}
+.arrow_grey{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 70px;
+
+}
+.trsp{
+    top:inherit;
+    position:absolute;
+}
+.artiste{
+    height: 750px;
+}
+>>>>>>> 036d2cba8f925ab205537cb0ae38abb1c2036cc6

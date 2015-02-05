@@ -367,15 +367,13 @@
   </div>
 </div>
 </form>
-
-
 <div class="input_h">
   <h3 class="title_art open_sans">Horaires</h3>
   <div class="slider"><input type="text" id="range" value="" name="range"/>
   </div>
 </div>
 </div>
-<div class="art_content" ng-controller="artistCtrl" style="display:none;" >
+<div class="art_content" ng-controller="artistCtrl" style="display:none; height:{{artistes.length*200}}+px" >
   <div class="list">
     <div class="repeat" ng-repeat="artist in artistes">
       <div class="row1">
@@ -413,46 +411,78 @@
     </div> 
   </div>
 </div>
-<!-- MAIN INFO-->
-<!-- <div class="content inf" style="display:none;">
-  <div class="sub_menu info" id="menu_billetterie" style="display:none;"> 
-      <div class="head">
-         <h2> PROGRAM-</h2>
-         <h2 id="mation"> MATION</h2>
-         <hr/>
-         <div class="subtitle">
-             <p> Parcourez le line-up du festival selon vos critères. </p>
-         </div>
+</div>
+
+   
+<!--INFO-->
+
+    <div class="content inf" id="info" style="display:none;">  
+  <div class="sub_menu info " id="menu_billetterie" style="display:none;">
+   <div class="head">
+     <h2> INFOS </h2>
+     <hr/>
+     <div class="subtitle">
+       <p> Tout ce dont vous avez besoin de savoir </p>
      </div>
-     <div class="arrow">
-        <img src="images/arrow.png"/>
-    </div>
-    <form class="inputs_art">
-       <div class="input_container input_container_art">
-          <div class="input input_art">
-            <label class="label2 radio">Tous</label> <input class="day_art" type="radio" name="day_art">
-          </div>
-      </div>
-       <div class="input_container input_container_art">
-          <div class="input input_art">
-            <label class="label2 radio">Vendredi</label> <input class="day_art" type="radio" name="day_art">
-          </div>
-      </div>
-      <div class="input_container input_container_art">
-          <div class="input input_art">
-            <label class="label2 radio">Samedi</label> <input class="day_art" type="radio" name="day_art">
-          </div>
-      </div>
-      <div class="input_container input_container_art">
-          <div class="input input_art">
-            <label class="label2 radio">Dimanche</label> <input class="day_art" type="radio" name="day_art">
-          </div>
-      </div>
-    </div>
+   </div>
+   <div class="arrow">
+    <img src="images/arrow.png"/>
   </div>
--->
-
-
+      <div class="infos">
+   <div class="input_container imput_container_art">
+    <div class="input input_art">
+     <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> <label for="acces" class="label1 radio">Accès / Contact</label> 
+   </div>
+ </div>
+  <div class="input_container imput_container_art">
+    <div class="input input_art">
+     <input id="acces" ng-model="day_pano" class="day_art" type="radio" name="info"> <label for="acces" class="label1 radio">Transport</label> 
+   </div>
+ </div>
+  <div class="input_container imput_container_art">
+    <div class="input input_art">
+     <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> <label for="acces" class="label1 radio">Camping</label> 
+   </div>
+ </div>
+       <div class="input_container imput_container_art">
+    <div class="input input_art">
+     <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> <label for="acces" class="label1 radio">A savoir</label> 
+   </div>
+ </div>
+</div>
+        </div>
+    
+<!-- MAIN INFO-->
+       <div class="info_content">
+<div class="acces">
+    <div class="info_line"></div>
+    <div class= "title-line">
+        <h2 class="info_title">Accès / contact</h2>
+    </div>
+    <div class="arrow_grey">
+    <img src="images/arrow_grey.png"/>
+  </div>
+    <div class="img-acces">
+        <div clas="img-acces-concert"></div>
+        <div class= "map-acces"></div>
+</div>
+    <div class="info_acces"></div>
+        </div>
+<div class="trsp">
+    <div class="info_line"></div>
+    <div class= "title-line">
+        <h2 class="info_title">Transport</h2>
+    </div>
+    <div class="arrow_grey">
+    <img src="images/arrow_grey.png"/>
+  </div>
+    <div class="img-acces">
+        <div clas="img-acces-concert"></div>
+        <div class= "map-acces"></div>
+</div>
+    <div class="info_acces"></div>
+        </div>
+    </div>
 </body>
 <script type="text/javascript" src="js/script.js"></script>
 </html>  	
