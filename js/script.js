@@ -213,30 +213,37 @@ $('#inf').click(function(){
 // }
 // });   
 
-
+var sizeList = $('.list').attr('data-size');
 var rowOpen = false;
-$('.row1').click(function(){
+$('.row1').click(function(e){
+var index = $(this).attr('data-position');
 if(rowOpen==false || rowOpen==this){
   var parent = $(this).parent('.repeat');
   var $target = $(this).children('.art_name');
   parent.children('.row_art').slideToggle(500);
+  var z = e.clientY;
+  if(z>400) z=300;
+  else if(z>200) z=100;
+  else z=0;
   if(!rowOpen){
    TweenLite.to($target, 0.5, {scale : 0.5,bottom:"20%",left:"17%"});
    rowOpen=this;
+   TweenLite.to('.art_content',1,{y:-200*index+'px',ease:Power1.easeIn}); 
  }
  else if(rowOpen==this){
-  TweenLite.to($target, 1, {scale : 1,bottom:"0%",left:"20%"});
-  rowOpen=false;
+  TweenLite.to($target, 1, {scale : 1,bottom:"0%",left:"20%",onCompleteParams: function(){
+    if(index>sizeList-3)
+      $('.art_content').height(sizeList*200);
+  }});  // Fix height of the div
+  rowOpen=false;          
 }
 }
 });
 
 $('.leave').click(function(){
   var parent = $(this).parents('.repeat');
-  $('.list').trigger();
   var $target = parent.find('.art_name'); 
-  parent.children('.row_art').slideToggle(500);
-  console.log($target.hasClass('art_name')); 
+  parent.children('.row_art').slideToggle(500); 
   TweenLite.to($target, 1, {scale : 1,bottom:"0%",left:"20%"});
   rowOpen=false;
 });
@@ -290,9 +297,9 @@ $('.list').on('mouseleave', '.row1', function(e) {
       TweenLite.to($img, DURATION, {x : widthImg, ease : Power4.easeOut});
     }
   });
-
 //Déplacement sur artist
 $('.art_content').mousemove(function(e) {
+  if(rowOpen==false){
         var h = $('.art_content').height()-$(window).height();
         var z = e.clientY - h/2;
         var v = e.clientY - $(window).height()/2;
@@ -304,6 +311,15 @@ $('.art_content').mousemove(function(e) {
         TweenLite.to('.art_content',300/(vit-100),{y:ind+'px',ease:Power1.easeIn,});
         if(vit<100)
         TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn,});  
+  }
+});
+$('.art_content').mouseout(function(e) {
+        var h = $('.art_content').height()-$(window).height();
+        var z = e.clientY - h/2;
+        var v = e.clientY - $(window).height()/2;
+        var vit = Math.abs(v);
+        var ind=0;
+        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn,});  
 });
 $('.artiste').mousemove(function(e) {
         var h = $('.artiste').height();
@@ -314,9 +330,14 @@ $('.artiste').mousemove(function(e) {
         if(v>0)
           ind=-30;
         if(vit>150)
-        TweenLite.to('.artiste',500/vit,{y:ind+'px',ease:Cubic.easeOut,});
+        TweenLite.to('.artiste',500/vit,{y:ind+'px',ease:Cubic.easeOut});
         if(vit<150)
         TweenLite.to('.artiste',100000,{y:ind+'px',ease:Cubic.easeOut,});  
+});
+$('.input_container').click(function(){
+  $(this).find('input').prop('checked',true);
+  $('.active').removeClass('active');
+  $(this).addClass('active');
 });
 });
 

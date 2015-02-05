@@ -664,7 +664,8 @@ hr{
   .art_main{
     width: 35%;
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
   .art_social{
     width: 15%;
@@ -694,7 +695,7 @@ hr{
     bottom: 10px;
   }
   .add_pano{
-    padding-top: 30px;
+    padding-top: 20px;
     font-family: 'Open Sans',sans-serif;
   }
   .add_img{
@@ -751,7 +752,7 @@ hr{
 .info_title{
     margin-left: 80px;
 }
-.arrow_grey{
+.arrow_grey1{
     position: absolute;
     margin-top: 60px;
     margin-left: 70px;
