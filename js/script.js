@@ -259,6 +259,17 @@ $("#range").ionRangeSlider({
   hide_min_max: true
 });
 
+//DIV to IMG
+$( ".line_container" ).click(function() {
+html2canvas($('.timeline_container'), {
+  onrendered: function(canvas) {
+    var img = canvas.toDataURL()
+    window.open(img);
+  }
+});
+});
+
+
 
 //Animation sur artiste
 
