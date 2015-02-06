@@ -753,11 +753,7 @@ hr{
   .even .icon_timeline{
     z-index:10;
     margin-left: 94px;
-<<<<<<< HEAD
     bottom: 116px;
-  }
-=======
-    bottom: 8px;
   }
   .info_content{
     top: 0;
@@ -794,4 +790,3 @@ hr{
 .artiste{
     height: 750px;
 }
->>>>>>> 036d2cba8f925ab205537cb0ae38abb1c2036cc6

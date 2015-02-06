@@ -11,6 +11,7 @@
   <title>Festival Panorama </title>
   <script type="text/javascript" src="jquery.min.js"></script>
   <script type="text/javascript" src="jquery-ui.min.js"></script>
+  <script type='text/javascript' src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   <script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
   <script type="text/javascript" src="js/html2canvas.js"></script>
@@ -318,7 +319,7 @@
     <h3 class="title_art open_sans">Jour</h3>
     <div class="input_container rad_container  input_container_art">
       <div class="input input_art">
-       <input class="day_art" type="radio" name="day_art" value="0" ng-model="day_art" id="jall"> <label for="jall" class="label2 radio">Tous</label>
+       <input class="day_art default" type="radio" name="day_art" value="0" ng-model="day_art" id="jall"> <label for="jall" class="label2 radio">Tous</label>
      </div>
    </div>
    <div class="input_container rad_container  input_container_art">
@@ -342,7 +343,7 @@
   <h3 class="title_art open_sans">Salle</h3>
   <div class="input_container rad_container input_container_art">
     <div class="input input_art">
-     <input class="sal_art" type="radio" name="sal_art" id="sall"> <label for="sall" class="label2 radio">Toutes</label>
+     <input class="sal_art default" type="radio" name="sal_art" id="sall"> <label for="sall" class="label2 radio">Toutes</label>
    </div>
  </div>
  <div class="input_container rad_container input_container_art">
@@ -375,8 +376,8 @@
 </div>
 <div class="art_content" ng-controller="artistCtrl" style="display:none; height:{{artistes.length*200}}+px" >
   <div class="list" data-size="{{$artistes.length}}">
-    <div class="repeat" ng-repeat="artist in artistes | filter: day">
-      <div class="row1" data-position="{{$index}}">
+    <div class="repeat" ng-repeat="artist in artistes">
+      <div class="row1" data-hide="{{((day_art==artist.jourId)==false)&&(day_art!=0)}}" data-position="{{$index}}">
         <div class="row__img__wrapper row__img__wrapper--nb">
           <div class="row__img row__img--nb" style="background:url({{artist.pic_link_black}}) no-repeat center center;"></div>
         </div> 
@@ -387,7 +388,7 @@
           </div>
         </div>
       </div>  
-      <div class="row_art" style="display:none; top:{{100+200*$index}}px">
+      <div class="row_art" style="display:none;">
         <div class="art_vid dropdown">
         </div>
         <div class="art_main dropdown">

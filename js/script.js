@@ -211,8 +211,30 @@ $('#inf').click(function(){
 //       });
 //   });
 // }
-// });   
+// });  
 
+//Range Slider
+$("#range").ionRangeSlider({
+  type: "double",
+  grid: true,
+  values: ["19h30", "20h30", "21h30", "22h30", "23h30", "00h30", "01h30", "02h30", "03h30", "04h30"],
+  from: 0,
+  to: 9,
+  grid: false,
+  hide_min_max: true
+});
+
+//DIV to IMG
+$( ".line_container" ).click(function() {
+html2canvas($('.timeline_container'), {
+  onrendered: function(canvas) {
+    var img = canvas.toDataURL()
+    window.open(img);
+  }
+});
+});
+
+//Attach event at each click
 var sizeList = $('.list').attr('data-size');
 var rowOpen = false;
 $('.row1').click(function(e){
@@ -248,39 +270,16 @@ $('.leave').click(function(){
   rowOpen=false;
 });
 
-//Range Slider
-$("#range").ionRangeSlider({
-  type: "double",
-  grid: true,
-  values: ["19h30", "20h30", "21h30", "22h30", "23h30", "00h30", "01h30", "02h30", "03h30", "04h30"],
-  from: 0,
-  to: 9,
-  grid: false,
-  hide_min_max: true
-});
-
-//DIV to IMG
-$( ".line_container" ).click(function() {
-html2canvas($('.timeline_container'), {
-  onrendered: function(canvas) {
-    var img = canvas.toDataURL()
-    window.open(img);
-  }
-});
-});
-
-
 
 //Animation sur artiste
-
 var widthImg = Math.min(1280, window.innerWidth);
-
-TweenLite.set($('.row__img__wrapper--color'), {x : widthImg});
-TweenLite.set($('.row__img__wrapper--color .row__img'), {x : widthImg});
-
 var DURATION = 0.7,
 EASE = Power4.easeInOut;
-
+var setDefault = function(){
+TweenLite.set($('.row__img__wrapper--color'), {x : widthImg});
+TweenLite.set($('.row__img__wrapper--color .row__img'), {x : widthImg});
+}
+setDefault();
 
 $('.list').on('mouseenter', '.row1', function(e) {
   if(rowOpen==false){
@@ -345,10 +344,26 @@ $('.artiste').mousemove(function(e) {
         if(vit<150)
         TweenLite.to('.artiste',100000,{y:ind+'px',ease:Cubic.easeOut,});  
 });
-$('.input_container').click(function(){
+//Effet pour clicker sur les radios a partir de la div.
+$('.rad_container').click(function(){
   $(this).find('input').prop('checked',true);
   $('.active').removeClass('active');
   $(this).addClass('active');
+  setTimeout(function(){
+  var elems = $('.row1');
+  _.each(elems, function(elem){
+    var test = $(elem).attr('data-hide');
+    console.log(!($(elem).hasClass('hidden')));
+    if(!($(elem).hasClass('hidden'))){
+      if(test=='true')
+      $(elem).addClass('hidden');
+    }
+    else if($(elem).hasClass('hidden')){
+      if(test=='false')
+        $(elem).removeClass('hidden');
+    }
+  });
+  },50);
+  setDefault();
 });
 });
-

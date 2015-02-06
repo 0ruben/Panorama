@@ -49,7 +49,7 @@ app.controller("artistCtrl",function($scope){
 	{
 		name:'KAYTRANADA',
 		jour:'VENDREDI 3 AVRIL',
-		jourId:'1',
+		jourId:'2',
 		heure:'23h20',
 		style:'AUCUN/STYLE',
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis fermentum enim, ut pulvinar lacus interdum vitae. Curabitur ultrices, nibh in auctor tincidunt, neque sapien fermentum dolor, in convallis augue quam vel mauris. Duis mollis sollicitudin nulla placerat fermentum. Nunc ipsum ex, condimentum a ante sed, congue pulvinar leo. Cras dignissim, justo ut ultrices ultricies, mauris ligula malesuada leo, fermentum varius purus nulla volutpat est. Duis purus eros, dictum sit amet commodo in, ullamcorper a magna. Ut sit amet feugiat ligula. Sed sagittis massa dignissim, convallis nisi nec, placerat erat.',
@@ -64,7 +64,7 @@ app.controller("artistCtrl",function($scope){
 	{
 		name:'KAYTRANADA',
 		jour:'VENDREDI 3 AVRIL',
-		jourId:'1',
+		jourId:'3',
 		heure:'23h20',
 		style:'AUCUN/STYLE',
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis fermentum enim, ut pulvinar lacus interdum vitae. Curabitur ultrices, nibh in auctor tincidunt, neque sapien fermentum dolor, in convallis augue quam vel mauris. Duis mollis sollicitudin nulla placerat fermentum. Nunc ipsum ex, condimentum a ante sed, congue pulvinar leo. Cras dignissim, justo ut ultrices ultricies, mauris ligula malesuada leo, fermentum varius purus nulla volutpat est. Duis purus eros, dictum sit amet commodo in, ullamcorper a magna. Ut sit amet feugiat ligula. Sed sagittis massa dignissim, convallis nisi nec, placerat erat.',
@@ -79,7 +79,7 @@ app.controller("artistCtrl",function($scope){
 	{
 		name:'KAYTRANADA',
 		jour:'VENDREDI 3 AVRIL',
-		jourId:'1',
+		jourId:'2',
 		heure:'23h20',
 		style:'AUCUN/STYLE',
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis fermentum enim, ut pulvinar lacus interdum vitae. Curabitur ultrices, nibh in auctor tincidunt, neque sapien fermentum dolor, in convallis augue quam vel mauris. Duis mollis sollicitudin nulla placerat fermentum. Nunc ipsum ex, condimentum a ante sed, congue pulvinar leo. Cras dignissim, justo ut ultrices ultricies, mauris ligula malesuada leo, fermentum varius purus nulla volutpat est. Duis purus eros, dictum sit amet commodo in, ullamcorper a magna. Ut sit amet feugiat ligula. Sed sagittis massa dignissim, convallis nisi nec, placerat erat.',
@@ -92,13 +92,6 @@ app.controller("artistCtrl",function($scope){
 		soundcloud:'#'
 	}
 	];
-	$scope.day= function(artiste){
-		console.log($scope.day_art);
-	 if ($scope.day_art==0 || $scope.day_art==artiste.jourId)
-			return artiste;
-		else
-			return;
-	}
 });
 
 
