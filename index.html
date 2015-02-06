@@ -258,10 +258,10 @@
  <div class="inputs_pano_art">
   <h3 class="title_art open_sans">Artistes</h3>
   <div ng-repeat="ar in artiste | filter: dayFilter">
-    <div class="input_container input_container_art">
-      <div class="input input_art" ng-click="includeArtiste(ar)">
-        <input class="day_art" type="checkbox" ng-model="ar.isChecked"/>
-        <label class="label1">{{ar.name}}</label>
+    <div class="input_container input_container_art_check">
+      <div class="input2 input_art" ng-click="includeArtiste(ar)">
+        <input jour-id="ar.jour" class="day_art" type="checkbox" ng-model="ar.isChecked"/>
+        <label class="label2">{{ar.name}}</label>
       </div>
     </div>
   </div>
@@ -271,22 +271,26 @@
 <div class="pano_content" style="display:none;">
   <div class="timeline_container" style="display:none;">
     <!-- <div class="timeline_artists_container"> -->
+    cpt: {{cpt}}
 
-      <div id="artistDiv" ng-repeat="a in artiste | filter:artisteFilter | filter:dayFilter">
+    <div ng-repeat="a in artiste | filter:artisteFilter | filter:dayFilter">
 
-        <div class="art_pano_container" ng-class-odd="'odd'" ng-class-even="'even'" style="margin-left:0%">
+      <div class="art_pano_container" ng-class-odd="'odd'" ng-class-even="'even'" style="margin-left:{{-200+(800/(cpt[dayChecked()-1]))}}px">
 
-          <div class="art_heure_pano"> - {{a.heure}} - </div>
-          <div class="art_name_pano"> {{a.name}} </div>
-          <div class="art_salle_pano"> {{a.salle}} </div>
-          <img class="icon_timeline" src="images/noeud.png" alt="nav"/>
-        </div>
-      </div>  
+        <div class="art_heure_pano"> - {{a.heure}} - </div>
+        <div class="art_name_pano"> {{a.name}} </div>
+        <div class="art_salle_pano"> {{a.salle}} </div>
+        <img class="icon_timeline" src="images/noeud.png" alt="nav"/>
+      </div>
+    </div>  
 
 
     <!-- </div> -->
     <div class="line_container">
       <hr class="blue_line"/>
+    </div>
+    <div class="button_container">
+    <a data-text="Réserver" id="generate" class="button_medley" href="#">Générer votre medley</a>
     </div>
 <!--     <div class="art_pano_container even" style="margin-left:0%">
       <img class="icon_timeline" src="images/noeud.png" alt="nav"/>
@@ -296,6 +300,7 @@
     </div> -->
   </div>
 </div>
+
 </div>
 
 
@@ -343,41 +348,41 @@
   <h3 class="title_art open_sans">Salle</h3>
   <div class="input_container rad_container input_container_art">
     <div class="input input_art">
-     <input class="sal_art default" type="radio" name="sal_art" id="sall"> <label for="sall" class="label2 radio">Toutes</label>
+     <input class="sal_art default" type="radio" ng-model="sal_art" value="0" name="sal_art" id="sall"> <label for="sall" class="label2 radio">Toutes</label>
    </div>
  </div>
  <div class="input_container rad_container input_container_art">
   <div class="input input_art">
-   <input class="sal_art" type="radio" name="sal_art" id="s1"> <label for="s1" class="label2 radio">Grand Club</label>
+   <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="1" id="s1"> <label for="s1" class="label2 radio">Grand Club</label>
  </div>
 </div>
 <div class="input_container rad_container input_container_art">
   <div class="input input_art">
-    <input class="sal_art" type="radio" name="sal_art" id="s2"> <label for="s2" class="label2 radio">Le Club</label> 
+    <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="2" id="s2"> <label for="s2" class="label2 radio">Le Club</label> 
   </div>
 </div>
 <div class="input_container rad_container input_container_art">
   <div class="input input_art">
 
-    <input class="sal_art" type="radio" name="sal_art" id="s3"> <label for="s3" class="label2 radio">Club Sesame</label> 
+    <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="3" id="s3"> <label for="s3" class="label2 radio">Club Sesame</label> 
   </div>
 </div>
 <div class="input_container rad_container input_container_art">
   <div class="input input_art">
-    <input class="sal_art" type="radio" name="sal_art" id="s4"> <label for="s4" class="label2 radio">Club Coatelan</label> 
+    <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="4" id="s4"> <label for="s4" class="label2 radio">Club Coatelan</label> 
   </div>
 </div>
 </form>
-<div class="input_h">
-  <h3 class="title_art open_sans">Horaires</h3>
-  <div class="slider"><input type="text" id="range" value="" name="range"/>
+<div class="input_h" data-range="{{range}}">
+  <h3 class="title_art open_sans">Horaires {{range}}</h3>
+  <div class="slider"><input type="text" id="range" ng-model="range" value="" name="range"/>
   </div>
 </div>
 </div>
 <div class="art_content" ng-controller="artistCtrl" style="display:none; height:{{artistes.length*200}}+px" >
   <div class="list" data-size="{{$artistes.length}}">
     <div class="repeat" ng-repeat="artist in artistes">
-      <div class="row1" data-hide="{{((day_art==artist.jourId)==false)&&(day_art!=0)}}" data-position="{{$index}}">
+      <div class="row1" data-hide-day="{{((day_art==artist.jourId)==false)&&(day_art!=0)}}" data-hide-salle="{{(sal_art!=0)&&(sal_art==artist.salleId)==false}}" data-time="{{artist.heureId}}" data-position="{{$index}}">
         <div class="row__img__wrapper row__img__wrapper--nb">
           <div class="row__img row__img--nb" style="background:url({{artist.pic_link_black}}) no-repeat center center;"></div>
         </div> 
@@ -414,10 +419,10 @@
 </div>
 </div>
 
-   
+
 <!--INFO-->
 
-    <div class="content inf" id="info" style="display:none;">  
+<div class="content inf" id="info" style="display:none;">  
   <div class="sub_menu info " id="menu_billetterie" style="display:none;">
    <div class="head">
      <h2> INFOS </h2>
@@ -431,11 +436,13 @@
   </div>
       <div class="infos">
    <div class="input_container rad_container imput_container_art">
+  <div class="infos">
+   <div class="input_container imput_container_art">
     <div class="input input_art">
      <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> <label for="acces" class="label1 radio">Accès / Contact</label> 
    </div>
  </div>
-  <div class="input_container rad_container imput_container_art">
+   <div class="input_container rad_container imput_container_art">
     <div class="input input_art">
      <input id="acces" ng-model="day_pano" class="day_art" type="radio" name="info"> <label for="acces" class="label1 radio">Transport</label> 
    </div>
@@ -449,41 +456,55 @@
     <div class="input input_art">
      <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> <label for="acces" class="label1 radio">A savoir</label> 
    </div>
+ <div class="input_container imput_container_art">
+  <div class="input input_art">
+   <input id="acces" ng-model="day_pano" class="day_art" type="radio" name="info"> <label for="acces" class="label1 radio">Transport</label> 
  </div>
 </div>
-        </div>
-    
+<div class="input_container imput_container_art">
+  <div class="input input_art">
+   <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> <label for="acces" class="label1 radio">Camping</label> 
+ </div>
+</div>
+<div class="input_container imput_container_art">
+  <div class="input input_art">
+   <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> <label for="acces" class="label1 radio">A savoir</label> 
+ </div>
+</div>
+</div>
+</div>
+
 <!-- MAIN INFO-->
-       <div class="info_content">
-<div class="acces">
+<div class="info_content">
+  <div class="acces">
     <div class="info_line"></div>
     <div class= "title-line">
-        <h2 class="info_title">Accès / contact</h2>
+      <h2 class="info_title">Accès / contact</h2>
     </div>
     <div class="arrow_grey">
-    <img src="images/arrow_grey.png"/>
-  </div>
+      <img src="images/arrow_grey.png"/>
+    </div>
     <div class="img-acces">
-        <div clas="img-acces-concert"></div>
-        <div class= "map-acces"></div>
-</div>
+      <div clas="img-acces-concert"></div>
+      <div class= "map-acces"></div>
+    </div>
     <div class="info_acces"></div>
-        </div>
-<div class="trsp">
+  </div>
+  <div class="trsp">
     <div class="info_line"></div>
     <div class= "title-line">
-        <h2 class="info_title">Transport</h2>
+      <h2 class="info_title">Transport</h2>
     </div>
     <div class="arrow_grey">
-    <img src="images/arrow_grey.png"/>
-  </div>
-    <div class="img-acces">
-        <div clas="img-acces-concert"></div>
-        <div class= "map-acces"></div>
-</div>
-    <div class="info_acces"></div>
-        </div>
+      <img src="images/arrow_grey.png"/>
     </div>
+    <div class="img-acces">
+      <div clas="img-acces-concert"></div>
+      <div class= "map-acces"></div>
+    </div>
+    <div class="info_acces"></div>
+  </div>
+</div>
 </body>
 <script type="text/javascript" src="js/script.js"></script>
 </html>  	

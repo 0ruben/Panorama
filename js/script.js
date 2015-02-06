@@ -217,9 +217,10 @@ $('#inf').click(function(){
 $("#range").ionRangeSlider({
   type: "double",
   grid: true,
-  values: ["19h30", "20h30", "21h30", "22h30", "23h30", "00h30", "01h30", "02h30", "03h30", "04h30"],
+  values: [19, 20, 21, 22, 23, 00, 01, 02, 03, 04, 05],
   from: 0,
-  to: 9,
+  to: 10,
+  postfix:"h",
   grid: false,
   hide_min_max: true
 });
@@ -268,6 +269,28 @@ $('.leave').click(function(){
   parent.children('.row_art').slideToggle(500); 
   TweenLite.to($target, 1, {scale : 1,bottom:"0%",left:"20%"});
   rowOpen=false;
+});
+
+
+//Range Slider
+$("#range").ionRangeSlider({
+  type: "double",
+  grid: true,
+  values: ["19h30", "20h30", "21h30", "22h30", "23h30", "00h30", "01h30", "02h30", "03h30", "04h30"],
+  from: 0,
+  to: 9,
+  grid: false,
+  hide_min_max: true
+});
+
+//DIV to IMG
+$( ".button_medley" ).click(function() {
+html2canvas($('.timeline_container'), {
+  onrendered: function(canvas) {
+    var img = canvas.toDataURL("img/png");
+    window.open(img);
+  }
+});
 });
 
 
@@ -344,7 +367,7 @@ $('.artiste').mousemove(function(e) {
         if(vit<150)
         TweenLite.to('.artiste',100000,{y:ind+'px',ease:Cubic.easeOut,});  
 });
-//Effet pour clicker sur les radios a partir de la div.
+//Effet pour clicker sur les radios a partir de la div + selection.
 $('.rad_container').click(function(){
   $(this).find('input').prop('checked',true);
   $('.active').removeClass('active');
@@ -352,18 +375,39 @@ $('.rad_container').click(function(){
   setTimeout(function(){
   var elems = $('.row1');
   _.each(elems, function(elem){
-    var test = $(elem).attr('data-hide');
-    console.log(!($(elem).hasClass('hidden')));
+    var test_day = $(elem).attr('data-hide-day');
+    var test_salle = $(elem).attr('data-hide-salle');
+    console.log(test_salle=='true');
     if(!($(elem).hasClass('hidden'))){
-      if(test=='true')
+      if(test_day=='true'||test_salle=='true')
       $(elem).addClass('hidden');
     }
     else if($(elem).hasClass('hidden')){
-      if(test=='false')
+      if(test_day=='false'&&test_salle=='false')
         $(elem).removeClass('hidden');
     }
   });
   },50);
   setDefault();
+});
+// Selection avec slider
+$('.irs').click(function(){
+  setTimeout(function(){
+    var value= $('.input_h').attr('data-range');
+    var val = value.split(';');
+    val = [parseInt(val[0]),parseInt(val[1])];
+    console.log(val);
+    var elems = $('.row1');
+    _.each(elems,function(elem){
+      var heureId = $(elem).attr('data-time'); 
+      if(heureId>18) heureId-=24;
+      if(val[0]>18) val[0]-=24;
+      if(val[1]>18) val[1]-=24;
+      if(val[0]>=heureId||val[1]<heureId){
+        if(!($(elem).hasClass('hidden')))
+          $(elem).addClass('hidden');
+      }
+  });
+  },50);
 });
 });
