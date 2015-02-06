@@ -218,10 +218,10 @@ h2, h3{
 
 .timeline_container{
     margin-top: 10%;
-    margin-left: 13%;
+    margin-left: 5%;
     padding: 10px;
     background-color: #ffffff;
-    width:650px;
+    width:850px;
     height:300px;
 }
 
@@ -231,7 +231,6 @@ h2, h3{
 }
 
 .art_pano_container{
-    margin-left:-100px;
     float: left;
     width: 200px;
     height: 100px;
@@ -285,7 +284,7 @@ hr{
 .line_container{
     position: absolute;
     margin: 0 auto;
-    width:600px;
+    width:780px;
     height:3px;
 }
 .blue_line{
@@ -569,8 +568,17 @@ hr{
     font-size: 14px;
 }
 
+.input_container_art_check{
+    width: 190px;
+    height: 22px;
+    font-size: 14px;
+}
+
 .input_container_art label:before {
     border-radius: 5px;
+}
+.input_container_art_check label:before {
+    border-radius: 2px;
 }
 .label2{
     font-weight: thin;
@@ -753,11 +761,7 @@ hr{
   .even .icon_timeline{
     z-index:10;
     margin-left: 94px;
-<<<<<<< HEAD
     bottom: 116px;
-  }
-=======
-    bottom: 8px;
   }
   .info_content{
     top: 0;
@@ -794,4 +798,3 @@ hr{
 .artiste{
     height: 750px;
 }
->>>>>>> 036d2cba8f925ab205537cb0ae38abb1c2036cc6

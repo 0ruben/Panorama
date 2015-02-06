@@ -260,10 +260,10 @@ $("#range").ionRangeSlider({
 });
 
 //DIV to IMG
-$( ".line_container" ).click(function() {
+$( ".button_medley" ).click(function() {
 html2canvas($('.timeline_container'), {
   onrendered: function(canvas) {
-    var img = canvas.toDataURL()
+    var img = canvas.toDataURL("img/png");
     window.open(img);
   }
 });

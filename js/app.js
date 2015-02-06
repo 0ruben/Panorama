@@ -786,18 +786,26 @@ app.controller("PanoCtrl",function($scope) {
     'pic_link_color':'images/artistes/37_c.jpg'
   }
 ];
-
-
+	$scope.artisteNotIncludes = [];
+	angular.copy($scope.artiste, $scope.artisteNotIncludes);
 	$scope.artisteIncludes = [];
 
+	$scope.cpt = [0,0,0];
+
+
 	$scope.includeArtiste = function(artiste) {
+
 		var i = $.inArray(artiste, $scope.artisteIncludes);
 		if (i > -1) {
+			$scope.cpt[artiste.jour - 1]--;
 			artiste.isChecked = false;
 			$scope.artisteIncludes.splice(i, 1);
+			$scope.artisteNotIncludes.push(artiste);
 		} else {
+			$scope.cpt[artiste.jour - 1]++;
 			artiste.isChecked = true;
 			$scope.artisteIncludes.push(artiste);
+			$scope.artisteNotIncludes.splice($.inArray(artiste, $scope.artisteNotIncludes), 1);
 		}
 
 	} 
@@ -811,6 +819,10 @@ app.controller("PanoCtrl",function($scope) {
 		return artiste;
 	}
 
+	$scope.dayChecked  = function() {
+        return $scope.day_pano;
+    }
+
 	$scope.dayFilter = function(artiste) {
 		if (artiste.jour == $scope.day_pano)
 			return artiste;
@@ -820,5 +832,9 @@ app.controller("PanoCtrl",function($scope) {
 
 	$scope.change = function(artiste) {
 		artiste.isChecked=true;
-	}  
+	} 
+
+	$scope.calculatePosition = function() {
+		
+	}
 });
