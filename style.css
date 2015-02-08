@@ -37,6 +37,7 @@ a{
 
 body{
     margin: 0;
+    background-color: #000000;
 }
 p, label{
     font-family: 'Open Sans', sans-serif;
@@ -213,7 +214,6 @@ input[type=checkbox]:checked + label:before {
 h2, h3{
     font-family: 'Farray', sans-serif;
 	color:#696969;
-    margin-top:0px;
 }
 
 .timeline_container{
@@ -278,7 +278,7 @@ h2, h3{
 hr{
     width: 25px;
     border:1px solid black;
-    margin-left: 16px;
+    margin-left: 25px;
 }
 
 .line_container{
@@ -300,7 +300,7 @@ hr{
     font-weight: 300;
     font-size: 12px;
     text-align: left;
-    margin-left: 16px;
+    margin:0px 25px;
 }
 .arrow{
     position: absolute;
@@ -619,10 +619,6 @@ hr{
     width:150px;
 
 }
-.list {
-  width:100%;  
-  max-width:1280px;
-} 
  .row1 {
     cursor:pointer;
     width:100%;
@@ -648,6 +644,9 @@ hr{
     &.row__img__wrapper--color {
       z-index:10;
     }
+  }
+  .row__img__wrapper--color{
+    z-index: 900;
   }
     
   .row__img {
@@ -796,5 +795,16 @@ hr{
     position:absolute;
 }
 .artiste{
-    height: 750px;
+    height: 690px;
+}
+.toHide{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0;
+    z-index: 700;
+}
+.hr_billet{
+    margin-left: 16px;
 }

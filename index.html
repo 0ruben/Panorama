@@ -54,9 +54,9 @@
 <!--  TICKETS -->    
 <div class="content bte opened">  
   <div class="sub_menu billeterie opened_menu" id="menu_billetterie">
-   <div class="head">
+   <div class="head head_billet">
      <h2> BILLETTERIE </h2>
-     <hr/>
+     <hr class="hr_billet"/>
      <div class="subtitle">
        <p> Choisissez le billet qui vous convient. </p>
      </div>
@@ -65,7 +65,7 @@
     <img src="images/arrow.png"/>
   </div>
   <form class="inputs">
-   <div id="day1" class="input_container">
+   <div id="day1" class="input_container default">
     <div class="input">
      <input id="d1" class="day" type="radio" name="day"> <label for="d1" class="label1 radio">Pass 1 jour</label> 
    </div>
@@ -229,7 +229,7 @@
   <div class="sub_menu pano" id="menu_billetterie" style="display:none;">
    <div class="head">
      <h2> MON PANO </h2>
-     <hr/>
+     <hr class="hr_pano"/>
      <div class="subtitle">
       <p> Imaginez votre soirée idéale et partagez-la à vos amis. </p>
     </div>
@@ -307,7 +307,7 @@
 
 
 <!-- MAIN ARTIST -->
-<div class="content art" id="artiste" style="display:none;">
+<div class="content art" id="artiste" style="display:none;" ng-init="init()">
   <div class="sub_menu artiste" id="menu_billetterie" style="display:none;">
    <div class="head">
      <h2> PROGRAM-</h2>
@@ -322,22 +322,22 @@
   </div>
   <form class="inputs_art">
     <h3 class="title_art open_sans">Jour</h3>
-    <div class="input_container rad_container  input_container_art">
+    <div class="input_container rad_container input_container_art default" ng-click="day_art=0">
       <div class="input input_art">
-       <input class="day_art default" type="radio" name="day_art" value="0" ng-model="day_art" id="jall"> <label for="jall" class="label2 radio">Tous</label>
+       <input class="day_art" type="radio" name="day_art" value="0" ng-model="day_art" id="jall"> <label for="jall" id="labelt" class="label2 radio">Tous</label>
      </div>
    </div>
-   <div class="input_container rad_container  input_container_art">
+   <div class="input_container rad_container input_container_art" ng-click="day_art=1">
     <div class="input input_art">
      <input class="day_art" type="radio" name="day_art" value="1" ng-model="day_art" id="j1"> <label for="j1" class="label2 radio">Vendredi</label>
    </div>
  </div>
- <div class="input_container rad_container  input_container_art">
+ <div class="input_container rad_container  input_container_art" ng-click="day_art=2">
   <div class="input input_art">
     <input class="day_art" type="radio" name="day_art" value="2" ng-model="day_art" id="j2"> <label for="j2" class="label2 radio">Samedi</label> 
   </div>
 </div>
-<div class="input_container rad_container input_container_art">
+<div class="input_container rad_container input_container_art" ng-click="day_art=3">
   <div class="input input_art">
     <input class="day_art" type="radio" name="day_art" value="3" ng-model="day_art" id="j3"> <label for="j3" class="label2 radio">Dimanche</label> 
   </div>
@@ -346,43 +346,44 @@
 
 <form class="inputs_sal">
   <h3 class="title_art open_sans">Salle</h3>
-  <div class="input_container rad_container input_container_art">
+  <div class="input_container rad_container input_container_art default" ng-click="sal_art=0">
     <div class="input input_art">
-     <input class="sal_art default" type="radio" ng-model="sal_art" value="0" name="sal_art" id="sall"> <label for="sall" class="label2 radio">Toutes</label>
+     <input class="sal_art" type="radio" ng-model="sal_art" value="0" name="sal_art" id="sall"> <label for="sall" class="label2 radio">Toutes</label>
    </div>
  </div>
- <div class="input_container rad_container input_container_art">
+ <div class="input_container rad_container input_container_art" ng-click="sal_art=1">
   <div class="input input_art">
    <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="1" id="s1"> <label for="s1" class="label2 radio">Grand Club</label>
  </div>
 </div>
-<div class="input_container rad_container input_container_art">
+<div class="input_container rad_container input_container_art" ng-click="sal_art=2">
   <div class="input input_art">
     <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="2" id="s2"> <label for="s2" class="label2 radio">Le Club</label> 
   </div>
 </div>
-<div class="input_container rad_container input_container_art">
+<div class="input_container rad_container input_container_art" ng-click="sal_art=3">
   <div class="input input_art">
 
     <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="3" id="s3"> <label for="s3" class="label2 radio">Club Sesame</label> 
   </div>
 </div>
-<div class="input_container rad_container input_container_art">
+<div class="input_container rad_container input_container_art" ng-click="sal_art=4">
   <div class="input input_art">
     <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="4" id="s4"> <label for="s4" class="label2 radio">Club Coatelan</label> 
   </div>
 </div>
 </form>
 <div class="input_h" data-range="{{range}}">
-  <h3 class="title_art open_sans">Horaires {{range}}</h3>
+  <h3 class="title_art open_sans">Horaires</h3>
   <div class="slider"><input type="text" id="range" ng-model="range" value="" name="range"/>
   </div>
 </div>
 </div>
 <div class="art_content" ng-controller="artistCtrl" style="display:none; height:{{artistes.length*200}}+px" >
   <div class="list" data-size="{{$artistes.length}}">
+    <div class="toHide"></div>
     <div class="repeat" ng-repeat="artist in artistes">
-      <div class="row1" data-hide-day="{{((day_art==artist.jourId)==false)&&(day_art!=0)}}" data-hide-salle="{{(sal_art!=0)&&(sal_art==artist.salleId)==false}}" data-time="{{artist.heureId}}" data-position="{{$index}}">
+      <div class="row1" data-hide-day="{{((day_art==artist.jourId)==false)&&(day_art!=0)}}" data-hide-salle="{{((sal_art==artist.salleId)==false)&&(sal_art!=0)}}" data-time="{{artist.heureId}}" data-position="{{$index}}">
         <div class="row__img__wrapper row__img__wrapper--nb">
           <div class="row__img row__img--nb" style="background:url({{artist.pic_link_black}}) no-repeat center center;"></div>
         </div> 
