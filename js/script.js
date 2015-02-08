@@ -380,6 +380,20 @@ $('.artiste').mousemove(function(e) {
         if(vit<150)
         TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Cubic.easeOut,});  
 });
+    // Deplacement sur info 
+    $('.info_content').mousemove(function(e) {
+        var h = $('.info_content').height();
+        var z = e.clientY - h/2;
+        var v = e.clientY - $(window).height()/2;
+        var vit = Math.abs(v);
+        var ind=0;
+        if(v>0)
+          ind=-4270;
+        if(vit>150)
+        TweenLite.to('.info_content',500/vit,{y:ind+'px',ease:Cubic.easeOut});
+        if(vit<150)
+        TweenLite.to('.info_content',100000,{y:ind+'px',ease:Cubic.easeOut,});  
+});
 //Effet pour clicker sur les radios a partir de la div + selection.  TODO Fusionner les deux dernières fonctions
 $('.rad_container').click(function(){
   // $(this).find('input').prop('checked',true);

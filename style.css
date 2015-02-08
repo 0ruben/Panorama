@@ -762,11 +762,14 @@ hr{
     margin-left: 94px;
     bottom: 116px;
   }
-  .info_content{
+    .artiste{
+        height: 750px;
+    }
+.info_content{
     top: 0;
     margin-left:200px;
+    width: 1300px;
     height: 100%;
-    width: 10000px;
     position: absolute;
 }
 .info_line{
@@ -790,12 +793,47 @@ hr{
     margin-left: 70px;
 
 }
-.trsp{
-    top:inherit;
-    position:absolute;
+.infos{height: 1300px;
+    margin-top: 275px;
 }
-.artiste{
-    height: 690px;
+.img-acces{
+    background-attachment: inherit;
+    background-image: url(images/acce.png);
+    background-repeat: no-repeat;
+    height: 1090px;
+}
+.img-entree{
+    background-attachment: inherit;
+    background-image: url(images/entree.png);
+    background-repeat: no-repeat;
+    height: 938px;
+}
+.img-trsp{
+    background-attachment: inherit;
+    background-image: url(images/trsp.png);
+    background-repeat: no-repeat;
+    height: 856px;
+}
+.img-camping{
+    background-attachment: inherit;
+    background-image: url(images/camping.png);
+    background-repeat: no-repeat;
+    height: 1084px;
+}
+.img-savoir{
+    background-attachment: inherit;
+    background-image: url(images/savoir.png);
+    background-repeat: no-repeat;
+    height: 735px;
+}
+.map-acces{
+    display: inline-block;
+    margin-left:584px;
+    z-index: 1;
+    margin-top: 163px;
+}
+.sub_info{
+    position:static;
 }
 .toHide{
     position: relative;
