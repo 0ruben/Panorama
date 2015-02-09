@@ -376,9 +376,9 @@ $('.artiste').mousemove(function(e) {
         if(v<0)
           ind=0;
         if(vit>150)
-        TweenLite.to('.artiste',500/vit,{y:-ind+'px',ease:Cubic.easeOut});
+        TweenLite.to('.artiste',500/vit,{y:-ind+'px',ease:Power1.easeIn});
         if(vit<150)
-        TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Cubic.easeOut,});  
+        TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Power1.easeIn});  
 });
     // Deplacement sur info 
     $('.info_content').mousemove(function(e) {
@@ -390,9 +390,9 @@ $('.artiste').mousemove(function(e) {
         if(v>0)
           ind=-4270;
         if(vit>150)
-        TweenLite.to('.info_content',500/vit,{y:ind+'px',ease:Cubic.easeOut});
+        TweenLite.to('.info_content',500/vit,{y:ind+'px',ease:Power1.easeIn});
         if(vit<150)
-        TweenLite.to('.info_content',100000,{y:ind+'px',ease:Cubic.easeOut,});  
+        TweenLite.to('.info_content',100000,{y:ind+'px',ease:Power1.easeIn});  
 });
 //Effet pour clicker sur les radios a partir de la div + selection.  TODO Fusionner les deux dernières fonctions
 $('.rad_container').click(function(){
