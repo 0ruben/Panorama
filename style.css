@@ -222,7 +222,16 @@ h2, h3{
     padding: 10px;
     background-color: #ffffff;
     width:850px;
-    height:300px;
+    height:250px;
+}
+
+.generate_pano_container{
+    margin-top: -3px;
+    margin-left: 5%;
+    padding: 10px;
+    background-color: #ffffff;
+    width:850px;
+    height:100px;
 }
 
 .timeline_artists_container{
@@ -237,6 +246,11 @@ h2, h3{
     display: inline-block;
 }
 
+.button_medley{
+    position:relative;
+    margin-top:50px;
+    margin-left:320px;
+}
 
 
 .odd{
@@ -286,6 +300,17 @@ hr{
     margin: 0 auto;
     width:780px;
     height:3px;
+}
+
+.timeline_container .start_timeline{
+    position: absolute;
+    left:15px;
+    top:130px;
+}
+.timeline_container .end_timeline{
+    position: absolute;
+    left:795px;
+    top:130px;
 }
 .blue_line{
     position: absolute;

@@ -834,7 +834,43 @@ app.controller("PanoCtrl",function($scope) {
 		artiste.isChecked=true;
 	} 
 
-	$scope.calculatePosition = function() {
-		
+	$scope.calculatePosition = function(index) {
+		var nbArtistes = $scope.cpt[$scope.day_pano-1];
+		var marge;
+		if(index==0)
+			marge = -90 + (390/nbArtistes);
+		else
+			marge = -210 + (840/nbArtistes);
+		return "margin-left:"+marge+"px;";
 	}
+
+	$scope.styling = function(artiste, index) {
+		//Artiste en haut
+		if(index%2==0){
+			if(artiste.length>15 && artiste.length<=18){
+				if((artiste.split(" ").length - 1)>=2)
+					return "top:19px;";
+				else
+					return "top:1px;";
+			}
+			else if (artiste.length>15)
+				return "top:1px;";
+			else
+				return "top:19px;";
+		}
+		//Artiste en bas
+		else
+			if(artiste.length>15 && artiste.length<=18){
+				if((artiste.split(" ").length - 1)>=2)
+					return "bottom:116px;";
+				else
+					return "bottom:135px;";
+			}
+			else if (artiste.length>15)
+				return "bottom:135px;";
+			
+			else
+				return "bottom:116px;";
+	}
+
 });

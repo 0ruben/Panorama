@@ -270,16 +270,15 @@
 <div class="pano_content" style="display:none;">
   <div class="timeline_container" style="display:none;">
     <!-- <div class="timeline_artists_container"> -->
-    cpt: {{cpt}}
 
     <div ng-repeat="a in artiste | filter:artisteFilter | filter:dayFilter">
 
-      <div class="art_pano_container" ng-class-odd="'odd'" ng-class-even="'even'" style="margin-left:{{-200+(800/(cpt[dayChecked()-1]))}}px">
+      <div class="art_pano_container" ng-class-odd="'odd'" ng-class-even="'even'" style="{{calculatePosition($index)}}">
 
         <div class="art_heure_pano"> - {{a.heure}} - </div>
         <div class="art_name_pano"> {{a.name}} </div>
         <div class="art_salle_pano"> {{a.salle}} </div>
-        <img class="icon_timeline" src="images/noeud.png" alt="nav"/>
+        <img class="icon_timeline" src="images/noeud.png" alt="{{a.heure}}" style="{{styling(a.name, $index)}}"/>
       </div>
     </div>  
 
@@ -288,8 +287,12 @@
     <div class="line_container">
       <hr class="blue_line"/>
     </div>
-    <div class="button_container">
-    <a data-text="Réserver" id="generate" class="button_medley" href="#">Générer votre medley</a>
+    <img class="start_timeline" src="images/button.png" alt="start"/>
+    <img class="end_timeline" src="images/button.png" alt="end"/>
+    
+    </div>
+    <div class="generate_pano_container">
+      <a data-text="Réserver" id="generate" class="button_medley" href="#">Générer votre medley</a>
     </div>
 <!--     <div class="art_pano_container even" style="margin-left:0%">
       <img class="icon_timeline" src="images/noeud.png" alt="nav"/>
@@ -433,18 +436,18 @@
    <div class="arrow">
     <img src="images/arrow.png"/>
   </div>
-<<<<<<< Updated upstream
+
       <div class="infos">
    <div class="input_container rad_container imput_container_art">
-=======
+
   <div class="infos">
    <div class="input_container imput_container_art">
->>>>>>> Stashed changes
+
     <div class="input input_art">
      <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> <label for="acces" class="label1 radio">Accès / Contact</label> 
    </div>
  </div>
-<<<<<<< Updated upstream
+
   <div class="input_container rad_container imput_container_art">
     <div class="input input_art">
      <input id="acces" ng-model="day_pano" class="day_art" type="radio" name="info"> <label for="acces" class="label1 radio">Transport</label> 
@@ -459,7 +462,7 @@
     <div class="input input_art">
      <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> <label for="acces" class="label1 radio">A savoir</label> 
    </div>
-=======
+
  <div class="input_container imput_container_art">
   <div class="input input_art">
    <input id="acces" ng-model="day_pano" class="day_art" type="radio" name="info"> <label for="acces" class="label1 radio">Transport</label> 
@@ -473,7 +476,7 @@
 <div class="input_container imput_container_art">
   <div class="input input_art">
    <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> <label for="acces" class="label1 radio">A savoir</label> 
->>>>>>> Stashed changes
+
  </div>
 </div>
 </div>
