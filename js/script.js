@@ -445,4 +445,15 @@ $('.slider').click(function(){
   },50);
   setDefault();
 });
+$('.info_content').mousemove(function(e){
+   var posY=e.pageY - $('.info_content').offset().top + $('.info_content').scrollTop();console.log(posY);
+    if (posY>1090) $('.sub_info').addClass('hidden');
+    else if ($('.sub_info').hasClass('hidden')) $('.sub_info').removeClass('hidden');
+     if (posY>2025) $('.sub_info_1').addClass('hidden');
+    else if ($('.sub_info_1').hasClass('hidden')) $('.sub_info_1').removeClass('hidden');
+     if (posY>2880) $('.sub_info_2').addClass('hidden');
+    else if ($('.sub_info_2').hasClass('hidden')) $('.sub_info_2').removeClass('hidden');
+     if (posY>3965) $('.sub_info_3').addClass('hidden');
+    else if ($('.sub_info_3').hasClass('hidden')) $('.sub_info_3').removeClass('hidden');
+    });
 });
