@@ -5,10 +5,12 @@ app.controller("artistCtrl",function($scope){
 		name:'KAYTRANADA',
 		jour:'VENDREDI 3 AVRIL',
 		jourId:'1',
-		heure:'23h20',
+		heure:'19h20',
+        heureId:19,
 		style:'AUCUN/STYLE',
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis fermentum enim, ut pulvinar lacus interdum vitae. Curabitur ultrices, nibh in auctor tincidunt, neque sapien fermentum dolor, in convallis augue quam vel mauris. Duis mollis sollicitudin nulla placerat fermentum. Nunc ipsum ex, condimentum a ante sed, congue pulvinar leo. Cras dignissim, justo ut ultrices ultricies, mauris ligula malesuada leo, fermentum varius purus nulla volutpat est. Duis purus eros, dictum sit amet commodo in, ullamcorper a magna. Ut sit amet feugiat ligula. Sed sagittis massa dignissim, convallis nisi nec, placerat erat.',
 		club:'Grand Hall',
+        salleId:'1',
 		pic_link_black:'images/artistes/kay.jpg',
 		pic_link_color:'images/artistes/kay_c.jpg',
 		vid_link:'https://www.youtube.com/watch?v=z1BVZ0PMs9M',
@@ -20,7 +22,9 @@ app.controller("artistCtrl",function($scope){
 		name:'KAYTRANADA',
 		jour:'VENDREDI 3 AVRIL',
 		jourId:'1',
-		heure:'23h20',
+        salleId:'2',
+		heure:'21h20',
+        heureId:21,
 		style:'AUCUN/STYLE',
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis fermentum enim, ut pulvinar lacus interdum vitae. Curabitur ultrices, nibh in auctor tincidunt, neque sapien fermentum dolor, in convallis augue quam vel mauris. Duis mollis sollicitudin nulla placerat fermentum. Nunc ipsum ex, condimentum a ante sed, congue pulvinar leo. Cras dignissim, justo ut ultrices ultricies, mauris ligula malesuada leo, fermentum varius purus nulla volutpat est. Duis purus eros, dictum sit amet commodo in, ullamcorper a magna. Ut sit amet feugiat ligula. Sed sagittis massa dignissim, convallis nisi nec, placerat erat.',
 		club:'Grand Hall',
@@ -35,7 +39,9 @@ app.controller("artistCtrl",function($scope){
 		name:'KAYTRANADA',
 		jour:'VENDREDI 3 AVRIL',
 		jourId:'1',
+        salleId:'3',
 		heure:'23h20',
+        heureId:23,
 		style:'AUCUN/STYLE',
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis fermentum enim, ut pulvinar lacus interdum vitae. Curabitur ultrices, nibh in auctor tincidunt, neque sapien fermentum dolor, in convallis augue quam vel mauris. Duis mollis sollicitudin nulla placerat fermentum. Nunc ipsum ex, condimentum a ante sed, congue pulvinar leo. Cras dignissim, justo ut ultrices ultricies, mauris ligula malesuada leo, fermentum varius purus nulla volutpat est. Duis purus eros, dictum sit amet commodo in, ullamcorper a magna. Ut sit amet feugiat ligula. Sed sagittis massa dignissim, convallis nisi nec, placerat erat.',
 		club:'Grand Hall',
@@ -49,11 +55,13 @@ app.controller("artistCtrl",function($scope){
 	{
 		name:'KAYTRANADA',
 		jour:'VENDREDI 3 AVRIL',
-		jourId:'1',
+		jourId:'2',
 		heure:'23h20',
+        heureId:23,
 		style:'AUCUN/STYLE',
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis fermentum enim, ut pulvinar lacus interdum vitae. Curabitur ultrices, nibh in auctor tincidunt, neque sapien fermentum dolor, in convallis augue quam vel mauris. Duis mollis sollicitudin nulla placerat fermentum. Nunc ipsum ex, condimentum a ante sed, congue pulvinar leo. Cras dignissim, justo ut ultrices ultricies, mauris ligula malesuada leo, fermentum varius purus nulla volutpat est. Duis purus eros, dictum sit amet commodo in, ullamcorper a magna. Ut sit amet feugiat ligula. Sed sagittis massa dignissim, convallis nisi nec, placerat erat.',
 		club:'Grand Hall',
+        salleId:'4',
 		pic_link_black:'images/artistes/kay.jpg',
 		pic_link_color:'images/artistes/kay_c.jpg',
 		vid_link:'https://www.youtube.com/watch?v=z1BVZ0PMs9M',
@@ -64,11 +72,13 @@ app.controller("artistCtrl",function($scope){
 	{
 		name:'KAYTRANADA',
 		jour:'VENDREDI 3 AVRIL',
-		jourId:'1',
-		heure:'23h20',
+		jourId:'3',
+		heure:'00h20',
+        heureId:0,
 		style:'AUCUN/STYLE',
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis fermentum enim, ut pulvinar lacus interdum vitae. Curabitur ultrices, nibh in auctor tincidunt, neque sapien fermentum dolor, in convallis augue quam vel mauris. Duis mollis sollicitudin nulla placerat fermentum. Nunc ipsum ex, condimentum a ante sed, congue pulvinar leo. Cras dignissim, justo ut ultrices ultricies, mauris ligula malesuada leo, fermentum varius purus nulla volutpat est. Duis purus eros, dictum sit amet commodo in, ullamcorper a magna. Ut sit amet feugiat ligula. Sed sagittis massa dignissim, convallis nisi nec, placerat erat.',
 		club:'Grand Hall',
+        salleId:'2',
 		pic_link_black:'images/artistes/kay.jpg',
 		pic_link_color:'images/artistes/kay_c.jpg',
 		vid_link:'https://www.youtube.com/watch?v=z1BVZ0PMs9M',
@@ -79,11 +89,13 @@ app.controller("artistCtrl",function($scope){
 	{
 		name:'KAYTRANADA',
 		jour:'VENDREDI 3 AVRIL',
-		jourId:'1',
-		heure:'23h20',
+		jourId:'2',
+		heure:'20h20',
+        heureId:20,
 		style:'AUCUN/STYLE',
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis fermentum enim, ut pulvinar lacus interdum vitae. Curabitur ultrices, nibh in auctor tincidunt, neque sapien fermentum dolor, in convallis augue quam vel mauris. Duis mollis sollicitudin nulla placerat fermentum. Nunc ipsum ex, condimentum a ante sed, congue pulvinar leo. Cras dignissim, justo ut ultrices ultricies, mauris ligula malesuada leo, fermentum varius purus nulla volutpat est. Duis purus eros, dictum sit amet commodo in, ullamcorper a magna. Ut sit amet feugiat ligula. Sed sagittis massa dignissim, convallis nisi nec, placerat erat.',
 		club:'Grand Hall',
+        salleId:'1',
 		pic_link_black:'images/artistes/kay.jpg',
 		pic_link_color:'images/artistes/kay_c.jpg',
 		vid_link:'https://www.youtube.com/watch?v=z1BVZ0PMs9M',
@@ -92,13 +104,6 @@ app.controller("artistCtrl",function($scope){
 		soundcloud:'#'
 	}
 	];
-	$scope.day= function(artiste){
-		console.log($scope.day_art);
-	 if ($scope.day_art==0 || $scope.day_art==artiste.jourId)
-			return artiste;
-		else
-			return;
-	}
 });
 
 
@@ -110,7 +115,7 @@ app.controller("PanoCtrl",function($scope) {
     'jour':'1',
     'heure':'21h00',
     'ordre_passage':2,
-    'name':'DON RIMINI B2B SURFING LEONS',
+    'name':'DON RIMINI <br> B2B SURFING LEONS',
     'style':'',
     'isChecked':false,
     'salle':'Grand Hall',
@@ -844,7 +849,7 @@ app.controller("PanoCtrl",function($scope) {
 		return "margin-left:"+marge+"px;";
 	}
 
-	$scope.styling = function(artiste, index) {
+	$scope.stylingTimeline = function(artiste, index) {
 		//Artiste en haut
 		if(index%2==0){
 			if(artiste.length>15 && artiste.length<=18){
@@ -872,5 +877,10 @@ app.controller("PanoCtrl",function($scope) {
 			else
 				return "bottom:116px;";
 	}
-
+	$scope.stylingListe = function(artiste) {
+		if(artiste.length>15 && (artiste.split(" ").length - 1)<2 && artiste.length<18)
+			return "height:44px;";
+		else if(artiste.length>=18)
+			return "height:44px;";
+	}
 });

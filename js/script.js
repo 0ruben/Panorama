@@ -2,6 +2,7 @@
 //Billeterie 1 correspond jour 1 sans camping 2 jour 1 avec camping
 $(document).ready(function(){
 	var id_b= 0;
+  setTimeout(function(){$('.default').click();},50);
   appear=function(elem,del){                              // Animation quand l'élément apparait
   TweenLite.to(elem,1,{opacity:1,delay:del,});
   TweenLite.from(elem,1,{ease: Back.easeOut.config(1.7), y: "5%",delay:del});
@@ -117,10 +118,11 @@ $('#art').click(function(){
         $('.opened_content').hide("blind",{},500,function(){
           $(this).removeClass('opened_content');
           $('.art_content').addClass('opened_content');
+          if($('.active').length==0) $('.default').click();   
           $('.art_content').show("blind",{},500,function(){
             $('.opened').hide();
             $('.opened').removeClass('opened');
-            $('.art').addClass('opened');          
+            $('.art').addClass('opened');       
           });
         });
       });
@@ -137,7 +139,8 @@ $('#bte').click(function(){
       $('.billeterie').show("slide",{},500,function(){
         $('.opened_content').hide("blind",{},500,function(){
           $(this).removeClass('opened_content');
-          $('.tickets').addClass('opened_content');          
+          $('.tickets').addClass('opened_content');
+          if($('.active').length==0) $('.default').click();                       
           $('.tickets').show("blind",{},500,function(){
             $('.opened').hide();
             $('.opened').removeClass('opened');
@@ -211,8 +214,22 @@ $('#inf').click(function(){
 //       });
 //   });
 // }
-// });   
+// });  
 
+//Range Slider
+$("#range").ionRangeSlider({
+  type: "double",
+  grid: true,
+  values: [19, 20, 21, 22, 23, 00, 01, 02, 03, 04, 05],
+  from: 0,
+  to: 10,
+  postfix:"h",
+  grid: false,
+  hide_min_max: true
+});
+
+
+//Dropdown artist
 var sizeList = $('.list').attr('data-size');
 var rowOpen = false;
 $('.row1').click(function(e){
@@ -220,18 +237,23 @@ var index = $(this).attr('data-position');
 if(rowOpen==false || rowOpen==this){
   var parent = $(this).parent('.repeat');
   var $target = $(this).children('.art_name');
+  var colorRow = $(this).children('.row__img__wrapper--color');
   parent.children('.row_art').slideToggle(500);
   var z = e.clientY;
   if(z>400) z=300;
   else if(z>200) z=100;
   else z=0;
   if(!rowOpen){
-   TweenLite.to($target, 0.5, {scale : 0.5,bottom:"20%",left:"17%"});
+   TweenLite.to($target, 1, {scale:0.5,left:"17%",ease:Quint.easeOut,top:"-40%"});
+   TweenLite.to(this,1,{height:"100px",ease:Quint.easeOut});
+   TweenLite.to('.toHide',1,{opacity:0.5,position:"absolute"});
    rowOpen=this;
    TweenLite.to('.art_content',1,{y:-200*index+'px',ease:Power1.easeIn}); 
  }
  else if(rowOpen==this){
-  TweenLite.to($target, 1, {scale : 1,bottom:"0%",left:"20%",onCompleteParams: function(){
+  TweenLite.to(this,1,{height:"200px",ease:Quint.easeOut});
+  TweenLite.to('.toHide',1,{opacity:0,position:"relative"});
+  TweenLite.to($target, 1, {scale : 1,left:"20%",top:"-9%",ease:Quint.easeOut,onCompleteParams: function(){
     if(index>sizeList-3)
       $('.art_content').height(sizeList*200);
   }});  // Fix height of the div
@@ -243,10 +265,18 @@ if(rowOpen==false || rowOpen==this){
 $('.leave').click(function(){
   var parent = $(this).parents('.repeat');
   var $target = parent.find('.art_name'); 
+  var self = parent.find('.row1');
+  TweenLite.to(self,1,{height:"200px",ease:Quint.easeOut});  
   parent.children('.row_art').slideToggle(500); 
-  TweenLite.to($target, 1, {scale : 1,bottom:"0%",left:"20%"});
-  rowOpen=false;
+  TweenLite.to('.toHide',1,{opacity:0,position:"relative"});  
+  TweenLite.to($target, 1, {scale : 1,bottom:"0%",left:"20%",top:"-9%",ease:Quint.easeOut,onCompleteParams: function(){
+    if(index>sizeList-3)
+      $('.art_content').height(sizeList*200);
+  }
+  });  // Fix height of the div
+  rowOpen=false;          
 });
+
 
 //Range Slider
 $("#range").ionRangeSlider({
@@ -270,17 +300,15 @@ html2canvas($('.timeline_container'), {
 });
 
 
-
 //Animation sur artiste
-
 var widthImg = Math.min(1280, window.innerWidth);
-
-TweenLite.set($('.row__img__wrapper--color'), {x : widthImg});
-TweenLite.set($('.row__img__wrapper--color .row__img'), {x : widthImg});
-
 var DURATION = 0.7,
 EASE = Power4.easeInOut;
-
+var setDefault = function(){
+TweenLite.set($('.row__img__wrapper--color'), {x : widthImg});
+TweenLite.set($('.row__img__wrapper--color .row__img'), {x : widthImg});
+}
+setDefault();
 
 $('.list').on('mouseenter', '.row1', function(e) {
   if(rowOpen==false){
@@ -333,22 +361,88 @@ $('.art_content').mouseout(function(e) {
         TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn,});  
 });
 $('.artiste').mousemove(function(e) {
-        var h = $('.artiste').height();
+        var ind = $('.artiste').height()-$(window).height();
+        var v = e.clientY - $(window).height()/2;
+        var vit = Math.abs(v);
+        if(v<0)
+          ind=0;
+        if(vit>150)
+        TweenLite.to('.artiste',500/vit,{y:-ind+'px',ease:Power1.easeIn});
+        if(vit<150)
+        TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Power1.easeIn});  
+});
+    // Deplacement sur info 
+    $('.info_content').mousemove(function(e) {
+        var h = $('.info_content').height();
         var z = e.clientY - h/2;
         var v = e.clientY - $(window).height()/2;
         var vit = Math.abs(v);
         var ind=0;
         if(v>0)
-          ind=-30;
+          ind=-4270;
         if(vit>150)
-        TweenLite.to('.artiste',500/vit,{y:ind+'px',ease:Cubic.easeOut});
+        TweenLite.to('.info_content',500/vit,{y:ind+'px',ease:Power1.easeIn});
         if(vit<150)
-        TweenLite.to('.artiste',100000,{y:ind+'px',ease:Cubic.easeOut,});  
+        TweenLite.to('.info_content',100000,{y:ind+'px',ease:Power1.easeIn});  
 });
-$('.input_container').click(function(){
-  $(this).find('input').prop('checked',true);
-  $('.active').removeClass('active');
+//Effet pour clicker sur les radios a partir de la div + selection.  TODO Fusionner les deux dernières fonctions
+$('.rad_container').click(function(){
+  // $(this).find('input').prop('checked',true);
+  $(this).parent('form').find('.active').removeClass('active');
+  $(this).parent('form').find('.active').removeClass('active');
   $(this).addClass('active');
+  setTimeout(function(){
+  var elems = $('.row1');
+  _.each(elems, function(elem){
+    var value= $('.input_h').attr('data-range');
+    if(value=="") value="19;5";
+    var val = value.split(';');
+    val = [parseInt(val[0]),parseInt(val[1])];    
+    var test_day = $(elem).attr('data-hide-day');
+    var test_salle = $(elem).attr('data-hide-salle');
+    var heureId = $(elem).attr('data-time');  
+    if(heureId>18) heureId-=24;
+    if(val[0]>18) val[0]-=24;
+    if(val[1]>18) val[1]-=24;
+    var test_heure= val[0]<=heureId && val[1]>heureId;
+    if(!($(elem).hasClass('hidden'))){
+      if(test_day=='true'||test_salle=='true')
+      $(elem).addClass('hidden');
+    }
+    else if($(elem).hasClass('hidden')){
+      if(test_day=='false'&&test_salle=='false'&&test_heure)
+        $(elem).removeClass('hidden');
+    }
+  });
+  },50);
+  setDefault();
+});
+// Selection avec slider
+$('.slider').click(function(){
+  setTimeout(function(){
+    var value= $('.input_h').attr('data-range');
+    var val = value.split(';');
+    val = [parseInt(val[0]),parseInt(val[1])];
+    console.log(val);
+    var elems = $('.row1');
+    _.each(elems,function(elem){
+      var test_day = $(elem).attr('data-hide-day');
+      var test_salle = $(elem).attr('data-hide-salle');      
+      var heureId = $(elem).attr('data-time');   
+      if(heureId>18) heureId-=24;
+      if(val[0]>18) val[0]-=24;
+      if(val[1]>18) val[1]-=24;
+      var test_heure= val[0]<=heureId && val[1]>heureId;   
+      if(!test_heure){
+        if(!($(elem).hasClass('hidden')))
+          $(elem).addClass('hidden');
+      }
+      if(test_heure && (test_day=='false') && (test_salle=='false')){
+        if(($(elem).hasClass('hidden')))
+          $(elem).removeClass('hidden');
+      }      
+  });
+  },50);
+  setDefault();
 });
 });
-
