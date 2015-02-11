@@ -371,24 +371,9 @@ $('.artiste').mousemove(function(e) {
         if(vit<150)
         TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Power1.easeIn});  
 });
-    // Deplacement sur info 
-    $('.info_content').mousemove(function(e) {
-        var h = $('.info_content').height();
-        var z = e.clientY - h/2;
-        var v = e.clientY - $(window).height()/2;
-        var vit = Math.abs(v);
-        var ind=0;
-        if(v>0)
-          ind=-4270;
-        if(vit>150)
-        TweenLite.to('.info_content',500/vit,{y:ind+'px',ease:Power1.easeIn});
-        if(vit<150)
-        TweenLite.to('.info_content',100000,{y:ind+'px',ease:Power1.easeIn});  
-});
 //Effet pour clicker sur les radios a partir de la div + selection.  TODO Fusionner les deux dernières fonctions
 $('.rad_container').click(function(){
   // $(this).find('input').prop('checked',true);
-  $(this).parent('form').find('.active').removeClass('active');
   $(this).parent('form').find('.active').removeClass('active');
   $(this).addClass('active');
   setTimeout(function(){
@@ -446,7 +431,7 @@ $('.slider').click(function(){
   setDefault();
 });
 $('.info_content').mousemove(function(e){
-   var posY=e.pageY - $('.info_content').offset().top + $('.info_content').scrollTop();console.log(posY);
+   var posY=e.pageY - $('.info_content').offset().top + $('.info_content').scrollTop();
     if (posY>1090) $('.sub_info').addClass('hidden');
     else if ($('.sub_info').hasClass('hidden')) $('.sub_info').removeClass('hidden');
      if (posY>2025) $('.sub_info_1').addClass('hidden');
@@ -456,4 +441,18 @@ $('.info_content').mousemove(function(e){
      if (posY>3965) $('.sub_info_3').addClass('hidden');
     else if ($('.sub_info_3').hasClass('hidden')) $('.sub_info_3').removeClass('hidden');
     });
+
+$('.imput_container_art').click(function() {
+  var self = $(this);
+  self.find('input').prop('checked',true);
+  self.parent('form').find('.active').removeClass('active');
+  self.addClass('active');
+  self=self.find('.input');
+  var target = $('.info_content');
+  if (self.hasClass('input_acces')) target.scrollTo("0px",1000);
+  if (self.hasClass('input_entree')) target.scrollTo("1090px",1000);
+  if (self.hasClass('input_transport')) target.scrollTo("2025px",1000);
+  if (self.hasClass('input_camping')) target.scrollTo("2880px",1000);
+  if (self.hasClass('input_savoir')) target.scrollTo("3965px",1000);
+});
 });

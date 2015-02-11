@@ -14,6 +14,7 @@
   <script type='text/javascript' src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   <script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
   <script type="text/javascript" src="js/html2canvas.js"></script>
   
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
@@ -250,9 +251,9 @@
      </div>
    </div>
    <div class="input_container input_container_art">
-   <div class="input input_art">
-     <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="3" id="pano3" checked> <label for="pano3" class="label2 radio">Jour 3</label>
-   </div>
+     <div class="input input_art">
+       <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="3" id="pano3" checked> <label for="pano3" class="label2 radio">Jour 3</label>
+     </div>
    </div>
  </div>
  <div class="inputs_pano_art">
@@ -290,7 +291,7 @@
       <hr class="blue_line"/>
     </div>
     <div class="button_container">
-    <a data-text="Réserver" id="generate" class="button_medley" href="#">Générer votre medley</a>
+      <a data-text="Réserver" id="generate" class="button_medley" href="#">Générer votre medley</a>
     </div>
 <!--     <div class="art_pano_container even" style="margin-left:0%">
       <img class="icon_timeline" src="images/noeud.png" alt="nav"/>
@@ -421,144 +422,142 @@
 </div>
 
 
-        <!--INFO-->
-        <div class="content inf" id="info" style="display:none;">  
-            <div class="sub_menu info " id="menu_billetterie" style="display:none;">
-                <div class="head">
-                    <h2> INFOS 
-                    </h2>
-                    <hr/>
-                    <div class="subtitle">
-                        <p> Tout ce dont vous avez besoin de savoir 
-                        </p>
-                    </div>
-                </div>
-                <div class="arrow">
-                    <img src="images/arrow.png"/>
-                </div>
-                <div class="infos">
-                    <div class="input_container rad_container imput_container_art">
-                        <div class="infos">
-                            <div class="input_container imput_container_art">
-                                <div class="input input_art">
-                                    <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info">
-                                    <label for="acces" class="label1 radio">Accès / Contact
-                                    </label> 
-                                </div>
-                            </div>
-                            <div class="input_container imput_container_art">
-                                <div class="input input_art">
-                                    <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info">
-                                    <label for="acces" class="label1 radio">Entrée
-                                    </label> 
-                                </div>
-                            </div>
-                            <div class="input_container imput_container_art">
-                                <div class="input input_art">
-                                    <input id="acces" ng-model="day_pano" class="day_art" type="radio" name="info"> 
-                                    <label for="acces" class="label1 radio">Transport
-                                    </label> 
-                                </div>
-                            </div>
-                            <div class="input_container imput_container_art">
-                                <div class="input input_art">
-                                    <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> 
-                                    <label for="acces" class="label1 radio">Camping
-                                    </label> 
-                                </div>
-                            </div>
-                            <div class="input_container imput_container_art">
-                                <div class="input input_art">
-                                    <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> 
-                                    <label for="acces" class="label1 radio">A savoir
-                                    </label> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- MAIN INFO-->
-            <div class="info_content">
-                <div class="acces">
-                    <div class="sub_info">
-                        <div class="info_line">
-                        </div>
-                        <div class= "title-line">
-                            <h2 class="info_title">accès / contact
-                            </h2>
-                        </div>
-                        <div class="arrow_grey">
-                            <img src="images/arrow_grey.png"/>
-                        </div>
-                    </div>
-                    <div class="img-acces">
-                        <img class="map-acces" src="images/map.png">
-                    </div>
-                </div>
-                <div class="entree">
-                    <div class="sub_info_1">
-                        <div class="info_line">
-                        </div>
-                        <div class= "title-line">
-                            <h2 class="info_title">entrée du festival
-                            </h2>
-                        </div>
-                        <div class="arrow_grey">
-                            <img src="images/arrow_grey.png"/>
-                        </div>
-                    </div>
-                    <div class="img-entree">
-                    </div>
-                </div>
-                <div class="trsp">
-                    <div class="sub_info_2">
-                        <div class="info_line">
-                        </div>
-                        <div class= "title-line">
-                            <h2 class="info_title">transport
-                            </h2>
-                        </div>
-                        <div class="arrow_grey">
-                            <img src="images/arrow_grey.png"/>
-                        </div>
-                    </div>
-                    <div class="img-trsp">
-                    </div>    
-                </div>
-                <div class="camping">
-                    <div class="sub_info_3">
-                        <div class="info_line">
-                        </div>
-                        <div class= "title-line">
-                            <h2 class="info_title">camping
-                            </h2>
-                        </div>
-                        <div class="arrow_grey">
-                            <img src="images/arrow_grey.png"/>
-                        </div>
-                    </div>
-                    <div class="img-camping">
-                    </div>    
-                </div>
-                <div class="savoir">
-                    <div class="sub_info_4">
-                        <div class="info_line">
-                        </div>
-                        <div class= "title-line">
-                            <h2 class="info_title">à savoir
-                            </h2>
-                        </div>
-                        <div class="arrow_grey">
-                            <img src="images/arrow_grey.png"/>
-                        </div>
-                    </div>
-                    <div class="img-savoir">
-                    </div>    
-              </div>
-            </div>
+<!--INFO-->
+<div class="content inf" style="display:none;">  
+  <div class="sub_menu info " id="menu_billetterie" style="display:none;">
+    <div class="head">
+      <h2> INFOS 
+      </h2>
+      <hr/>
+      <div class="subtitle">
+        <p> Tout ce dont vous avez besoin de savoir 
+        </p>
+      </div>
+    </div>
+    <div class="arrow">
+      <img src="images/arrow.png"/>
+    </div>
+    <div class="infos">
+      <form>
+        <div class="input_container imput_container_art">
+          <div class="input input_info input_acces">
+            <input id="acces" class="day_art" value="0"  type="radio" name="info">
+            <label for="acces" class="label1 radio">Accès / Contact
+            </label> 
+          </div>
         </div>
-    </body>
-    <script type="text/javascript" src="js/script.js">
-    </script>
+        <div class="input_container imput_container_art">
+          <div class="input input_info input_entree">
+            <input  id="entree" class="day_art" value="1"  type="radio" name="info">
+            <label for="entree" class="label1 radio">Entrée
+            </label> 
+          </div>
+        </div>
+        <div class="input_container imput_container_art">
+          <div class="input input_info input_transport">
+            <input  id="transport"class="day_art" value="2" type="radio" name="info"> 
+            <label for="transport" class="label1 radio">Transport
+            </label> 
+          </div>
+        </div>
+        <div class="input_container imput_container_art">
+          <div class="input input_info input_camping">
+            <input  id="camping" class="day_art" type="radio" name="info"> 
+            <label for="camping" class="label1 radio">Camping
+            </label> 
+          </div>
+        </div>
+        <div class="input_container imput_container_art">
+          <div class="input input_info input_savoir">
+            <input id="savoir" class="day_art" type="radio" name="info"> 
+            <label for="savoir" class="label1 radio">A savoir
+            </label> 
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- MAIN INFO-->
+  <div class="info_content">
+    <div class="acces">
+      <div class="sub_info">
+        <div class="info_line">
+        </div>
+        <div class= "title-line">
+          <h2 class="info_title">accès / contact
+          </h2>
+        </div>
+        <div class="arrow_grey">
+          <img src="images/arrow_grey.png"/>
+        </div>
+      </div>
+      <div class="img-acces">
+        <img class="map-acces" src="images/map.png">
+      </div>
+    </div>
+    <div class="entree">
+      <div class="sub_info_1">
+        <div class="info_line">
+        </div>
+        <div class= "title-line">
+          <h2 class="info_title">entrée du festival
+          </h2>
+        </div>
+        <div class="arrow_grey">
+          <img src="images/arrow_grey.png"/>
+        </div>
+      </div>
+      <div class="img-entree">
+      </div>
+    </div>
+    <div class="trsp">
+      <div class="sub_info_2">
+        <div class="info_line">
+        </div>
+        <div class= "title-line">
+          <h2 class="info_title">transport
+          </h2>
+        </div>
+        <div class="arrow_grey">
+          <img src="images/arrow_grey.png"/>
+        </div>
+      </div>
+      <div class="img-trsp">
+      </div>    
+    </div>
+    <div class="camping">
+      <div class="sub_info_3">
+        <div class="info_line">
+        </div>
+        <div class= "title-line">
+          <h2 class="info_title">camping
+          </h2>
+        </div>
+        <div class="arrow_grey">
+          <img src="images/arrow_grey.png"/>
+        </div>
+      </div>
+      <div class="img-camping">
+      </div>    
+    </div>
+    <div class="savoir">
+      <div class="sub_info_4">
+        <div class="info_line">
+        </div>
+        <div class= "title-line">
+          <h2 class="info_title">à savoir
+          </h2>
+        </div>
+        <div class="arrow_grey">
+          <img src="images/arrow_grey.png"/>
+        </div>
+      </div>
+      <div class="img-savoir">
+      </div>    
+    </div>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="js/script.js">
+</script>
 </html>
