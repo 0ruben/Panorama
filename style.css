@@ -842,8 +842,10 @@ hr{
     margin-left: 70px;
 
 }
-.infos{height: 1300px;
-    margin-top: 275px;
+.infos{
+    position: absolute;
+    top:225px;
+    margin-left: 10px;
 }
 .img-acces{
     background-attachment: inherit;
