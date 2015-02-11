@@ -885,7 +885,34 @@ hr{
     margin-top: 163px;
 }
 .sub_info{
-    position:static;
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 11;
+}
+.sub_info_1{
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index:10;
+}
+.sub_info_2{
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 9;
+}
+.sub_info_3{
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 8;
+}
+.sub_info_4{
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 7;
 }
 .toHide{
     position: relative;
