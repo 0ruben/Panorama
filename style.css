@@ -906,3 +906,12 @@ hr{
     font-weight:500;
 
 }
+
+.entree{
+    overflow: hidden;
+ }
+
+.pano{
+    overflow: scroll;
+}
+
