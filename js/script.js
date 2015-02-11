@@ -281,16 +281,16 @@ $('.leave').click(function(){
 
 
 //DIV to IMG
-$("#generate").click(function() {
-  $('#tc').html2canvas({
-    onrendered: function (canvas) {
-  
-                $('#img_val').val(canvas.toDataURL("image/png"));
-                
-                document.getElementById("myForm").submit();
-              }
-            });
-});
+  function capture() {
+    $('#tc').html2canvas({
+      onrendered: function (canvas) {
+                //Set hidden field's value to image data (base-64 string)
+        $('#img_val').val(canvas.toDataURL("image/png"));
+                //Submit the form manually
+        document.getElementById("myForm").submit();
+      }
+    });
+  }
 
 
 //Animation sur artiste
