@@ -680,6 +680,7 @@ hr{
     background-color: #ffffff;
     z-index: 2000;
     color:#6f6f6f;
+    opacity: 0;
   }
   .time{
     padding: 5px 15px;

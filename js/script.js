@@ -244,6 +244,7 @@ if(rowOpen==false || rowOpen==this){
   else if(z>200) z=100;
   else z=0;
   if(!rowOpen){
+   TweenLite.to(parent.children('.row_art'),0.5,{opacity:1});
    TweenLite.to($target, 1, {scale:0.5,left:"17%",ease:Quint.easeOut,top:"-40%"});
    TweenLite.to(this,1,{height:"100px",ease:Quint.easeOut});
    TweenLite.to('.toHide',1,{opacity:0.5,position:"absolute"});
@@ -251,6 +252,7 @@ if(rowOpen==false || rowOpen==this){
    TweenLite.to('.art_content',1,{y:-200*index+'px',ease:Power1.easeIn}); 
  }
  else if(rowOpen==this){
+  TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
   TweenLite.to(this,1,{height:"200px",ease:Quint.easeOut});
   TweenLite.to('.toHide',1,{opacity:0,position:"relative"});
   TweenLite.to($target, 1, {scale : 1,left:"20%",top:"-9%",ease:Quint.easeOut,onCompleteParams: function(){
@@ -266,6 +268,7 @@ $('.leave').click(function(){
   var parent = $(this).parents('.repeat');
   var $target = parent.find('.art_name'); 
   var self = parent.find('.row1');
+  TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
   TweenLite.to(self,1,{height:"200px",ease:Quint.easeOut});  
   parent.children('.row_art').slideToggle(500); 
   TweenLite.to('.toHide',1,{opacity:0,position:"relative"});  
@@ -347,9 +350,9 @@ $('.art_content').mousemove(function(e) {
         if(v>0)
           ind=-h;
         if(vit>100)
-        TweenLite.to('.art_content',300/(vit-100),{y:ind+'px',ease:Power1.easeIn,});
+        TweenLite.to('.art_content',180/(vit-100),{y:ind+'px',ease:Power1.easeIn});
         if(vit<100)
-        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn,});  
+        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn});  
   }
 });
 $('.art_content').mouseout(function(e) {
@@ -358,7 +361,7 @@ $('.art_content').mouseout(function(e) {
         var v = e.clientY - $(window).height()/2;
         var vit = Math.abs(v);
         var ind=0;
-        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn,});  
+        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn});  
 });
 $('.artiste').mousemove(function(e) {
         var ind = $('.artiste').height()-$(window).height();
@@ -367,7 +370,7 @@ $('.artiste').mousemove(function(e) {
         if(v<0)
           ind=0;
         if(vit>150)
-        TweenLite.to('.artiste',500/vit,{y:-ind+'px',ease:Power1.easeIn});
+        TweenLite.to('.artiste',300/vit,{y:-ind+'px',ease:Power1.easeIn});
         if(vit<150)
         TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Power1.easeIn});  
 });
