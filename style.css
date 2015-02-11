@@ -223,7 +223,6 @@ h2, h3{
     background-color: #ffffff;
     width:850px;
     height:300px;
-<<<<<<< HEAD
 }
 
 .generate_pano_container{
@@ -233,8 +232,7 @@ h2, h3{
     background-color: #ffffff;
     width:850px;
     height:150px;
-=======
->>>>>>> d1124279a282dfcea7b32e7a8e5977d9924c44cb
+
 }
 
 .timeline_artists_container{
@@ -906,3 +904,6 @@ hr{
     overflow: hidden;
  }
 
+.pano{
+    overflow: scroll;
+}
