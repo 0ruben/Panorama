@@ -424,13 +424,14 @@ $('.slider').click(function(){
   setDefault();
 
 });
-<<<<<<< HEAD
+
 $('.rad_container_').click(function(){
   $(this).find('input').prop('checked',true);
   $(this).parent('form').find('.active').removeClass('active');
   $(this).parent('form').find('.active').removeClass('active');
   $(this).addClass('active');
-=======
+  });
+
 $('.info_content').mousemove(function(e){
    var posY=e.pageY - $('.info_content').offset().top + $('.info_content').scrollTop();
     if (posY>1090) $('.sub_info').addClass('hidden');
@@ -456,6 +457,5 @@ $('.imput_container_art').click(function() {
   if (self.hasClass('input_camping')) target.scrollTo("2880px",1000);
   if (self.hasClass('input_savoir')) target.scrollTo("3965px",1000);
 });
->>>>>>> d1124279a282dfcea7b32e7a8e5977d9924c44cb
-});
+
 });
