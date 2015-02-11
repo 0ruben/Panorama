@@ -827,6 +827,17 @@ app.controller("PanoCtrl",function($scope) {
 	$scope.dayChecked  = function() {
         return $scope.day_pano;
     }
+	$scope.affichageJour  = function() {
+        if($scope.day_pano==1)
+        	return "VENDREDI 3 AVRIL";
+        else if ($scope.day_pano==2)
+        	return "SAMEDI 4 AVRIL";
+        else if($scope.day_pano==3)
+        	return "DIMANCHE 5 AVRIL";
+        else
+        	return;
+    }
+
 
 	$scope.dayFilter = function(artiste) {
 		if (artiste.jour == $scope.day_pano)
@@ -877,6 +888,8 @@ app.controller("PanoCtrl",function($scope) {
 			else
 				return "bottom:116px;";
 	}
+
+
 	$scope.stylingListe = function(artiste) {
 		if(artiste.length>15 && (artiste.split(" ").length - 1)<2 && artiste.length<18)
 			return "height:44px;";

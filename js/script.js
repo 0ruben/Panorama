@@ -219,7 +219,6 @@ $('#inf').click(function(){
 //Range Slider
 $("#range").ionRangeSlider({
   type: "double",
-  grid: true,
   values: [19, 20, 21, 22, 23, 00, 01, 02, 03, 04, 05],
   from: 0,
   to: 10,
@@ -278,25 +277,16 @@ $('.leave').click(function(){
 });
 
 
-//Range Slider
-$("#range").ionRangeSlider({
-  type: "double",
-  grid: true,
-  values: ["19h30", "20h30", "21h30", "22h30", "23h30", "00h30", "01h30", "02h30", "03h30", "04h30"],
-  from: 0,
-  to: 9,
-  grid: false,
-  hide_min_max: true
-});
-
 //DIV to IMG
-$( ".button_medley" ).click(function() {
-html2canvas($('.timeline_container'), {
-  onrendered: function(canvas) {
-    var img = canvas.toDataURL("img/png");
-    window.open(img);
-  }
-});
+$("#generate").click(function() {
+  $('#tc').html2canvas({
+    onrendered: function (canvas) {
+  
+                $('#img_val').val(canvas.toDataURL("image/png"));
+                
+                document.getElementById("myForm").submit();
+              }
+            });
 });
 
 
@@ -444,5 +434,12 @@ $('.slider').click(function(){
   });
   },50);
   setDefault();
+
+});
+$('.rad_container_').click(function(){
+  $(this).find('input').prop('checked',true);
+  $(this).parent('form').find('.active').removeClass('active');
+  $(this).parent('form').find('.active').removeClass('active');
+  $(this).addClass('active');
 });
 });
