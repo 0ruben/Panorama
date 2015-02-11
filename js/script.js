@@ -231,10 +231,14 @@ $("#range").ionRangeSlider({
 //Dropdown artist
 var sizeList = $('.list').attr('data-size');
 var rowOpen = false;
-$('.row1').click(function(e){
+$('.row1').click(function(e){  
+$('.buttonBar').addClass('hidden');  
 var index = $(this).attr('data-position');
 if(rowOpen==false || rowOpen==this){
   var parent = $(this).parent('.repeat');
+  if(parent.find('.play_button').attr('isClicked')=='false'){
+    parent.find('.buttonBar').addClass('hidden');  
+  }
   var $target = $(this).children('.art_name');
   var colorRow = $(this).children('.row__img__wrapper--color');
   parent.children('.row_art').slideToggle(500);
@@ -243,6 +247,7 @@ if(rowOpen==false || rowOpen==this){
   else if(z>200) z=100;
   else z=0;
   if(!rowOpen){
+   $('.player'+$(this).attr('data-position')).YTPlayer();
    TweenLite.to(parent.children('.row_art'),0.5,{opacity:1});
    TweenLite.to($target, 1, {scale:0.5,left:"17%",ease:Quint.easeOut,top:"-40%"});
    TweenLite.to(this,1,{height:"100px",ease:Quint.easeOut});
@@ -251,6 +256,9 @@ if(rowOpen==false || rowOpen==this){
    TweenLite.to('.art_content',1,{y:-200*index+'px',ease:Power1.easeIn}); 
  }
  else if(rowOpen==this){
+  if(parent.find('.play_button').attr('isClicked')=='true'){
+    $('.player'+$(this).attr('data-position')).pauseYTP();
+  }
   TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
   TweenLite.to(this,1,{height:"200px",ease:Quint.easeOut});
   TweenLite.to('.toHide',1,{opacity:0,position:"relative"});
@@ -267,6 +275,9 @@ $('.leave').click(function(){
   var parent = $(this).parents('.repeat');
   var $target = parent.find('.art_name'); 
   var self = parent.find('.row1');
+  if(parent.find('.play_button').attr('isClicked')=='true'){
+    $('.player'+$(this).attr('data-position')).pauseYTP();
+  }  
   TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
   TweenLite.to(self,1,{height:"200px",ease:Quint.easeOut});  
   parent.children('.row_art').slideToggle(500); 
@@ -294,7 +305,7 @@ $("#generate").click(function() {
 
 
 //Animation sur artiste
-var widthImg = Math.min(1280, window.innerWidth);
+var widthImg = (window.innerWidth);
 var DURATION = 0.7,
 EASE = Power4.easeInOut;
 var setDefault = function(){
@@ -394,6 +405,7 @@ $('.rad_container').click(function(){
   });
   },50);
   setDefault();
+  TweenLite.to('.art_content',0.5,{y:0+'px',ease:Power1.easeIn});  
 });
 // Selection avec slider
 $('.slider').click(function(){
@@ -422,7 +434,7 @@ $('.slider').click(function(){
   });
   },50);
   setDefault();
-
+  TweenLite.to('.art_content',0.5,{y:0+'px',ease:Power1.easeIn}); 
 });
 
 $('.rad_container_').click(function(){
@@ -477,4 +489,13 @@ $('.imput_container_art').click(function() {
   if (self.hasClass('input_savoir')) target.scrollTo("3970px",1000);
 });
 
+$('.play_button').click(function(){
+  var row=$(this).parents('.repeat');
+  var player=row.find('.player');
+  $(this).attr('isClicked','true');
+  row.find('.buttonBar').removeClass('hidden');
+  player.playYTP();
+  playing = true;
+  $(this).fadeOut(500); 
+});
 });

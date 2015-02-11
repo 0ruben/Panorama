@@ -408,8 +408,9 @@
       </div>  
       <div class="row_art" style="display:none;">
         <div class="art_vid dropdown">
-          <div class="player" style="display:block; margin: auto; background: rgba(0,0,0,0.5)" data-property="{videoURL:'{{artist.vid_link}}',containment:'self',startAt:0,mute:false,autoPlay:false,loop:false,opacity:1,showYTLogo:false, realfullscreen:true}"></div>
+          <div class="player player{{$index}}" style="display:block; margin: auto; background: rgba(0,0,0,0.5)" data-property="{videoURL:'{{artist.vid_link}}',containment:'self',startAt:0,mute:false,autoPlay:false,loop:false,opacity:1,showYTLogo:false,realfullscreen:true}"></div>
         </div>
+          <img isClicked="false" class="play_button" src="images/play_button.png"/>
         <div class="art_main dropdown">
           <p class="time">{{artist.heure}}</p>
           <p class="art_day">{{artist.jour}}</p>
@@ -423,7 +424,7 @@
         </div>
         <div class="art_social">
           <a href="#" class="socicon social">a</a>
-          <a href="#" class="socicon social">b</a>  
+          <a href="{{artist.facebook}}" class="socicon social">b</a>  
           <a href="#" class="socicon social">n</a> 
           <img class="leave" src="images/leave.png"/>         
         </div>
