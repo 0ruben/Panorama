@@ -433,16 +433,35 @@ $('.rad_container_').click(function(){
   });
 
 $('.info_content').scroll(function(e){
-   var posY=$('.info_content').offset().top + $('.info_content').scrollTop();
-    if (posY>1090) $('.sub_info').addClass('hidden');
-    else if ($('.sub_info').hasClass('hidden')) $('.sub_info').removeClass('hidden');
-     if (posY>2025) $('.sub_info_1').addClass('hidden');
+   var posY= $('.info_content').offset().top + $('.info_content').scrollTop();
+    if (posY>1090) {
+        $('.sub_info').addClass('hidden');
+        $('.active').removeClass('active');
+        $('.inf_2').addClass('active');
+        $('#entree').prop('checked',true)}
+    else if($('.sub_info').hasClass('hidden')) $('.sub_info').removeClass('hidden');
+     if (posY>2025) {
+        $('.sub_info_1').addClass('hidden');
+        $('.active').removeClass('active');
+        $('.inf_3').addClass('active');
+        $('#transport').prop('checked',true)}
     else if ($('.sub_info_1').hasClass('hidden')) $('.sub_info_1').removeClass('hidden');
-     if (posY>2880) $('.sub_info_2').addClass('hidden');
+     if (posY>2880) {
+        $('.sub_info_2').addClass('hidden');
+        $('.active').removeClass('active');
+        $('.inf_4').addClass('active');
+        $('#camping').prop('checked',true)}
     else if ($('.sub_info_2').hasClass('hidden')) $('.sub_info_2').removeClass('hidden');
-     if (posY>3965) $('.sub_info_3').addClass('hidden');
+     if (posY>3965) {
+        $('.sub_info_3').addClass('hidden');
+        $('.active').removeClass('active');
+        $('.inf_5').addClass('active');
+        $('#savoir').prop('checked',true)}
     else if ($('.sub_info_3').hasClass('hidden')) $('.sub_info_3').removeClass('hidden');
-    });
+    if (posY<1090) { $('.active').removeClass('active');
+        $('.inf_1').addClass('active');
+        $('#acces').prop('checked',true)}
+});
 
 $('.imput_container_art').click(function() {
   var self = $(this);
