@@ -433,8 +433,8 @@ $('.slider').click(function(){
   },50);
   setDefault();
 });
-$('.info_content').mousemove(function(e){
-   var posY=e.pageY - $('.info_content').offset().top + $('.info_content').scrollTop();
+$('.info_content').scroll(function(e){
+   var posY=$('.info_content').scrollTop() - $('.info_content').offset().top;
     if (posY>1090) $('.sub_info').addClass('hidden');
     else if ($('.sub_info').hasClass('hidden')) $('.sub_info').removeClass('hidden');
      if (posY>2025) $('.sub_info_1').addClass('hidden');
@@ -453,9 +453,9 @@ $('.imput_container_art').click(function() {
   self=self.find('.input');
   var target = $('.info_content');
   if (self.hasClass('input_acces')) target.scrollTo("0px",1000);
-  if (self.hasClass('input_entree')) target.scrollTo("1090px",1000);
-  if (self.hasClass('input_transport')) target.scrollTo("2025px",1000);
-  if (self.hasClass('input_camping')) target.scrollTo("2880px",1000);
-  if (self.hasClass('input_savoir')) target.scrollTo("3965px",1000);
+  if (self.hasClass('input_entree')) target.scrollTo("1095px",1000);
+  if (self.hasClass('input_transport')) target.scrollTo("2030px",1000);
+  if (self.hasClass('input_camping')) target.scrollTo("2885px",1000);
+  if (self.hasClass('input_savoir')) target.scrollTo("3970px",1000);
 });
 });
