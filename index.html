@@ -2,6 +2,7 @@
 <html ng-app="Panorama">
 <head>
   <meta charset="utf-8" lang="fr"/>
+  <link href="css/YTPlayer.css" media="all" rel="stylesheet" type="text/css">
   <link type="text/css" rel="stylesheet" href="style.css"/>
   <link type="text/css" rel="stylesheet" href="jquery-ui.min.css"/>
   <link rel="stylesheet" href="css/normalize.css">
@@ -14,14 +15,9 @@
   <script type='text/javascript' src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   <script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
-  <script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
   <script type="text/javascript" src="js/html2canvas.js"></script>
-  <<<<<<< HEAD
   <script type="text/javascript" src="js/jquery.plugin.html2canvas.js"></script>
   <script type="text/javascript" src="js/jquery.mb.YTPlayer.min.js"></script>
-  =======
-  
-  >>>>>>> d1124279a282dfcea7b32e7a8e5977d9924c44cb
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
   <script src="js/app.js"></script>
   
@@ -73,17 +69,17 @@
   <form class="inputs">
    <div id="day1" class="input_container default">
     <div class="input">
-     <input id="d1" class="day" type="radio" name="day"> <label for="d1" class="label1 radio">Pass 1 jour</label> 
+     <input id="d1" class="day" type="radio" name="day"> <label for="d1" class="label2 radio">Pass 1 jour</label> 
    </div>
  </div>
  <div id="day2" class="input_container">
   <div class="input">
-    <input type="radio" name="day" id="d2" class="day"><label for ="d2" class="label1 radio">Pass 2 jours </label>
+    <input type="radio" name="day" id="d2" class="day"><label for ="d2" class="label2 radio">Pass 2 jours </label>
   </div>
 </div>
 <div id="camp" class="input_container">
   <div class="input2">
-    <input id="c1" type="checkbox" name="camp" class ="cmp"><label class="label1" for="camp">Camping</label> 
+    <input id="c1" type="checkbox" name="camp" class ="cmp"><label class="label2" for="camp">Camping</label> 
   </div>
 </div>
 </form>
@@ -264,10 +260,7 @@
  <div class="inputs_pano_art">
   <h3 class="title_art open_sans artiste_list" style="margin-top:0px;">Artistes</h3>
   <div ng-repeat="ar in artiste | filter: dayFilter">
-
     <div class="input_container input_container_art_check" style="{{stylingListe(ar.name)}} padding-right: 35px;">
-
-
       <div class="input2 input_art" ng-click="includeArtiste(ar)">
         <input jour-id="ar.jour" class="day_art" type="checkbox" ng-model="ar.isChecked"/>
         <label class="label2"><span class="name">{{ar.name}}</span></label>
@@ -281,15 +274,14 @@
   <div id="tc" class="timeline_container" style="display:none;">
     <!-- <div class="timeline_artists_container"> -->
 
-
     <div ng-repeat="a in artiste | filter:artisteFilter | filter:dayFilter">
 
-      <div class="art_pano_container" ng-class-odd="'odd'" ng-class-even="'even'" style="margin-left:{{-200+(800/(cpt[dayChecked()-1]))}}px">
+      <div class="art_pano_container" ng-class-odd="'odd'" ng-class-even="'even'" style="{{calculatePosition($index)}}">
 
         <div class="art_heure_pano"> - {{a.heure}} - </div>
         <div class="art_name_pano"> {{a.name}} </div>
         <div class="art_salle_pano"> {{a.salle}} </div>
-        <img class="icon_timeline" src="images/noeud.png" alt="nav"/>
+        <img class="icon_timeline" src="images/noeud.png" alt="{{a.heure}}" style="{{stylingTimeline(a.name, $index)}}"/>
       </div>
     </div>  
 
@@ -298,11 +290,10 @@
     <div class="line_container">
       <hr class="blue_line"/>
     </div>
-
     <img class="start_timeline" src="images/button.png" alt="start"/>
     <img class="end_timeline" src="images/button.png" alt="end"/>
-    <div class="jour_pano">
-      {{affichageJour()}}
+        <div class="jour_pano">
+    {{affichageJour()}}
     </div>
   </div>
   <div class="generate_pano_container">
@@ -311,10 +302,8 @@
     </div>
     <div class="explication_pano">
       Sélectionnez les artistes que vous souhaitez voir afin d’optimiser votre parcours pendant le festival, puis générez votre medley et partagez-le avec vos amis.
-
-      <div class="button_container">
-        <a data-text="Réserver" id="generate" class="button_medley" href="#">Générer votre medley</a>
-      </div>
+    </div>
+  </div>
 <!--     <div class="art_pano_container even" style="margin-left:0%">
       <img class="icon_timeline" src="images/noeud.png" alt="nav"/>
       <div class="art_heure_pano"> -01h30- </div>
@@ -324,8 +313,7 @@
   </div>
 </div>
 
-</div>
-</div>
+
 
 
 
@@ -419,6 +407,7 @@
       </div>  
       <div class="row_art" style="display:none;">
         <div class="art_vid dropdown">
+          <div class="player" style="display:block; margin: auto; background: rgba(0,0,0,0.5)" data-property="{videoURL:'{{artist.vid_link}}',containment:'self',startAt:0,mute:false,autoPlay:false,loop:false,opacity:1,showYTLogo:false, realfullscreen:true}"></div>
         </div>
         <div class="art_main dropdown">
           <p class="time">{{artist.heure}}</p>
@@ -443,9 +432,10 @@
 </div>
 </div>
 
+<!--INFO-->
 
 <!--INFO-->
-<div class="content inf" style="display:none;">  
+<div class="content inf" id="info" style="display:none;">  
   <div class="sub_menu info " id="menu_billetterie" style="display:none;">
     <div class="head">
       <h2> INFOS 
@@ -460,47 +450,49 @@
       <img src="images/arrow.png"/>
     </div>
     <div class="infos">
-      <form>
-        <div class="input_container imput_container_art">
-          <div class="input input_info input_acces">
-            <input id="acces" class="day_art" value="0"  type="radio" name="info">
-            <label for="acces" class="label1 radio">Accès / Contact
-            </label> 
+      <div class="input_container rad_container imput_container_art">
+        <div class="infos">
+          <div class="input_container imput_container_art">
+            <div class="input input_art">
+              <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info">
+              <label for="acces" class="label1 radio">Accès / Contact
+              </label> 
+            </div>
+          </div>
+          <div class="input_container imput_container_art">
+            <div class="input input_art">
+              <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info">
+              <label for="acces" class="label1 radio">Entrée
+              </label> 
+            </div>
+          </div>
+          <div class="input_container imput_container_art">
+            <div class="input input_art">
+              <input id="acces" ng-model="day_pano" class="day_art" type="radio" name="info"> 
+              <label for="acces" class="label1 radio">Transport
+              </label> 
+            </div>
+          </div>
+          <div class="input_container imput_container_art">
+            <div class="input input_art">
+              <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> 
+              <label for="acces" class="label1 radio">Camping
+              </label> 
+            </div>
+          </div>
+          <div class="input_container imput_container_art">
+            <div class="input input_art">
+              <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> 
+              <label for="acces" class="label1 radio">A savoir
+              </label> 
+            </div>
           </div>
         </div>
-        <div class="input_container imput_container_art">
-          <div class="input input_info input_entree">
-            <input  id="entree" class="day_art" value="1"  type="radio" name="info">
-            <label for="entree" class="label1 radio">Entrée
-            </label> 
-          </div>
-        </div>
-        <div class="input_container imput_container_art">
-          <div class="input input_info input_transport">
-            <input  id="transport"class="day_art" value="2" type="radio" name="info"> 
-            <label for="transport" class="label1 radio">Transport
-            </label> 
-          </div>
-        </div>
-        <div class="input_container imput_container_art">
-          <div class="input input_info input_camping">
-            <input  id="camping" class="day_art" type="radio" name="info"> 
-            <label for="camping" class="label1 radio">Camping
-            </label> 
-          </div>
-        </div>
-        <div class="input_container imput_container_art">
-          <div class="input input_info input_savoir">
-            <input id="savoir" class="day_art" type="radio" name="info"> 
-            <label for="savoir" class="label1 radio">A savoir
-            </label> 
-          </div>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
   <!-- MAIN INFO-->
-  <div class="info_content" style="display:none;">
+  <div class="info_content">
     <div class="acces">
       <div class="sub_info">
         <div class="info_line">
@@ -518,7 +510,7 @@
       </div>
     </div>
     <div class="entree">
-      <div class="sub_info_1">
+      <div class="sub_info">
         <div class="info_line">
         </div>
         <div class= "title-line">
@@ -533,7 +525,7 @@
       </div>
     </div>
     <div class="trsp">
-      <div class="sub_info_2">
+      <div class="sub_info">
         <div class="info_line">
         </div>
         <div class= "title-line">
@@ -548,7 +540,7 @@
       </div>    
     </div>
     <div class="camping">
-      <div class="sub_info_3">
+      <div class="sub_info">
         <div class="info_line">
         </div>
         <div class= "title-line">
@@ -563,7 +555,7 @@
       </div>    
     </div>
     <div class="savoir">
-      <div class="sub_info_4">
+      <div class="sub_info">
         <div class="info_line">
         </div>
         <div class= "title-line">
@@ -581,10 +573,10 @@
 </div>
 
 <form method="POST" enctype="multipart/form-data" action="save.php" id="myForm">
-  <input type="hidden" name="img_val" id="img_val" value="" />
+    <input type="hidden" name="img_val" id="img_val" value="" />
 </form>
 
 </body>
 <script type="text/javascript" src="js/script.js">
 </script>
-</html>
+</html>  	

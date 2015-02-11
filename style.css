@@ -165,21 +165,23 @@ input[type=checkbox] {
 }
 
 input[type=radio]:checked + label:before {
-    content: "\2022";
-    color: #f3f3f3;
-    font-size: 27px;
+    content: "";
+    color: #35BFBF;
+    font-size: 28px;
     text-align: center;
-    line-height: 12px;
+    line-height: 10px;
     margin-left: 140px;
     margin-top: 3px;
+    background-color:#35BFBF;
 }
 
 input[type=checkbox]:checked + label:before {
-    content: "\2713";
+    content: "";
     font-size: 12px;
     color: #f3f3f3;
     text-align: center;
     line-height: 12px;
+    background-color:#35BFBF;
 }
 
 /*End button*/
@@ -223,7 +225,6 @@ h2, h3{
     background-color: #ffffff;
     width:850px;
     height:300px;
-<<<<<<< HEAD
 }
 
 .generate_pano_container{
@@ -233,8 +234,6 @@ h2, h3{
     background-color: #ffffff;
     width:850px;
     height:150px;
-=======
->>>>>>> d1124279a282dfcea7b32e7a8e5977d9924c44cb
 }
 
 .timeline_artists_container{
@@ -249,6 +248,11 @@ h2, h3{
     display: inline-block;
 }
 
+.button_medley{
+    position:relative;
+    margin-top:50px;
+    margin-left:320px;
+}
 
 
 .odd{
@@ -295,9 +299,19 @@ hr{
 
 .line_container{
     position: absolute;
-    margin: 0 auto;
     width:780px;
     height:3px;
+}
+
+.timeline_container .start_timeline{
+    position: absolute;
+    left:25px;
+    top:130px;
+}
+.timeline_container .end_timeline{
+    position: absolute;
+    left:805px;
+    top:130px;
 }
 .blue_line{
     position: absolute;
@@ -461,6 +475,16 @@ hr{
     color: #35bfbf; 
 }
 
+.generer{
+    margin-top: 30px;
+    margin-left: 35%;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #35bfbf; 
+}
+
 .button{
 
 }
@@ -520,6 +544,14 @@ hr{
 .open_sans{
     font-family: 'Open Sans', sans-serif;
     color: #a8a8a8;
+}
+.explication_pano{
+    width:300px;
+    margin-left:30%;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color:#000000;
+    font-size: 11px;
 }
 #disabled{
     color:#a8a8a8;
@@ -594,6 +626,7 @@ hr{
 }
 .label2{
     font-weight: thin;
+    width:100px;
 }
 
 .label2:before {
@@ -607,7 +640,10 @@ hr{
     height: 12px;
     margin-left: 140px;
     position: absolute;
-    background-color: #35BFBF;
+    background-color:  #e6e6e6;
+    border-color: #35BFBF;
+    border-style: solid;
+    border-width: 2px;
 }
 
 .input_art{
@@ -692,7 +728,6 @@ hr{
     background-color: #ffffff;
     z-index: 2000;
     color:#6f6f6f;
-    opacity: 0;
   }
   .time{
     padding: 5px 15px;
@@ -702,6 +737,7 @@ hr{
   }
   .art_vid{
     width: 35%;
+    height: 95%;
     display: inline-block;
   }
   .art_main{
@@ -776,15 +812,14 @@ hr{
     bottom: 116px;
   }
     .artiste{
-      min-height: 750px;
+        height: 750px;
     }
 .info_content{
     top: 0;
     margin-left:200px;
-    width: 100%;
+    width: 1300px;
     height: 100%;
     position: absolute;
-    overflow: scroll;
 }
 .info_line{
     position: absolute;
@@ -794,7 +829,7 @@ hr{
 }
 .title-line{
     background-color:#e6e6e6;
-    position:absolute;
+    position: absolute;
     width: 100%;
     margin-top: 5px;
 }
@@ -807,10 +842,8 @@ hr{
     margin-left: 70px;
 
 }
-.infos{
-    position: absolute;
-    top:225px;
-    margin-left: 10px;
+.infos{height: 1300px;
+    margin-top: 275px;
 }
 .img-acces{
     background-attachment: inherit;
@@ -849,34 +882,7 @@ hr{
     margin-top: 163px;
 }
 .sub_info{
-    position:fixed;
-    width: 100%;
-    top:0;
-    z-index: 11;
-}
-.sub_info_1{
-    position:fixed;
-    width: 100%;
-    top:0;
-    z-index:10;
-}
-.sub_info_2{
-    position:fixed;
-    width: 100%;
-    top:0;
-    z-index: 9;
-}
-.sub_info_3{
-    position:fixed;
-    width: 100%;
-    top:0;
-    z-index: 8;
-}
-.sub_info_4{
-    position:fixed;
-    width: 100%;
-    top:0;
-    z-index: 7;
+    position:static;
 }
 .toHide{
     position: relative;
@@ -889,7 +895,6 @@ hr{
 .hr_billet{
     margin-left: 16px;
 }
-
 .artiste_list{
     margin-top: 0px;
 }
@@ -901,8 +906,3 @@ hr{
     font-weight:500;
 
 }
-
-.entree{
-    overflow: hidden;
- }
-
