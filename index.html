@@ -14,9 +14,14 @@
   <script type='text/javascript' src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   <script type="text/javascript" src="js/ion.rangeSlider.min.js"></script>
-    <script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
   <script type="text/javascript" src="js/html2canvas.js"></script>
+  <<<<<<< HEAD
+  <script type="text/javascript" src="js/jquery.plugin.html2canvas.js"></script>
+  <script type="text/javascript" src="js/jquery.mb.YTPlayer.min.js"></script>
+  =======
   
+  >>>>>>> d1124279a282dfcea7b32e7a8e5977d9924c44cb
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
   <script src="js/app.js"></script>
   
@@ -241,28 +246,31 @@
   <div class="inputs_j1j2j3">
     <h3 class="title_art open_sans">Jour</h3>
     <div class="input_container input_container_art">
-      <div class="input input_art">
-       <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="1" id="pano1"> <label for="pano1" class="label2 radio">Jour 1</label>
+      <div class="input input_art rad_container_pano">
+       <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="1" id="pano1"> <label for="pano1" class="label2 radio">Ven. 3 Avril</label>
      </div>
    </div>
    <div class="input_container input_container_art">
      <div class="input input_art">
-       <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="2" id="pano2"> <label for="pano2" class="label2 radio">Jour 2</label>
+       <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="2" id="pano2"> <label for="pano2" class="label2 radio">Sam. 4 Avril</label>
      </div>
    </div>
    <div class="input_container input_container_art">
      <div class="input input_art">
-       <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="3" id="pano3" checked> <label for="pano3" class="label2 radio">Jour 3</label>
+       <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="3" id="pano3" checked> <label for="pano3" class="label2 radio">Dim. 5 Avril</label>
      </div>
    </div>
  </div>
  <div class="inputs_pano_art">
-  <h3 class="title_art open_sans">Artistes</h3>
+  <h3 class="title_art open_sans artiste_list" style="margin-top:0px;">Artistes</h3>
   <div ng-repeat="ar in artiste | filter: dayFilter">
-    <div class="input_container input_container_art_check">
+
+    <div class="input_container input_container_art_check" style="{{stylingListe(ar.name)}} padding-right: 35px;">
+
+
       <div class="input2 input_art" ng-click="includeArtiste(ar)">
         <input jour-id="ar.jour" class="day_art" type="checkbox" ng-model="ar.isChecked"/>
-        <label class="label2">{{ar.name}}</label>
+        <label class="label2"><span class="name">{{ar.name}}</span></label>
       </div>
     </div>
   </div>
@@ -270,9 +278,9 @@
 
 </div>
 <div class="pano_content" style="display:none;">
-  <div class="timeline_container" style="display:none;">
+  <div id="tc" class="timeline_container" style="display:none;">
     <!-- <div class="timeline_artists_container"> -->
-    cpt: {{cpt}}
+
 
     <div ng-repeat="a in artiste | filter:artisteFilter | filter:dayFilter">
 
@@ -290,9 +298,23 @@
     <div class="line_container">
       <hr class="blue_line"/>
     </div>
-    <div class="button_container">
-      <a data-text="Réserver" id="generate" class="button_medley" href="#">Générer votre medley</a>
+
+    <img class="start_timeline" src="images/button.png" alt="start"/>
+    <img class="end_timeline" src="images/button.png" alt="end"/>
+    <div class="jour_pano">
+      {{affichageJour()}}
     </div>
+  </div>
+  <div class="generate_pano_container">
+    <div class="generer">
+      <a data-text="Générer votre medley" id="generate" class="button-hover hvr-float button_medley" href="#">Générer votre medley</a>
+    </div>
+    <div class="explication_pano">
+      Sélectionnez les artistes que vous souhaitez voir afin d’optimiser votre parcours pendant le festival, puis générez votre medley et partagez-le avec vos amis.
+
+      <div class="button_container">
+        <a data-text="Réserver" id="generate" class="button_medley" href="#">Générer votre medley</a>
+      </div>
 <!--     <div class="art_pano_container even" style="margin-left:0%">
       <img class="icon_timeline" src="images/noeud.png" alt="nav"/>
       <div class="art_heure_pano"> -01h30- </div>
@@ -303,7 +325,7 @@
 </div>
 
 </div>
-
+</div>
 
 
 
@@ -557,6 +579,11 @@
     </div>
   </div>
 </div>
+
+<form method="POST" enctype="multipart/form-data" action="save.php" id="myForm">
+  <input type="hidden" name="img_val" id="img_val" value="" />
+</form>
+
 </body>
 <script type="text/javascript" src="js/script.js">
 </script>
