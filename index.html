@@ -432,10 +432,9 @@
 </div>
 </div>
 
-<!--INFO-->
 
 <!--INFO-->
-<div class="content inf" id="info" style="display:none;">  
+<div class="content inf" style="display:none;">  
   <div class="sub_menu info " id="menu_billetterie" style="display:none;">
     <div class="head">
       <h2> INFOS 
@@ -450,49 +449,47 @@
       <img src="images/arrow.png"/>
     </div>
     <div class="infos">
-      <div class="input_container rad_container imput_container_art">
-        <div class="infos">
-          <div class="input_container imput_container_art">
-            <div class="input input_art">
-              <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info">
-              <label for="acces" class="label1 radio">Accès / Contact
-              </label> 
-            </div>
-          </div>
-          <div class="input_container imput_container_art">
-            <div class="input input_art">
-              <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info">
-              <label for="acces" class="label1 radio">Entrée
-              </label> 
-            </div>
-          </div>
-          <div class="input_container imput_container_art">
-            <div class="input input_art">
-              <input id="acces" ng-model="day_pano" class="day_art" type="radio" name="info"> 
-              <label for="acces" class="label1 radio">Transport
-              </label> 
-            </div>
-          </div>
-          <div class="input_container imput_container_art">
-            <div class="input input_art">
-              <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> 
-              <label for="acces" class="label1 radio">Camping
-              </label> 
-            </div>
-          </div>
-          <div class="input_container imput_container_art">
-            <div class="input input_art">
-              <input id="acces" class="day_art" ng-model="day_pano" type="radio" name="info"> 
-              <label for="acces" class="label1 radio">A savoir
-              </label> 
-            </div>
+      <form>
+        <div class="input_container imput_container_art">
+          <div class="input input_info input_acces">
+            <input id="acces" class="day_art" value="0"  type="radio" name="info">
+            <label for="acces" class="label1 radio">Accès / Contact
+            </label> 
           </div>
         </div>
-      </div>
+        <div class="input_container imput_container_art">
+          <div class="input input_info input_entree">
+            <input  id="entree" class="day_art" value="1"  type="radio" name="info">
+            <label for="entree" class="label1 radio">Entrée
+            </label> 
+          </div>
+        </div>
+        <div class="input_container imput_container_art">
+          <div class="input input_info input_transport">
+            <input  id="transport"class="day_art" value="2" type="radio" name="info"> 
+            <label for="transport" class="label1 radio">Transport
+            </label> 
+          </div>
+        </div>
+        <div class="input_container imput_container_art">
+          <div class="input input_info input_camping">
+            <input  id="camping" class="day_art" type="radio" name="info"> 
+            <label for="camping" class="label1 radio">Camping
+            </label> 
+          </div>
+        </div>
+        <div class="input_container imput_container_art">
+          <div class="input input_info input_savoir">
+            <input id="savoir" class="day_art" type="radio" name="info"> 
+            <label for="savoir" class="label1 radio">A savoir
+            </label> 
+          </div>
+        </div>
+      </form>
     </div>
   </div>
   <!-- MAIN INFO-->
-  <div class="info_content">
+  <div class="info_content" style="display:none;">
     <div class="acces">
       <div class="sub_info">
         <div class="info_line">
@@ -510,7 +507,7 @@
       </div>
     </div>
     <div class="entree">
-      <div class="sub_info">
+      <div class="sub_info_1">
         <div class="info_line">
         </div>
         <div class= "title-line">
@@ -525,7 +522,7 @@
       </div>
     </div>
     <div class="trsp">
-      <div class="sub_info">
+      <div class="sub_info_2">
         <div class="info_line">
         </div>
         <div class= "title-line">
@@ -540,7 +537,7 @@
       </div>    
     </div>
     <div class="camping">
-      <div class="sub_info">
+      <div class="sub_info_3">
         <div class="info_line">
         </div>
         <div class= "title-line">
@@ -555,7 +552,7 @@
       </div>    
     </div>
     <div class="savoir">
-      <div class="sub_info">
+      <div class="sub_info_4">
         <div class="info_line">
         </div>
         <div class= "title-line">
