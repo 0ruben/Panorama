@@ -261,10 +261,10 @@
  <div class="inputs_pano_art">
   <h3 class="title_art open_sans artiste_list" style="margin-top:0px;">Artistes</h3>
   <div ng-repeat="ar in artiste | filter: dayFilter">
-    <div class="input_container input_container_art_check" style="{{stylingListe(ar.name)}} padding-right: 35px;">
-      <div class="input2 input_art" ng-click="includeArtiste(ar)">
-        <input jour-id="ar.jour" class="day_art" type="checkbox" ng-model="ar.isChecked"/>
-        <label class="label2"><span class="name">{{ar.name}}</span></label>
+    <div disabled="disabled" class="input_container input_container_art_check" style="{{stylingListe(ar.name)}} padding-right: 35px;">
+      <div class="input2 input_art" ng-click="verouillerBox(ar) || includeArtiste(ar)" ng-disabled="verouillerBox(ar.jour, ar)">
+        <input class="day_art" type="checkbox" ng-model="ar.isChecked"/>
+        <label class="label2 {{verouillerStyle(ar)}}"><span class="name">{{ar.name}}</span></label>
       </div>
     </div>
   </div>
@@ -275,7 +275,7 @@
   <div id="tc" class="timeline_container" style="display:none;">
     <!-- <div class="timeline_artists_container"> -->
 
-    <div ng-repeat="a in artiste | filter:artisteFilter | filter:dayFilter">
+    <div ng-repeat="a in artiste | filter:artisteFilter | filter:dayFilter | orderBy :predicate">
 
       <div class="art_pano_container" ng-class-odd="'odd'" ng-class-even="'even'" style="{{calculatePosition($index)}}">
 
@@ -291,15 +291,16 @@
     <div class="line_container">
       <hr class="blue_line"/>
     </div>
-    <img class="start_timeline" src="images/button.png" alt="start"/>
-    <img class="end_timeline" src="images/button.png" alt="end"/>
+    <img class="start_timeline" src="images/button.png" alt="début"/>
+    <img class="end_timeline" src="images/button.png" alt="fin"/>
         <div class="jour_pano">
     {{affichageJour()}}
     </div>
+    <img class="logo_timeline" src="images/icon.png" alt="panorama 18"/>
   </div>
   <div class="generate_pano_container">
     <div class="generer">
-      <a data-text="Générer votre medley" id="generate" class="button-hover hvr-float button_medley" href="#">Générer votre medley</a>
+      <a data-text="Générer votre medley" type="submit" id="generate" onclick="capture();" class="button-hover hvr-float button_medley" href="#">Générer votre medley</a>
     </div>
     <div class="explication_pano">
       Sélectionnez les artistes que vous souhaitez voir afin d’optimiser votre parcours pendant le festival, puis générez votre medley et partagez-le avec vos amis.
@@ -314,7 +315,18 @@
   </div>
 </div>
 
-
+<script type="text/javascript">
+  function capture() {
+    $('#tc').html2canvas({
+      onrendered: function (canvas) {
+                //Set hidden field's value to image data (base-64 string)
+        $('#img_val').val(canvas.toDataURL("image/png"));
+                //Submit the form manually
+        document.getElementById("myForm").submit();
+      }
+    });
+  }
+</script>
 
 
 
@@ -573,7 +585,7 @@
   </div>
 </div>
 
-<form method="POST" enctype="multipart/form-data" action="save.php" id="myForm">
+<form ng-controller="RandomCtrl" method="POST" enctype="multipart/form-data" action="mon_pano.php?" id="myForm" target="_blank">
     <input type="hidden" name="img_val" id="img_val" value="" />
 </form>
 
