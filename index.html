@@ -420,8 +420,9 @@
       </div>  
       <div class="row_art" style="display:none;">
         <div class="art_vid dropdown">
-          <div class="player" style="display:block; margin: auto; background: rgba(0,0,0,0.5)" data-property="{videoURL:'{{artist.vid_link}}',containment:'self',startAt:0,mute:false,autoPlay:false,loop:false,opacity:1,showYTLogo:false, realfullscreen:true}"></div>
+          <div class="player player{{$index}}" style="display:block; margin: auto; background: rgba(0,0,0,0.5)" data-property="{videoURL:'{{artist.vid_link}}',containment:'self',startAt:0,mute:false,autoPlay:false,loop:false,opacity:1,showYTLogo:false,realfullscreen:true}"></div>
         </div>
+          <img isClicked="false" class="play_button" src="images/play_button.png"/>
         <div class="art_main dropdown">
           <p class="time">{{artist.heure}}</p>
           <p class="art_day">{{artist.jour}}</p>
@@ -435,7 +436,7 @@
         </div>
         <div class="art_social">
           <a href="#" class="socicon social">a</a>
-          <a href="#" class="socicon social">b</a>  
+          <a href="{{artist.facebook}}" class="socicon social">b</a>  
           <a href="#" class="socicon social">n</a> 
           <img class="leave" src="images/leave.png"/>         
         </div>
@@ -463,38 +464,38 @@
     </div>
     <div class="infos">
       <form>
-        <div class="input_container imput_container_art">
+        <div class="input_container inf_1 imput_container_art">
           <div class="input input_info input_acces">
-            <input id="acces" class="day_art" value="0"  type="radio" name="info">
-            <label for="acces" class="label1 radio">Accès / Contact
+            <input id="acces" class="day_art"  type="radio" name="info" checked>
+            <label for="acces" class="label2 radio">Accès / Contact
             </label> 
           </div>
         </div>
-        <div class="input_container imput_container_art">
+        <div class="input_container inf_2 imput_container_art">
           <div class="input input_info input_entree">
-            <input  id="entree" class="day_art" value="1"  type="radio" name="info">
-            <label for="entree" class="label1 radio">Entrée
+            <input  id="entree" class="day_art" type="radio" name="info">
+            <label for="entree" class="label2 radio">Entrée
             </label> 
           </div>
         </div>
-        <div class="input_container imput_container_art">
+        <div class="input_container inf_3 imput_container_art">
           <div class="input input_info input_transport">
-            <input  id="transport"class="day_art" value="2" type="radio" name="info"> 
-            <label for="transport" class="label1 radio">Transport
+            <input  id="transport"class="day_art" type="radio" name="info"> 
+            <label for="transport" class="label2 radio">Transport
             </label> 
           </div>
         </div>
-        <div class="input_container imput_container_art">
+        <div class="input_container inf_4 imput_container_art">
           <div class="input input_info input_camping">
             <input  id="camping" class="day_art" type="radio" name="info"> 
-            <label for="camping" class="label1 radio">Camping
+            <label for="camping" class="label2 radio">Camping
             </label> 
           </div>
         </div>
-        <div class="input_container imput_container_art">
+        <div class="input_container inf_5 imput_container_art">
           <div class="input input_info input_savoir">
             <input id="savoir" class="day_art" type="radio" name="info"> 
-            <label for="savoir" class="label1 radio">A savoir
+            <label for="savoir" class="label2 radio">A savoir
             </label> 
           </div>
         </div>
@@ -516,9 +517,9 @@
         </div>
       </div>
       <div class="img-acces">
-        <a href="https://www.google.fr/maps/place/LANGO+-+Parc+des+Expositions/@48.585716,-3.791507,13z/data=!4m2!3m1!1s0x0000000000000000:0xecdb12dc7300c7aa" target="_blank">
-          <img class="map-acces" src="images/map.png">
-        </a>
+          <a href="https://www.google.fr/maps/place/LANGO+-+Parc+des+Expositions/@48.585716,-3.791507,13z/data=!4m2!3m1!1s0x0000000000000000:0xecdb12dc7300c7aa" target="_blank">
+        <img class="map-acces" src="images/map.png">
+          </a>
       </div>
     </div>
     <div class="entree">

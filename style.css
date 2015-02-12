@@ -750,6 +750,9 @@ hr{
     display: inline-block;
     margin-top: 15px;
     margin-bottom: 15px;
+    margin-left: 60px;
+    position: relative;
+    bottom: 30px;
   }
   .art_social{
     width: 15%;
@@ -817,7 +820,7 @@ hr{
     bottom: 116px;
   }
     .artiste{
-        height: 750px;
+        min-height: 750px;
     }
 .info_content{
     top: 0;
@@ -949,4 +952,12 @@ hr{
 .pano{
     overflow: scroll;
 }
-
+.player{
+    height: 400px;
+}
+.play_button{
+    position: relative;
+    bottom:156px;
+    right:21%;
+    cursor: pointer;
+}
