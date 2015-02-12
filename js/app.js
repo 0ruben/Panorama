@@ -1596,12 +1596,14 @@ app.controller("PanoCtrl",function($scope) {
 	$scope.artisteNotIncludes = [];
 	angular.copy($scope.artiste, $scope.artisteNotIncludes);
 	$scope.artisteIncludes = [];
-
+	$scope.predicate = 'ordre_passage';
 	$scope.cpt = [0,0,0];
 
 
 
 	$scope.includeArtiste = function(artiste) {
+
+
 
 		var i = $.inArray(artiste, $scope.artisteIncludes);
 		if (i > -1) {
@@ -1627,6 +1629,24 @@ app.controller("PanoCtrl",function($scope) {
 		return artiste;
 	}
 
+
+	$scope.verouillerBox = function(artiste) {
+		if($scope.cpt[artiste.jour - 1]>6){
+			if($.inArray(artiste, $scope.artisteIncludes)>-1)
+				return false;
+			else
+				return true;
+		}    	
+		else
+			return false;
+	}
+
+	$scope.verouillerStyle = function(artiste) {
+		if($scope.verouillerBox(artiste)){
+			return "label_verouille";
+		}
+	}
+
 	$scope.dayChecked  = function() {
 		return $scope.day_pano;
 	}
@@ -1640,6 +1660,8 @@ app.controller("PanoCtrl",function($scope) {
 		else
 			return;
 	}
+
+
 
 
 	$scope.dayFilter = function(artiste) {
