@@ -276,7 +276,7 @@ $('.leave').click(function(){
   var $target = parent.find('.art_name'); 
   var self = parent.find('.row1');
   if(parent.find('.play_button').attr('isClicked')=='true'){
-    $('.player'+$(this).attr('data-position')).pauseYTP();
+    $('.player'+$(self).attr('data-position')).pauseYTP();
   }  
   TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
   TweenLite.to(self,1,{height:"200px",ease:Quint.easeOut});  
@@ -343,17 +343,17 @@ $('.list').on('mouseleave', '.row1', function(e) {
 //Déplacement sur artist
 $('.art_content').mousemove(function(e) {
   if(rowOpen==false){
-    var h = $('.art_content').height()-$(window).height();
-    var z = e.clientY - h/2;
-    var v = e.clientY - $(window).height()/2;
-    var vit = Math.abs(v);
-    var ind=0;
-    if(v>0)
-      ind=-h;
-    if(vit>100)
-      TweenLite.to('.art_content',180/(vit-100),{y:ind+'px',ease:Power1.easeIn});
-    if(vit<100)
-      TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn});  
+        var h = $('.art_content').height()-$(window).height();
+        var z = e.clientY - h/2;
+        var v = e.clientY - $(window).height()/2;
+        var vit = Math.abs(v);
+        var ind=0;
+        if(v>0)
+          ind=-h;
+        if(vit>50)
+        TweenLite.to('.art_content',180/(vit-50),{y:ind+'px',ease:Power1.easeIn});
+        if(vit<50)
+        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn}); 
   }
 });
 $('.art_content').mouseout(function(e) {
@@ -493,9 +493,9 @@ $('.play_button').click(function(){
   var row=$(this).parents('.repeat');
   var player=row.find('.player');
   $(this).attr('isClicked','true');
+  row.find('.art_main').addClass('marged');
   row.find('.buttonBar').removeClass('hidden');
   player.playYTP();
-  playing = true;
   $(this).fadeOut(500); 
 
 });
