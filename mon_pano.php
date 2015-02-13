@@ -33,7 +33,7 @@
 
     </div>
     <div class="image_container">
-        <?php echo '<img src="pic_pano/img'.$imageID.'.png"/>';
+        <?php echo '<img class="image" src="pic_pano/img'.$imageID.'.png"/>';
         ?>
     </div>
     <div class="url_container">
@@ -49,7 +49,7 @@
 <style type="text/css">
 
   body{
-    background-image:url(images/bg-pano.jpg);
+    background-color: #ffffff;
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -60,6 +60,9 @@
     width:100%;
     margin:0px auto;
     margin-top:10%;
+    border-color: #35BFBF;
+    border-style: solid;
+    border-width: 1px;
 
 }
 .center{
