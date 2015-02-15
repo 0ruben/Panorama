@@ -1829,9 +1829,7 @@ app.controller("PanoCtrl",function($scope) {
 app.controller("RandomCtrl",function($scope) {
 
 	$scope.randomNumber = Math.floor(Math.random()*10001);
-	$scope.randomNumberF = function() {
-		return Math.floor(Math.random()*10001);
-	}
+
 
 
 
