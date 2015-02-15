@@ -111,16 +111,16 @@ $(document).ready(function(){
 $('#art').click(function(){
   if(!($('.art').hasClass('opened'))){
     $('.art').show();
-    $('.opened_menu').hide("slide",{},500,function(){
-      $(this).removeClass('opened_menu');
-      $('.artiste').addClass('opened_menu');
-      $('.artiste').show("slide",{},500,function(){
-        $('.opened_content').hide("blind",{},500,function(){
-          $(this).removeClass('opened_content');
-          $('.art_content').addClass('opened_content');
+    $('.artiste').show("slide",{easing:'easeInQuart'},500,function(){
+          $('.opened_menu').hide("slide",{easing:'easeInQuart'},500,function(){
+          $(this).removeClass('opened_menu');
+         $('.artiste').addClass('opened_menu');
+          $('.art_content').show("blind",{easing:'easeInQuart'},500,function(){        
           if($('.active').length==0) $('.default').click();   
-          $('.art_content').show("blind",{},500,function(){
+          $('.opened_content').hide("blind",{easing:'easeInQuart'},500,function(){
             $('.opened').hide();
+            $(this).removeClass('opened_content');
+           $('.art_content').addClass('opened_content');
             $('.opened').removeClass('opened');
             $('.art').addClass('opened');       
           });
@@ -351,9 +351,9 @@ $('.art_content').mousemove(function(e) {
         if(v>0)
           ind=-h;
         if(vit>50)
-        TweenLite.to('.art_content',180/(vit-50),{y:ind+'px',ease:Power1.easeIn});
+        TweenLite.to('.art_content',400/(vit-50),{y:ind+'px',ease:Power1.easeInOut});
         if(vit<50)
-        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn}); 
+        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeInOut}); 
   }
 });
 $('.art_content').mouseout(function(e) {
