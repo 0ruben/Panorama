@@ -12,7 +12,7 @@
         $unencodedData=base64_decode($filteredData);
         //Save the image
         file_put_contents('pic_pano/img'.$imageID.'.png', $unencodedData);
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/dev/panot/mon_pano.php?image='.$imageID);
+        header('Location: http://'.$_SERVER['HTTP_HOST'].'/dev/panorama/mon_pano.php?image='.$imageID);
 
     }
     else
@@ -23,7 +23,7 @@
     <meta property="og:site_name" content="Panorama Festival"/>
     <meta property="og:description" content="Viens toi aussi créer ta soirée Panorama !" />
     <meta property="og:title" content="Mon Pano" />
-    <?php echo  '<meta property="og:image" content="http://'.$_SERVER['HTTP_HOST'].'/dev/panot/pic_pano/img'.$imageID.'.png"/>'
+    <?php echo  '<meta property="og:image" content="http://'.$_SERVER['HTTP_HOST'].'/dev/panorama/pic_pano/img'.$imageID.'.png"/>'
     ?>
     <link type="text/css" rel="stylesheet" href="style.css"/>
 </head>
@@ -38,11 +38,11 @@
     </div>
     <div class="url_container">
         <div class="url">
-            <?php echo '<a href="http://'.$_SERVER['HTTP_HOST'].'/dev/panot/mon_pano.php?image='.$imageID.'"> 
-            http://'.$_SERVER['HTTP_HOST'].'/dev/panot/mon_pano.php?image='.$imageID.'</a>' ?>
+            <?php echo '<a href="http://'.$_SERVER['HTTP_HOST'].'/dev/panoram/mon_pano.php?image='.$imageID.'"> 
+            http://'.$_SERVER['HTTP_HOST'].'/dev/panorama/mon_pano.php?image='.$imageID.'</a>' ?>
         </div>
     </div>
-    <?php echo '<a href="https://www.facebook.com/sharer/sharer.php?u=http://'.$_SERVER['HTTP_HOST'].'/dev/panot/mon_pano.php?image='.$imageID.'" target="_blank"> <img src="http://www.le-bon-plan.com/wp-content/uploads/2014/05/facebook-partage.png">'
+    <?php echo '<a href="https://www.facebook.com/sharer/sharer.php?u=http://'.$_SERVER['HTTP_HOST'].'/dev/panorama/mon_pano.php?image='.$imageID.'" target="_blank"> <img src="http://www.le-bon-plan.com/wp-content/uploads/2014/05/facebook-partage.png">'
     ?>
 </body>
 
@@ -60,9 +60,9 @@
     width:100%;
     margin:0px auto;
     margin-top:10%;
-    border-color: #35BFBF;
+/*    border-color: #35BFBF;
     border-style: solid;
-    border-width: 1px;
+    border-width: 1px;*/
 
 }
 .center{
