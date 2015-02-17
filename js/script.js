@@ -1,6 +1,49 @@
 // TODO Disable hand click on radio and checkbox
 //Billeterie 1 correspond jour 1 sans camping 2 jour 1 avec camping
+$(window).load(function(){
+  $('.nav_range').removeClass('hidden');
+  $('.loader').addClass('hidden');
+});
+
 $(document).ready(function(){
+
+  var count = 1000;
+  var nav_clicked = false;
+  TweenLite.set('nav',{x:$(window).width()+'px'});
+    
+   //Splashscreen
+   $('.splashscreen').height($(window).height());
+   $('.nav-item-range').mouseenter(function() {
+    $(this).find('h2').css('visibility','visible');
+   });
+   $('.nav-item-range').mouseleave(function() {
+    $(this).find('h2').css('visibility','hidden');
+   });
+
+   $('.nav-item-range').click(function(){
+    var self = this;
+    TweenLite.to('nav',1,{x:0+'px',opacity:1,ease:Quint.easeOut});
+    setTimeout(function(){
+     var target = '.'+$(self).attr('data-target');
+     var sub_menu= $(target).find('.sub_menu');
+     var content = $(target).find('.contains'); 
+     console.log('complete');
+     count++;
+     $(target).zIndex(count);
+     $(target).show();
+     sub_menu.show("slide",{easing:'easeInQuart'},500,function(){
+      sub_menu.addClass('opened_menu');
+      content.show("blind",{easing:'easeInQuart'},500,function(){  
+        content.addClass('opened_content');               
+        if($('.active').length==0) $('.default').click(); 
+        if(target == '.mdl') showIt('.timeline_container');
+        $(target).addClass('opened');
+        $('.splashscreen').hide(); 
+        });
+      });  
+    },1500);  
+   });
+
 	var id_b= 0;
   setTimeout(function(){$('.default').click();},50);
   appear=function(elem,del){                              // Animation quand l'élément apparait
@@ -99,16 +142,13 @@ $(document).ready(function(){
       }
     });
 // CHANGE VIEW ON MENU
-var count = 1000;
-var nav_clicked = false;
 $('.nav-item').click(function(){
   var id = $(this).attr('id');
   var target = $('.'+id);
-  var sub_menu= $(target).find('.sub_menu');
-  content = $(target).find('.contains');
+  var sub_menu= target.find('.sub_menu');
+  var content = target.find('.contains');
   count++;
-  console.log(target.hasClass('opened'));
-  target = target.zIndex(count);
+  target.zIndex(count);
   if(!(target.hasClass('opened'))&&!(nav_clicked)){
       nav_clicked = true;
       target.show();
@@ -172,10 +212,8 @@ function capture() {
   var widthImg = (window.innerWidth);
   var DURATION = 0.7,
   EASE = Power4.easeInOut;
-  var valueMargin = Math.min($(window).width()-260,1550)/2-303+'px';  //Margin for artist name
-  // var valueMarginSmall = (Math.min($('.opened_content').width(),1550)-)/2-151+'px';
-  TweenLite.set('.art_name',{marginLeft : valueMargin});    
-
+  var widthContent = Math.min($(window).width()-260,1550); 
+  TweenLite.set('.art_name',{ width : widthContent});    
 var setDefault = function(){
   TweenLite.set($('.row__img__wrapper--color'), {x : widthImg});
   TweenLite.set($('.row__img__wrapper--color .row__img'), {x : widthImg});
@@ -184,8 +222,8 @@ var setDefault = function(){
 
 $(window).resize(function() {
   widthImg = (window.innerWidth);
-  valueMargin = Math.min($(window).width()-260,1550)/2-303+'px';  
-  TweenLite.set('.art_name',{marginLeft : valueMargin});  
+  widthContent = Math.min($(window).width()-260,1550);  
+  TweenLite.set('.art_name',{ width : widthContent});  
 });
 
 $('.list').on('mouseenter', '.row1', function(e) {
@@ -239,7 +277,7 @@ $('.row1').click(function(e){
     if(!rowOpen){
      $('.player'+$(this).attr('data-position')).YTPlayer();
      TweenLite.to(parent.children('.row_art'),0.5,{opacity:1});
-     TweenLite.to($target, 1, {scale:0.5,ease:Quint.easeOut,top:"-40%"});
+     TweenLite.to($target, 1, {scale:0.5,ease:Quint.easeOut,bottom:"-15px"});
      TweenLite.to(this,1,{height:"100px",ease:Quint.easeOut});
      TweenLite.to('.toHide',1,{opacity:0.5,position:"absolute"});
      rowOpen=this;
@@ -252,7 +290,7 @@ $('.row1').click(function(e){
     TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
     TweenLite.to(this,1,{height:"200px",ease:Quint.easeOut});
     TweenLite.to('.toHide',1,{opacity:0,position:"relative"});
-    TweenLite.to($target, 1, {scale : 1,top:"-14px",ease:Quint.easeOut,onCompleteParams: function(){
+    TweenLite.to($target, 1, {scale : 1,bottom:"25px",ease:Quint.easeOut,onCompleteParams: function(){
       if(index>sizeList-3)
         $('.art_content').height(sizeList*200);
   }});  // Fix height of the div
@@ -272,7 +310,7 @@ $('.leave').click(function(){
   TweenLite.to(self,1,{height:"200px",ease:Quint.easeOut});  
   parent.children('.row_art').slideToggle(500); 
   TweenLite.to('.toHide',1,{opacity:0,position:"relative"});  
-  TweenLite.to($target, 1, {scale : 1,top:"-14px",ease:Quint.easeOut,onCompleteParams: function(){
+  TweenLite.to($target, 1, {scale : 1,bottom:"25px",ease:Quint.easeOut,onCompleteParams: function(){
     if(index>sizeList-3)
       $('.art_content').height(sizeList*200);
   }
@@ -293,7 +331,7 @@ $('.art_content').mousemove(function(e) {
         if(v>0)
           ind=-h;
         if(vit>50)
-        TweenLite.to('.art_content',400/(vit-50),{y:ind+'px',ease:Power1.easeInOut});
+        TweenLite.to('.art_content',800/(vit-50),{y:ind+'px',ease:Power1.easeInOut});
         if(vit<50)
         TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeInOut}); 
   }
