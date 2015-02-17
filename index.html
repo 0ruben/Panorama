@@ -260,9 +260,9 @@
  </div>
  <div class="inputs_pano_art">
   <h3 class="title_art open_sans artiste_list" style="margin-top:0px;">Artistes</h3>
-  <div ng-repeat="ar in artiste | filter: dayFilter">
+  <div ng-repeat="ar in artistes | filter: dayFilter">
     <div disabled="disabled" class="input_container input_container_art_check" style="{{stylingListe(ar.name)}} padding-right: 35px;">
-      <div class="input2 input_art" ng-click="verouillerBox(ar) || includeArtiste(ar)" ng-disabled="verouillerBox(ar.jour, ar)">
+      <div class="input2 input_art" ng-click="verouillerBox(ar) || includeArtiste(ar)" ng-disabled="verouillerBox(ar)">
         <input class="day_art" type="checkbox" ng-model="ar.isChecked"/>
         <label class="label2 {{verouillerStyle(ar)}}"><span class="name">{{ar.name}}</span></label>
       </div>
@@ -275,7 +275,7 @@
   <div id="tc" class="timeline_container" style="display:none;">
     <!-- <div class="timeline_artists_container"> -->
 
-    <div ng-repeat="a in artiste | filter:artisteFilter | filter:dayFilter | orderBy :predicate">
+    <div ng-repeat="a in artistes | filter:artisteFilter | filter:dayFilter | orderBy :predicate">
 
       <div class="art_pano_container" ng-class-odd="'odd'" ng-class-even="'even'" style="{{calculatePosition($index)}}">
 
@@ -296,7 +296,7 @@
         <div class="jour_pano">
     {{affichageJour()}}
     </div>
-    <img class="logo_timeline" src="images/icon.png" alt="panorama 18"/>
+    <img class="logo_timeline" src="images/logo_pano.png" alt="panorama 18"/>
   </div>
   <div class="generate_pano_container">
     <div class="generer">

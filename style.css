@@ -228,7 +228,7 @@ h2, h3{
     padding: 10px;
     background-color: #ffffff;
     width:850px;
-    height:300px;
+    height:330px;
 }
 
 .generate_pano_container{
@@ -307,20 +307,20 @@ hr{
     height:3px;
 }
 
-.timeline_container .start_timeline{
+.start_timeline{
     position: absolute;
     left:25px;
     top:130px;
 }
-.timeline_container .end_timeline{
+.end_timeline{
     position: absolute;
     left:805px;
     top:130px;
 }
 .timeline_container .logo_timeline{
     position: absolute;
-    left:800px;
-    top:230px;
+    left:95%;
+    top:82%;
 }
 .blue_line{
     position: absolute;
@@ -974,9 +974,9 @@ hr{
 }
 .jour_pano{
     position:absolute;
-    top:-1px;
-    left:680px;
-    font-family: 'Open Sans', sans-serif;
+    top:5px;
+    left:30%;
+    font-family:'Kelson';
     font-weight:500;
 
 }
