@@ -261,6 +261,8 @@ for (var k=0;k<37;k++){opened_art.push(k+'')};
 var sizeList = $('.list').attr('data-size');
 var rowOpen = false;
 $('.row1').click(function(e){  
+  var bottom = [-15,25];
+  if($(window).width()<1280) bottom = [0,45];
   $('.buttonBar').addClass('hidden');  
   var index = $(this).attr('data-position');
   var position = opened_art.indexOf(index);
@@ -279,7 +281,7 @@ $('.row1').click(function(e){
     if(!rowOpen){
      $('.player'+$(this).attr('data-position')).YTPlayer();
      TweenLite.to(parent.children('.row_art'),0.5,{opacity:1});
-     TweenLite.to($target, 1, {scale:0.5,ease:Quint.easeOut,bottom:"-15px"});
+     TweenLite.to($target, 1, {scale:0.5,ease:Quint.easeOut,bottom:bottom[0]+"px"});
      TweenLite.to(this,1,{height:"100px",ease:Quint.easeOut});
      TweenLite.to('.toHide',1,{opacity:0.5,position:"absolute"});
      rowOpen=this;
@@ -292,7 +294,7 @@ $('.row1').click(function(e){
     TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
     TweenLite.to(this,1,{height:"200px",ease:Quint.easeOut});
     TweenLite.to('.toHide',1,{opacity:0,position:"relative"});
-    TweenLite.to($target, 1, {scale : 1,bottom:"25px",ease:Quint.easeOut,onCompleteParams: function(){
+    TweenLite.to($target, 1, {scale : 1,bottom:bottom[1]+"px",ease:Quint.easeOut,onCompleteParams: function(){
       if(index>sizeList-3)
         $('.art_content').height(sizeList*200);
   }});  // Fix height of the div
@@ -312,7 +314,7 @@ $('.leave').click(function(){
   TweenLite.to(self,1,{height:"200px",ease:Quint.easeOut});  
   parent.children('.row_art').slideToggle(500); 
   TweenLite.to('.toHide',1,{opacity:0,position:"relative"});  
-  TweenLite.to($target, 1, {scale : 1,bottom:"25px",ease:Quint.easeOut,onCompleteParams: function(){
+  TweenLite.to($target, 1, {scale : 1,bottom:bottom[1]+"px",ease:Quint.easeOut,onCompleteParams: function(){
     if(index>sizeList-3)
       $('.art_content').height(sizeList*200);
   }
@@ -323,40 +325,40 @@ $('.leave').click(function(){
 
 
 //Déplacement sur artist
-$('.art_content').mousemove(function(e) {
-  if(rowOpen==false){
-        var h = $('.art_content').height()-$(window).height();
-        var z = e.clientY - h/2;
-        var v = e.clientY - $(window).height()/2;
-        var vit = Math.abs(v);
-        var ind=0;
-        if(v>0)
-          ind=-h;
-        if(vit>50)
-        TweenLite.to('.art_content',800/(vit-50),{y:ind+'px',ease:Power1.easeInOut});
-        if(vit<50)
-        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeInOut}); 
-  }
-});
-$('.art_content').mouseout(function(e) {
-  var h = $('.art_content').height()-$(window).height();
-  var z = e.clientY - h/2;
-  var v = e.clientY - $(window).height()/2;
-  var vit = Math.abs(v);
-  var ind=0;
-  TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn});  
-});
-$('.artiste').mousemove(function(e) {
-  var ind = $('.artiste').height()-$(window).height();
-  var v = e.clientY - $(window).height()/2;
-  var vit = Math.abs(v);
-  if(v<0)
-    ind=0;
-  if(vit>150)
-    TweenLite.to('.artiste',300/vit,{y:-ind+'px',ease:Power1.easeIn});
-  if(vit<150)
-    TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Power1.easeIn});  
-});
+// $('.art_content').mousemove(function(e) {
+//   if(rowOpen==false){
+//         var h = $('.art_content').height()-$(window).height();
+//         var z = e.clientY - h/2;
+//         var v = e.clientY - $(window).height()/2;
+//         var vit = Math.abs(v);
+//         var ind=0;
+//         if(v>0)
+//           ind=-h;
+//         if(vit>50)
+//         TweenLite.to('.art_content',800/(vit-50),{y:ind+'px',ease:Power1.easeInOut});
+//         if(vit<50)
+//         TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeInOut}); 
+//   }
+// });
+// $('.art_content').mouseout(function(e) {
+//   var h = $('.art_content').height()-$(window).height();
+//   var z = e.clientY - h/2;
+//   var v = e.clientY - $(window).height()/2;
+//   var vit = Math.abs(v);
+//   var ind=0;
+//   TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn});  
+// });
+// $('.artiste').mousemove(function(e) {
+//   var ind = $('.artiste').height()-$(window).height();
+//   var v = e.clientY - $(window).height()/2;
+//   var vit = Math.abs(v);
+//   if(v<0)
+//     ind=0;
+//   if(vit>150)
+//     TweenLite.to('.artiste',300/vit,{y:-ind+'px',ease:Power1.easeIn});
+//   if(vit<150)
+//     TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Power1.easeIn});  
+// });
 //Effet pour clicker sur les radios a partir de la div + selection.  TODO Fusionner les deux dernières fonctions
 $('.radi_container').click(function(){
   // $(this).find('input').prop('checked',true);
