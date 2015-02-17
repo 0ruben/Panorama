@@ -325,40 +325,40 @@ $('.leave').click(function(){
 
 
 //Déplacement sur artist
-// $('.art_content').mousemove(function(e) {
-//   if(rowOpen==false){
-//         var h = $('.art_content').height()-$(window).height();
-//         var z = e.clientY - h/2;
-//         var v = e.clientY - $(window).height()/2;
-//         var vit = Math.abs(v);
-//         var ind=0;
-//         if(v>0)
-//           ind=-h;
-//         if(vit>50)
-//         TweenLite.to('.art_content',800/(vit-50),{y:ind+'px',ease:Power1.easeInOut});
-//         if(vit<50)
-//         TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeInOut}); 
-//   }
-// });
-// $('.art_content').mouseout(function(e) {
-//   var h = $('.art_content').height()-$(window).height();
-//   var z = e.clientY - h/2;
-//   var v = e.clientY - $(window).height()/2;
-//   var vit = Math.abs(v);
-//   var ind=0;
-//   TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn});  
-// });
-// $('.artiste').mousemove(function(e) {
-//   var ind = $('.artiste').height()-$(window).height();
-//   var v = e.clientY - $(window).height()/2;
-//   var vit = Math.abs(v);
-//   if(v<0)
-//     ind=0;
-//   if(vit>150)
-//     TweenLite.to('.artiste',300/vit,{y:-ind+'px',ease:Power1.easeIn});
-//   if(vit<150)
-//     TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Power1.easeIn});  
-// });
+$('.art_content').mousemove(function(e) {
+  if(rowOpen==false){
+        var h = $('.art_content').height()-$(window).height();
+        var z = e.clientY - h/2;
+        var v = e.clientY - $(window).height()/2;
+        var vit = Math.abs(v);
+        var ind=0;
+        if(v>0)
+          ind=-h;
+        if(vit>50)
+        TweenLite.to('.art_content',800/(vit-50),{y:ind+'px',ease:Power1.easeInOut});
+        if(vit<50)
+        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeInOut}); 
+  }
+});
+$('.art_content').mouseout(function(e) {
+  var h = $('.art_content').height()-$(window).height();
+  var z = e.clientY - h/2;
+  var v = e.clientY - $(window).height()/2;
+  var vit = Math.abs(v);
+  var ind=0;
+  TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn});  
+});
+$('.artiste').mousemove(function(e) {
+  var ind = $('.artiste').height()-$(window).height();
+  var v = e.clientY - $(window).height()/2;
+  var vit = Math.abs(v);
+  if(v<0)
+    ind=0;
+  if(vit>150)
+    TweenLite.to('.artiste',300/vit,{y:-ind+'px',ease:Power1.easeIn});
+  if(vit<150)
+    TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Power1.easeIn});  
+});
 //Effet pour clicker sur les radios a partir de la div + selection.  TODO Fusionner les deux dernières fonctions
 $('.radi_container').click(function(){
   // $(this).find('input').prop('checked',true);
