@@ -27,7 +27,6 @@ $(document).ready(function(){
      var target = '.'+$(self).attr('data-target');
      var sub_menu= $(target).find('.sub_menu');
      var content = $(target).find('.contains'); 
-     console.log('complete');
      count++;
      $(target).zIndex(count);
      $(target).show();
@@ -257,11 +256,14 @@ $('.list').on('mouseleave', '.row1', function(e) {
 
 
 //Dropdown artist
+var opened_art = []; //index of open artists.
+for (var k=0;k<37;k++){opened_art.push(k+'')};
 var sizeList = $('.list').attr('data-size');
 var rowOpen = false;
 $('.row1').click(function(e){  
   $('.buttonBar').addClass('hidden');  
   var index = $(this).attr('data-position');
+  var position = opened_art.indexOf(index);
   if(rowOpen==false || rowOpen==this){
     var parent = $(this).parent('.repeat');
     if(parent.find('.play_button').attr('isClicked')=='false'){
@@ -281,7 +283,7 @@ $('.row1').click(function(e){
      TweenLite.to(this,1,{height:"100px",ease:Quint.easeOut});
      TweenLite.to('.toHide',1,{opacity:0.5,position:"absolute"});
      rowOpen=this;
-     TweenLite.to('.art_content',1,{y:-200*index+'px',ease:Power1.easeIn}); 
+     TweenLite.to('.art_content',1,{y:-200*position+'px',ease:Power1.easeIn}); 
    }
    else if(rowOpen==this){
     if(parent.find('.play_button').attr('isClicked')=='true'){
@@ -364,6 +366,7 @@ $('.radi_container').click(function(){
     var elems = $('.row1');
     _.each(elems, function(elem){
       var value= $('.input_h').attr('data-range');
+      var index = $(elem).attr('data-position');
       if(value=="") value="19;5";
       var val = value.split(';');
       val = [parseInt(val[0]),parseInt(val[1])];    
@@ -375,14 +378,20 @@ $('.radi_container').click(function(){
       if(val[1]>18) val[1]-=24;
       var test_heure= val[0]<=heureId && val[1]>heureId;
       if(!($(elem).hasClass('hidden'))){
-        if(test_day=='true'||test_salle=='true')
+        if(test_day=='true'||test_salle=='true'){
           $(elem).addClass('hidden');
+          opened_art.splice(opened_art.indexOf(index),1);
+        } 
       }
       else if($(elem).hasClass('hidden')){
-        if(test_day=='false'&&test_salle=='false'&&test_heure)
+        if(test_day=='false'&&test_salle=='false'&&test_heure){
           $(elem).removeClass('hidden');
+          opened_art.push(index);          
+        }
       }
     });
+  opened_art.sort(function(a,b){return a-b});
+  console.log(opened_art);
   },50);
   setDefault();
   TweenLite.to('.art_content',0.5,{y:0+'px',ease:Power1.easeIn});  
