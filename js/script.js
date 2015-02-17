@@ -257,7 +257,7 @@ $('.list').on('mouseleave', '.row1', function(e) {
 
 //Dropdown artist
 var opened_art = []; //index of open artists.
-for (var k=0;k<37;k++){opened_art.push(k+'')};
+for (var k=0;k<41;k++){opened_art.push(k+'')};
 var sizeList = $('.list').attr('data-size');
 var rowOpen = false;
 $('.row1').click(function(e){  
@@ -405,11 +405,11 @@ $('.radi_container').click(function(){
 $('.slider').click(function(){
   setTimeout(function(){
     var value= $('.input_h').attr('data-range');
-    var index = $(elem).attr('data-position');
     var val = value.split(';');
     val = [parseInt(val[0]),parseInt(val[1])];
     var elems = $('.row1');
     _.each(elems,function(elem){
+      var index = $(elem).attr('data-position');      
       var test_day = $(elem).attr('data-hide-day');
       var test_salle = $(elem).attr('data-hide-salle');      
       var heureId = $(elem).attr('data-time');   
@@ -420,6 +420,7 @@ $('.slider').click(function(){
       if(!test_heure){
         if(!($(elem).hasClass('hidden'))){
           $(elem).addClass('hidden');
+          console.log(index);
           opened_art.splice(opened_art.indexOf(index),1);
         }  
       }
@@ -431,6 +432,7 @@ $('.slider').click(function(){
       }      
     });
     opened_art.sort(function(a,b){return a-b});
+              console.log(opened_art);
   },50);
   setDefault();
   TweenLite.to('.art_content',0.5,{y:0+'px',ease:Power1.easeIn}); 
