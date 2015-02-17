@@ -750,13 +750,13 @@ hr{
   .art_name{
     z-index: 1000;
     position: absolute;
-    width: 607px;
     left:0;
     right: 0;
-    font-size: 85px;
+    font-size: 55px;
+    text-align: center;
     font-family: 'Farray';
     color: #ffffff;
-    bottom:0%;
+    bottom:25px;
   }
   .dropdown{
     display: inline-block;
@@ -1237,4 +1237,50 @@ top:140px;
 }
 .savoir1{
   top:20px;
+}
+.splashscreen{
+  position: fixed; right: 0; bottom: 0;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto; z-index: -100;
+  background: url(/images/splashscreen.jpg) no-repeat;
+  background-size: cover;
+}
+#vid{
+    min-width: 100%;
+    min-height: 100%;
+}
+.nav_range{
+    position: absolute;
+    top: 65%;
+    left: 16%;
+    width: 80%;
+}
+.nav-item-range{
+    display: inline-block;
+    width: 20%;
+}
+#info_range{
+    width: 10px;
+}
+.title_splash{
+    color: #ffffff;
+    font-family: 'Kelson', sans-serif;
+    text-align: center;
+    visibility: hidden;
+}
+.nav-range-img{
+    width: 30px;    
+    margin-left: auto;
+    margin-right: auto;
+    display: block;    
+}
+.logo-long{
+    position: absolute;
+    top: 12%;
+    left: 26%;
+}
+.logo-court{
+    position: absolute;
+    top: 85%;
+    left: 48%;
 }

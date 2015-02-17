@@ -24,8 +24,51 @@
   
 </head>
 <body>
+  <!-- SPLASHSCREEN -->
+  <div class="splashscreen">
+    <video autoplay loop poster="images/splashscreen.png" id="vid">
+      <source src="images/video/intro_720.webm" type="video/webm">
+    </video>
+   <div class="logo-long">
+    <img src="images/logo-long.png"/>
+   </div>
+   <ul class="nav_range">
+     <li class="nav-item-range" data-target="art">
+      <a href="#">
+       <img src="images/prog_icone.png" class="nav-range-img" alt="nav"/>
+     </a>
+     <h2 class="title_splash dot">.</h2>
+    <h2 class="title_splash">PROGRAMMATION </h2>
+   </li>
+   <li class="nav-item-range" data-target="bte">
+    <a href="#">
+     <img src="images/icone-billet.png" class="nav-range-img" alt="nav"/>
+   </a>
+    <h2 class="title_splash dot">.</h2>
+    <h2 class="title_splash">BILLETERIE </h2>
+ </li>
+ <li class="nav-item-range" data-target="inf">
+  <a href="#">
+   <img src="images/icone-info.png" id="info_range" class="nav-range-img" alt="nav"/>
+ </a>
+  <h2 class="title_splash dot">.</h2>
+  <h2 class="title_splash">INFO </h2>
+</li>
+<li class="nav-item-range" data-target="mdl">
+  <a href="#">
+   <img src="images/icone-pano.png" class="nav-range-img" alt="nav"/>
+ </a>
+  <h2 class="title_splash dot">.</h2>
+  <h2 class="title_splash">MON PANO </h2> 
+</li>
+</ul> 
+   <div class="logo-court">
+    <img src="images/logo-court.png"/>
+   </div>
+  </div>
+
   <!-- SIDE MENU -->
-  <nav class="nav">
+  <nav class="nav" style="opacity:0;">
     <a href="#" class="nav-logo"> 
      <img src="images/icon.png" alt="Panorama 18"/>
    </a>
@@ -55,8 +98,8 @@
 
 
 <!--  TICKETS -->    
-<div class="content bte opened">  
-  <div class="sub_menu billeterie opened_menu" id="menu_billetterie">
+<div class="content bte" style="display:none;">  
+  <div class="sub_menu billeterie" id="menu_billetterie" style="display:none;">
    <div class="head head_billet">
      <h2> BILLETTERIE </h2>
      <hr class="hr_billet"/>
@@ -88,7 +131,7 @@
 
 
 <!-- MAIN-->    
-<div class="tickets contains opened_content">
+<div class="tickets contains" style="display:none;">
   <!-- PASS 1 DAY NO CAMPING -->
   <div class="widget pass1 first" style="display:none; opacity:0;">
     <div class="head_wg">
@@ -410,7 +453,7 @@
       <div class="row1" data-hide-day="{{((day_art==artist.jourId)==false)&&(day_art!=0)}}" data-hide-salle="{{((sal_art==artist.salleId)==false)&&(sal_art!=0)}}" data-time="{{artist.heureId}}" data-position="{{$index}}">
         <div class="row__img__wrapper row__img__wrapper--nb">
           <div class="row__img row__img--nb" style="background-image:url({{artist.pic_link_black}});"></div>
-        </div> 
+        </div>
           <h1 class="art_name">{{artist.name}}</h1>
         <div class="row__img__wrapper row__img__wrapper--color">
           <div class="row__img row__img--color">
