@@ -27,24 +27,13 @@
   <!-- SPLASHSCREEN -->
   <div class="splashscreen" style="width:100%;">
     <div class="loader" style="display:none;">
-      <div id="circularG">
-       <div id="circularG_1" class="circularG">
-       </div>
-       <div id="circularG_2" class="circularG">
-       </div>
-       <div id="circularG_3" class="circularG">
-       </div>
-       <div id="circularG_4" class="circularG">
-       </div>
-       <div id="circularG_5" class="circularG">
-       </div>
-       <div id="circularG_6" class="circularG">
-       </div>
-       <div id="circularG_7" class="circularG">
-       </div>
-       <div id="circularG_8" class="circularG">
-       </div>
-     </div>
+    <div class="sk-spinner sk-spinner-wave">
+      <div class="sk-rect1"></div>
+      <div class="sk-rect2"></div>
+      <div class="sk-rect3"></div>
+      <div class="sk-rect4"></div>
+      <div class="sk-rect5"></div>
+    </div>
    </div>
    <video autoplay loop poster="images/splashscreen.jpg" id="vid">
     <source src="images/video/intro_720.webm" type="video/webm">
@@ -395,7 +384,7 @@ function capture() {
 
 
 <!-- MAIN ARTIST -->
-<div class="content art" id="artiste" style="display:none;" ng-init="init()">
+<div class="content art" id="artiste" style="visibility:hidden;" ng-init="init()">
   <div class="sub_menu artiste" id="menu_billetterie" style="display:none;">
    <div class="head">
      <h2> PROGRAM-</h2>

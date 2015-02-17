@@ -3,6 +3,8 @@
 $(window).load(function(){
   $('.nav_range').removeClass('hidden');
   $('.loader').addClass('hidden');
+  $('.art').css('visibility','visible');
+  $('.art').css('display','none');
 });
 
 $(document).ready(function(){
