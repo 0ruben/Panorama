@@ -23,7 +23,7 @@
   <script src="js/app.js"></script>
   
 </head>
-<body>
+<body ng-controller="PanoCtrl">
   <!-- SPLASHSCREEN -->
   <div class="splashscreen">
     <div class="loader">
@@ -291,7 +291,7 @@
 </div>
 </div>
 <!-- MAIN PANO-->
-<div class="content mdl" id="pano" style="display:none;" ng-controller="PanoCtrl">  
+<div class="content mdl" id="pano" style="display:none;">  
   <div class="sub_menu pano" id="menu_billetterie" style="display:none;">
    <div class="head">
      <h2> MON PANO </h2>
@@ -324,7 +324,7 @@
  <div class="inputs_pano_art">
   <h3 class="title_art open_sans artiste_list" style="margin-top:0px;">Artistes</h3>
   <div ng-repeat="ar in artistes | filter: dayFilter">
-    <div disabled="disabled" class="input_container input_container_art_check" style="{{stylingListe(ar.name)}} padding-right: 35px;">
+    <div disabled="disabled" class="input_container input_container_art_check" style="{{stylingListe(ar.name)}} padding-right: 45px;">
       <div class="input2 input_art" ng-click="verouillerBox(ar) || includeArtiste(ar)" ng-disabled="verouillerBox(ar)">
         <input class="day_art" type="checkbox" ng-model="ar.isChecked"/>
         <label class="label2 {{verouillerStyle(ar)}}"><span class="name">{{ar.name}}</span></label>
@@ -368,27 +368,35 @@
     <div class="explication_pano">
       Sélectionnez les artistes que vous souhaitez voir afin d’optimiser votre parcours pendant le festival, puis générez votre medley et partagez-le avec vos amis.
     </div>
+    <div class="url_pano">
+
+    </div>
   </div>
-<!--     <div class="art_pano_container even" style="margin-left:0%">
-      <img class="icon_timeline" src="images/noeud.png" alt="nav"/>
-      <div class="art_heure_pano"> -01h30- </div>
-      <div class="art_name_pano"> ARTISTE </div>
-      <div class="art_salle_pano"> SALLE </div>
-    </div> -->
-  </div>
+</div>
 </div>
 
 <script type="text/javascript">
-function capture() {
-  $('#tc').html2canvas({
-    onrendered: function (canvas) {
-                //Set hidden field's value to image data (base-64 string)
-                $('#img_val').val(canvas.toDataURL("image/png"));
-                //Submit the form manually
-                document.getElementById("myForm").submit();
-              }
-            });
-}
+
+  function capture() {
+    $('#tc').html2canvas({
+      onrendered: function (canvas) {
+        $('#img_val').val(canvas.toDataURL("image/png"));
+
+        var $this = $('#myForm'); 
+
+        $.ajax({
+                url: $this.attr('action'), // Le nom du fichier indiqué dans le formulaire
+                type: $this.attr('method'), // La méthode indiquée dans le formulaire (get ou post)
+                data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
+                success: function(html) { // Je récupère la réponse du fichier PHP
+                 
+                 $('.url_pano').html(html);
+               }
+             });
+
+      }
+    });
+  }
 </script>
 
 
@@ -466,7 +474,7 @@ function capture() {
   </div>
 </div>
 </div>
-<div class="art_content contains" ng-controller="artistCtrl" style="display:none; height:{{artistes.length*200}}+px" >
+<div class="art_content contains" style="display:none; height:{{artistes.length*200}}+px" >
   <div class="list" data-size="{{$artistes.length}}">
     <div class="toHide"></div>
     <div class="repeat" ng-repeat="artist in artistes">
@@ -483,7 +491,7 @@ function capture() {
       </div>  
       <div class="row_art" style="display:none;">
         <div class="art_vid dropdown">
-          <div class="player player{{$index}}" style="display:block; margin: auto; background: rgba(0,0,0,0.5)" data-property="{videoURL:'{{artist.youtube}}',containment:'self',startAt:0,mute:false,autoPlay:false,loop:false,opacity:1,showYTLogo:false,realfullscreen:true}"></div>
+          <div class="player player{{$index}}" style="display:block; margin: auto; background: rgba(0,0,0,0)" data-property="{videoURL:'{{artist.youtube}}',containment:'self',startAt:0,mute:false,autoPlay:false,loop:false,opacity:1,showYTLogo:false,realfullscreen:true}"></div>
         </div>
         <img isClicked="false" class="play_button" src="images/play_button.png"/>
         <div class="art_main dropdown">
@@ -493,19 +501,24 @@ function capture() {
           <div class="description">
             <p>{{artist.description}}</p>
           </div>
-          <div class="add_pano">
-            <a class="add"><img class="add_img" src="images/add.png"/>                        Ajouter a MON PANO </a>
-          </div>
-        </div>
-        <div class="art_social">
-          <a href="#" class="socicon social">a</a>
-          <a href="{{artist.facebook}}" class="socicon social">b</a>  
-          <a href="#" class="socicon social">n</a> 
-          <img class="leave" src="images/leave.png"/>         
-        </div>
+<!--           <div class="add_pano" ng-click="includeArtiste(artist)">
+    <div disabled="disabled" class="input_container input_container_art_check">
+      <div class="input2 input_art" ng-click="verouillerBox(ar) || includeArtiste(ar)" ng-disabled="verouillerBox(ar)">
+        <input class="day_art" type="checkbox" ng-model="ar.isChecked"/>
+        <label class="label2 {{verouillerStyle(ar)}}"><span class="name">Ajouter à mon Pano</span></label>
       </div>
-    </div> 
-  </div>
+    </div>
+  </div> -->
+</div>
+<div class="art_social">
+  <a href="#" class="socicon social">a</a>
+  <a href="{{artist.facebook}}" class="socicon social">b</a>  
+  <a href="#" class="socicon social">n</a> 
+  <img class="leave" src="images/leave.png"/>         
+</div>
+</div>
+</div> 
+</div>
 </div>
 </div>
 
@@ -530,35 +543,35 @@ function capture() {
         <div class="input_container inf_1 imput_container_art">
           <div class="input input_info input_acces">
             <input id="acces" class="day_art"  type="radio" name="info" checked>
-            <label for="acces" class="label2 radio">Accès / Contact
+            <label id="info1" for="acces" class="label2 radio">Accès / Contact
             </label> 
           </div>
         </div>
         <div class="input_container inf_2 imput_container_art">
           <div class="input input_info input_entree">
             <input  id="entree" class="day_art" type="radio" name="info">
-            <label for="entree" class="label2 radio">Entrée
+            <label id="info2" for="entree" class="label2 radio">Entrée
             </label> 
           </div>
         </div>
         <div class="input_container inf_3 imput_container_art">
           <div class="input input_info input_transport">
             <input  id="transport"class="day_art" type="radio" name="info"> 
-            <label for="transport" class="label2 radio">Transport
+            <label id="info3" for="transport" class="label2 radio">Transport
             </label> 
           </div>
         </div>
         <div class="input_container inf_4 imput_container_art">
           <div class="input input_info input_camping">
             <input  id="camping" class="day_art" type="radio" name="info"> 
-            <label for="camping" class="label2 radio">Camping
+            <label id="info4" for="camping" class="label2 radio">Camping
             </label> 
           </div>
         </div>
         <div class="input_container inf_5 imput_container_art">
           <div class="input input_info input_savoir">
             <input id="savoir" class="day_art" type="radio" name="info"> 
-            <label for="savoir" class="label2 radio">A savoir
+            <label id="info5" for="savoir" class="label2 radio">A savoir
             </label> 
           </div>
         </div>
@@ -821,12 +834,11 @@ function capture() {
                   </div>
                 </div>
 
-                <form ng-controller="RandomCtrl" method="POST" enctype="multipart/form-data" action="mon_pano.php?" id="myForm" target="_blank">
-                  <input type="hidden" name="img_val" id="img_val" value="" />
+                <form method="POST" enctype="multipart/form-data" action="generate.php" id="myForm">
+                  <input type="submit" name="img_val" id="img_val" value="" />
                 </form>
 
               </body>
-              <script type="text/javascript" src="js/script.js">
-              </script>
+              <script type="text/javascript" src="js/script.js"></script>
               </html>  	
 

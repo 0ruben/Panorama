@@ -320,7 +320,7 @@ hr{
 .timeline_container .logo_timeline{
     position: absolute;
     left:95%;
-    top:82%;
+    top:80%;
 }
 .blue_line{
     position: absolute;
@@ -488,7 +488,7 @@ hr{
 }
 
 .generer{
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 35%;
     position: relative;
     font-family: 'Open Sans', sans-serif;
@@ -496,11 +496,6 @@ hr{
     text-transform: uppercase;
     color: #35bfbf; 
 }
-
-.button{
-
-}
-
 /* 1er effet */
 .hvr-float {
     display: inline-block;
@@ -560,10 +555,14 @@ hr{
 .explication_pano{
     width:300px;
     margin-left:30%;
+    margin-top:-15px;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     color:#000000;
     font-size: 11px;
+}
+.link-pano{
+    margin-top:10px;
 }
 #disabled{
     color:#a8a8a8;
@@ -636,17 +635,22 @@ hr{
 .input_container_art_check label:before {
     border-radius: 2px;
 }
-.label2{
+.label2 , .label3{
     font-weight: thin;
     width:100px;
 }
+
 
 .label_verouille{
     font-weight: thin;
     width:100px;
 }
 
-.label2:before {
+.strong-label3{
+    font-weight:700;
+}
+
+.label2:before, .label3:before {
     content: "";
     margin-top: 4px;
     width: 10px;
@@ -979,6 +983,12 @@ hr{
     font-family:'Kelson';
     font-weight:500;
 
+}
+.url_pano{
+    margin-top:5px;
+    margin-left:21%;
+    font-family:'Kelson';
+    font-weight:500;
 }
 
 .entree{

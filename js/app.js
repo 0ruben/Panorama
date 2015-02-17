@@ -803,10 +803,6 @@ var artistes = [
   }
 ]
 
-app.controller("artistCtrl",function($scope){
-$scope.artistes = artistes;
-});
-
 
 app.controller("PanoCtrl",function($scope) {
 
@@ -943,11 +939,11 @@ app.controller("PanoCtrl",function($scope) {
 
 	});
 
-app.controller("RandomCtrl",function($scope) {
+// app.controller("RandomCtrl",function($scope) {
 
-	$scope.randomNumber = Math.floor(Math.random()*10001);
-
-
+// 	$scope.randomNumber = Math.floor(Math.random()*10001);
 
 
-});
+
+
+// });
