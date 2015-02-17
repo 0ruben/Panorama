@@ -261,7 +261,6 @@ for (var k=0;k<41;k++){opened_art.push(k+'')};
 var sizeList = $('.list').attr('data-size');
 var rowOpen = false;
 $('.row1').click(function(e){  
-  TweenLite.killTweensOf('.art_content');  
   var bottom = [-15,25];
   if($(window).width()<1280) bottom = [0,45];
   $('.buttonBar').addClass('hidden');  
