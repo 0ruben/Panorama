@@ -821,7 +821,6 @@ hr{
     bottom: 10px;
   }
   .add_pano{
-    padding-top: 20px;
     font-family: 'Open Sans',sans-serif;
   }
   .add_img{
@@ -865,7 +864,7 @@ hr{
 .info_content{
     top: 0;
     margin-left:200px;
-    width: 1300px;
+    width: 100%;
     height: 100%;
     position: absolute;
     overflow: scroll;
@@ -899,32 +898,42 @@ hr{
 .img-acces{
     background-attachment: inherit;
     background-image: url(images/acce.png);
-    background-repeat: no-repeat;
+       background-size:100%;
+    width: 100%;
+background-repeat:round;
     height: 1090px;
     margin-top: 74px;
 }
 .img-entree{
     background-attachment: inherit;
     background-image: url(images/entree.png);
-    background-repeat: no-repeat;
+       background-size:100%;
+    width: 100%;
+ background-repeat:round;
     height: 980px;
 }
 .img-trsp{
     background-attachment: inherit;
     background-image: url(images/trsp.png);
-    background-repeat: no-repeat;
+       background-size:100%;
+    width: 100%;
+background-repeat:round;
     height: 856px;
 }
 .img-camping{
     background-attachment: inherit;
     background-image: url(images/camping.png);
-    background-repeat: no-repeat;
+       background-size:100%;
+    width: 100%;
+    background-repeat:round;
     height: 1084px;
 }
 .img-savoir{
-    background-attachment: inherit;
+    background-attachment:inherit;
     background-image: url(images/savoir.png);
-    background-repeat: no-repeat;
+    background-size:100%;
+    width: 100%;
+   background-repeat:round;
     height: 735px;
 }
 .map-acces{
@@ -1061,73 +1070,70 @@ h5{
 }
 .club-info{
   position: absolute;
-  left: 80px;
+    margin-left: 70px;
   top: 420px;
   width: 490px;
   height: 124px;
 }
 .coatelan-info{
 position: absolute;
-  left: 80px;
   top: 620px;
+    margin-left: 70px;
   width: 490px;
   height: 124px;
 }
 .cine-info{
   position: absolute;
-  left: 580px;
   top: 620px;
   width: 490px;
   height: 124px;
 }
 .cafe-info{
   position: absolute;
-  left: 840px;
+  margin-left: 280px;
   top: 620px;
   width: 250px;
   height: 124px;
 }
 .mjc-info{
   position: absolute;
-  left: 580px;
   top: 760px;
   width: 490px;
   height: 124px;
 }
 .espace-info{
   position: absolute;
-  left: 840px;
+  margin-left: 280px;
   top: 760px;
   width: 250px;
   height: 124px;
 }
 .tempo-info{
   position: absolute;
-  left: 580px;
   top: 900px;
   width: 490px;
   height: 124px;
 }
 .manu-info{
   position: absolute;
-  left: 840px;
+ margin-left: 280px;
   top: 900px;
   width: 250px;
   height: 124px;
 }
 .theatre-info{
   position: absolute;
-  left: 580px;
   top: 1030px;
   width: 490px;
   height: 124px;
 }
 .bracelet-info{
 position: absolute;
-  left: 620px;
   top: 1540px;
   width: 490px;
   height: 124px;
+    margin-left: 140px;
+    
 }
 .bracelet1{
   top:190px;
@@ -1143,45 +1149,45 @@ position: absolute;
 }
 .train-info{
   position: absolute;
-  left: 80px;
   top: 2540px;
   width: 490px;
   height: 124px;
+    margin-left: 70px;
 }
 .covoi-info{
   position: absolute;
-  left: 80px;
   top: 2740px;
   width: 490px;
   height: 124px;
+    margin-left: 70px;
 }
 .nav1-info{
   position: absolute;
-  left: 610px;
   top: 2540px;
   width: 490px;
   height: 124px;
+    margin-left: 70px;
 }
 .nav2-info{
   position: absolute;
-  left: 610px;
   top: 2780px;
   width: 490px;
   height: 124px;
+    margin-left: 70px;
 }
 .camp-info{
   position: absolute;
-  left: 80px;
   top: 3370px;
   width: 490px;
   height: 124px;
+    margin-left: 70px;
 }
 .camp-red-info{
   position: absolute;
-  left: 80px;
   top: 3650px;
   width: 490px;
   height: 124px;
+    margin-left: 70px;
 }
 .text-red-info{
   font-size: 20.627px;
@@ -1200,10 +1206,10 @@ position: absolute;
 }
 .autre-camp-info{
  position: absolute;
-  left: 610px;
   top: 3370px;
   width: 490px;
   height: 124px;
+    margin-left: 70px;
 }
 .autre-camp1-info{
 top:180px;
@@ -1213,10 +1219,10 @@ top:180px;
 }
 .heberg-info{
  position: absolute;
-  left: 610px;
   top: 3660px;
   width: 490px;
   height: 124px;
+    margin-left: 70px;
 }
 .heberg1-info{
 top:150px;
@@ -1226,21 +1232,19 @@ top:140px;
 }
 .psh-info{
   position: absolute;
-  left: 80px;
   top: 4460px;
   width: 490px;
   height: 124px;
+    margin-left: 70px;
 }
 .distri-info{
  position: absolute;
-  left: 600px;
   top: 4460px;
   width: 490px;
   height: 124px;
 }
 .obj-info{
  position: absolute;
-  left: 600px;
   top: 4610px;
   width: 490px;
   height: 124px;
@@ -1287,12 +1291,24 @@ top:140px;
 .logo-long{
     position: absolute;
     top: 12%;
-    left: 26%;
+    left: 28%;
+    width: 47%;
+}
+.logo-long img{
+    width: 100%;
 }
 .logo-court{
     position: absolute;
-    top: 85%;
+    top: 80%;
     left: 48%;
+    width: 4%;
+}
+.logo-court img{
+    width: 100%;
+}
+.container_splash{
+    width:100%;
+    height: 100%;
 }
 .loader{
     position: absolute;
@@ -1460,4 +1476,78 @@ transform:scale(1)}
 100%{
 transform:scale(.3)}
 
+}
+
+/*Reponsive*/
+@media screen and (max-width: 1280px) {
+  .art_name{
+    font-size: 40px;
+    bottom: 45px
+  }
+  .description{
+    font-size: 10px;
+  }
+  .art_main{
+    right: 45px;
+    width: 30%;
+  }
+  .social{
+    font-size: 20px;
+  }
+  .art_day{
+    font-size: 15px;
+  }
+  .art_style{
+    font-size: 12px
+  }
+  .art_social{
+    position: relative;
+    right:36px;
+    margin-top:90px; 
+  }
+
+.pass1, .pass1c{
+        width: 35%;
+        display: block;
+        margin-left: 20%;
+}
+.tickets{
+    overflow: scroll;
+}
+}
+@media screen and (max-width: 1024px){
+    .pass1{
+        width: 50%;
+        margin-left: 15%;
+    }
+
+}
+* {
+   padding: 0;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.inside-info:after {
+    clear: both;
+}
+
+.inside-info > div {
+    min-height: 200px;
+    float: left;
+    width: 40%;
+}
+@media all and (max-width: 500px) {
+    .container > div {
+        float: none;
+        width: 100%;
+    }
+}
+.tab{
+ position: absolute;
+  top: 2740px;
+  width: 420px;
+  height: 124px;
+    margin-left: 70px;
 }

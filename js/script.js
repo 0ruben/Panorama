@@ -1,4 +1,4 @@
-// TODO Disable hand click on radio and checkbox
+//TODO Disable hand click on radio and checkbox
 //Billeterie 1 correspond jour 1 sans camping 2 jour 1 avec camping
 $(window).load(function(){
   $('.nav_range').removeClass('hidden');
@@ -257,10 +257,12 @@ $('.list').on('mouseleave', '.row1', function(e) {
 
 //Dropdown artist
 var opened_art = []; //index of open artists.
-for (var k=0;k<37;k++){opened_art.push(k+'')};
+for (var k=0;k<41;k++){opened_art.push(k+'')};
 var sizeList = $('.list').attr('data-size');
 var rowOpen = false;
 $('.row1').click(function(e){  
+  var bottom = [-15,25];
+  if($(window).width()<1280) bottom = [0,45];
   $('.buttonBar').addClass('hidden');  
   var index = $(this).attr('data-position');
   var position = opened_art.indexOf(index);
@@ -277,13 +279,14 @@ $('.row1').click(function(e){
     else if(z>200) z=100;
     else z=0;
     if(!rowOpen){
+     rowOpen=this;
      $('.player'+$(this).attr('data-position')).YTPlayer();
      TweenLite.to(parent.children('.row_art'),0.5,{opacity:1});
-     TweenLite.to($target, 1, {scale:0.5,ease:Quint.easeOut,bottom:"-15px"});
      TweenLite.to(this,1,{height:"100px",ease:Quint.easeOut});
-     TweenLite.to('.toHide',1,{opacity:0.5,position:"absolute"});
-     rowOpen=this;
-     TweenLite.to('.art_content',1,{y:-200*position+'px',ease:Power1.easeIn}); 
+     TweenLite.to($target, 1, {scale:0.5,ease:Quint.easeOut,bottom:bottom[0]+"px",onComplete: function(){
+     TweenLite.to('.toHide',0.5,{opacity:0.5,position:"absolute"});
+     TweenLite.to('.art_content',0.5,{y:-200*position+'px',ease:Power1.easeIn}); 
+   }});
    }
    else if(rowOpen==this){
     if(parent.find('.play_button').attr('isClicked')=='true'){
@@ -292,7 +295,7 @@ $('.row1').click(function(e){
     TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
     TweenLite.to(this,1,{height:"200px",ease:Quint.easeOut});
     TweenLite.to('.toHide',1,{opacity:0,position:"relative"});
-    TweenLite.to($target, 1, {scale : 1,bottom:"25px",ease:Quint.easeOut,onCompleteParams: function(){
+    TweenLite.to($target, 1, {scale : 1,bottom:bottom[1]+"px",ease:Quint.easeOut,onCompleteParams: function(){
       if(index>sizeList-3)
         $('.art_content').height(sizeList*200);
   }});  // Fix height of the div
@@ -302,6 +305,8 @@ $('.row1').click(function(e){
 });
 
 $('.leave').click(function(){
+  var bottom = [-15,25];
+  if($(window).width()<1280) bottom = [0,45];
   var parent = $(this).parents('.repeat');
   var $target = parent.find('.art_name'); 
   var self = parent.find('.row1');
@@ -312,7 +317,7 @@ $('.leave').click(function(){
   TweenLite.to(self,1,{height:"200px",ease:Quint.easeOut});  
   parent.children('.row_art').slideToggle(500); 
   TweenLite.to('.toHide',1,{opacity:0,position:"relative"});  
-  TweenLite.to($target, 1, {scale : 1,bottom:"25px",ease:Quint.easeOut,onCompleteParams: function(){
+  TweenLite.to($target, 1, {scale : 1,bottom:bottom[1]+"px",ease:Quint.easeOut,onCompleteParams: function(){
     if(index>sizeList-3)
       $('.art_content').height(sizeList*200);
   }
@@ -335,7 +340,7 @@ $('.art_content').mousemove(function(e) {
         if(vit>50)
         TweenLite.to('.art_content',800/(vit-50),{y:ind+'px',ease:Power1.easeInOut});
         if(vit<50)
-        TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeInOut}); 
+        TweenLite.killTweensOf('.art_content');
   }
 });
 $('.art_content').mouseout(function(e) {
@@ -344,7 +349,7 @@ $('.art_content').mouseout(function(e) {
   var v = e.clientY - $(window).height()/2;
   var vit = Math.abs(v);
   var ind=0;
-  TweenLite.to('.art_content',100000,{y:ind+'px',ease:Power1.easeIn});  
+  TweenLite.killTweensOf('.art_content');
 });
 $('.artiste').mousemove(function(e) {
   var ind = $('.artiste').height()-$(window).height();
@@ -355,7 +360,7 @@ $('.artiste').mousemove(function(e) {
   if(vit>150)
     TweenLite.to('.artiste',300/vit,{y:-ind+'px',ease:Power1.easeIn});
   if(vit<150)
-    TweenLite.to('.artiste',100000,{y:-ind+'px',ease:Power1.easeIn});  
+  TweenLite.killTweensOf('.art_content'); 
 });
 //Effet pour clicker sur les radios a partir de la div + selection.  TODO Fusionner les deux dernières fonctions
 $('.radi_container').click(function(){
@@ -391,7 +396,6 @@ $('.radi_container').click(function(){
       }
     });
   opened_art.sort(function(a,b){return a-b});
-  console.log(opened_art);
   },50);
   setDefault();
   TweenLite.to('.art_content',0.5,{y:0+'px',ease:Power1.easeIn});  
@@ -402,9 +406,9 @@ $('.slider').click(function(){
     var value= $('.input_h').attr('data-range');
     var val = value.split(';');
     val = [parseInt(val[0]),parseInt(val[1])];
-    console.log(val);
     var elems = $('.row1');
     _.each(elems,function(elem){
+      var index = $(elem).attr('data-position');      
       var test_day = $(elem).attr('data-hide-day');
       var test_salle = $(elem).attr('data-hide-salle');      
       var heureId = $(elem).attr('data-time');   
@@ -413,14 +417,21 @@ $('.slider').click(function(){
       if(val[1]>18) val[1]-=24;
       var test_heure= val[0]<=heureId && val[1]>heureId;   
       if(!test_heure){
-        if(!($(elem).hasClass('hidden')))
+        if(!($(elem).hasClass('hidden'))){
           $(elem).addClass('hidden');
+          console.log(index);
+          opened_art.splice(opened_art.indexOf(index),1);
+        }  
       }
       if(test_heure && (test_day=='false') && (test_salle=='false')){
-        if(($(elem).hasClass('hidden')))
+        if(($(elem).hasClass('hidden'))){
           $(elem).removeClass('hidden');
+           opened_art.push(index); 
+        }
       }      
     });
+    opened_art.sort(function(a,b){return a-b});
+              console.log(opened_art);
   },50);
   setDefault();
   TweenLite.to('.art_content',0.5,{y:0+'px',ease:Power1.easeIn}); 
