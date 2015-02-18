@@ -1128,73 +1128,6 @@ h5{
   left: -200px;
   top:45px;
 }
-.club-info{
-  position: absolute;
-    margin-left: 70px;
-  top: 420px;
-  width: 490px;
-  height: 124px;
-}
-.coatelan-info{
-position: absolute;
-  top: 620px;
-    margin-left: 70px;
-  width: 490px;
-  height: 124px;
-}
-.cine-info{
-  position: absolute;
-  top: 620px;
-  width: 490px;
-  height: 124px;
-}
-.cafe-info{
-  position: absolute;
-  margin-left: 280px;
-  top: 620px;
-  width: 250px;
-  height: 124px;
-}
-.mjc-info{
-  position: absolute;
-  top: 760px;
-  width: 490px;
-  height: 124px;
-}
-.espace-info{
-  position: absolute;
-  margin-left: 280px;
-  top: 760px;
-  width: 250px;
-  height: 124px;
-}
-.tempo-info{
-  position: absolute;
-  top: 900px;
-  width: 490px;
-  height: 124px;
-}
-.manu-info{
-  position: absolute;
- margin-left: 280px;
-  top: 900px;
-  width: 250px;
-  height: 124px;
-}
-.theatre-info{
-  position: absolute;
-  top: 1030px;
-  width: 490px;
-  height: 124px;
-}
-.bracelet-info{
-position: absolute;
-  top: 1540px;
-  width: 490px;
-  height: 124px;
-    margin-left: 140px;
-    
-}
 .bracelet1{
   top:190px;
 }
@@ -1206,48 +1139,6 @@ position: absolute;
 }
 .bracelet4{
   top:310px;
-}
-.train-info{
-  position: absolute;
-  top: 2540px;
-  width: 490px;
-  height: 124px;
-    margin-left: 70px;
-}
-.covoi-info{
-  position: absolute;
-  top: 2740px;
-  width: 490px;
-  height: 124px;
-    margin-left: 70px;
-}
-.nav1-info{
-  position: absolute;
-  top: 2540px;
-  width: 490px;
-  height: 124px;
-    margin-left: 70px;
-}
-.nav2-info{
-  position: absolute;
-  top: 2780px;
-  width: 490px;
-  height: 124px;
-    margin-left: 70px;
-}
-.camp-info{
-  position: absolute;
-  top: 3370px;
-  width: 490px;
-  height: 124px;
-    margin-left: 70px;
-}
-.camp-red-info{
-  position: absolute;
-  top: 3650px;
-  width: 490px;
-  height: 124px;
-    margin-left: 70px;
 }
 .text-red-info{
   font-size: 20.627px;
@@ -1264,50 +1155,17 @@ position: absolute;
   left: -200px;
   top:45px;
 }
-.autre-camp-info{
- position: absolute;
-  top: 3370px;
-  width: 490px;
-  height: 124px;
-    margin-left: 70px;
-}
 .autre-camp1-info{
 top:180px;
 }
 .autre-camp2-info{
     top:170px;
 }
-.heberg-info{
- position: absolute;
-  top: 3660px;
-  width: 490px;
-  height: 124px;
-    margin-left: 70px;
-}
 .heberg1-info{
 top:150px;
 }
 .heberg2-info{
 top:140px;
-}
-.psh-info{
-  position: absolute;
-  top: 4460px;
-  width: 490px;
-  height: 124px;
-    margin-left: 70px;
-}
-.distri-info{
- position: absolute;
-  top: 4460px;
-  width: 490px;
-  height: 124px;
-}
-.obj-info{
- position: absolute;
-  top: 4610px;
-  width: 490px;
-  height: 124px;
 }
 .savoir1{
   top:20px;
@@ -1501,3 +1359,308 @@ top:140px;
   height: 124px;
     margin-left: 70px;
 }
+
+.img-acces-bis{
+background-color: rgb(255,255,255);
+}
+.club-info-bis{
+  position: relative;
+    margin-left: 70px;
+  width: 80%;
+  height: 160px;
+}
+.coatelan-info-bis{
+  position: relative;
+    margin-left: 70px;
+  width: 80%;
+  height: 195px;
+}
+.cine-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+margin-left: 70px;
+        display: inline-block;
+}
+.cafe-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+        display: inline-block;
+}
+.mjc-info-bis{
+  position: relative;
+  width: 40%;
+  height: 140px;
+    margin-left: 70px;
+        display: inline-block;
+}
+.espace-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+        display: inline-block;
+}
+.tempo-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+    margin-left: 70px;
+        display: inline-block;
+}
+.manu-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+    display: inline-block;
+}
+.theatre-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+    margin-left: 70px;
+        display: inline-block;
+}
+.ban-acces{
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+}
+.img-entree-bis{
+background-color: rgb(255,255,255);
+}
+.ban-entree{
+position: relative;
+overflow: hidden;
+    height: 325px;
+}
+.graph-entree{
+position: relative;
+        width: 40%;
+    display: inline-block;
+    margin-left: 70px;
+}
+.bracelet-info-bis{
+position: relative;
+    width: 40%;
+    display: inline-block;
+	bottom: 480px;
+}
+.img-trsp-bis{
+background-color: rgb(243,243,243);
+}
+.ban-trsp{
+position: relative;
+overflow: hidden;
+    height: 355px;
+}
+.trsp1{
+    position: relative;
+        width: 40%;
+    display: inline-block;
+    margin-left: 70px;
+    bottom:95px;
+}
+.trsp2{
+    position: relative;
+        width: 40%;
+    display: inline-block;
+}
+.train-info-bis{
+position: relative;
+      height: 184px;
+}
+.covoi-info-bis{
+position: relative;
+      height: 164px;
+}
+.nav1-info-bis{
+    position: relative;
+      height: 204px;
+}
+.tab-bis{
+    position: relative;
+      height: 94px;
+}
+.nav2-info-bis{
+    position: relative;
+      height: 124px;
+bottom: 80px;
+}
+.img-camping-bis{
+background-color: rgb(255,255,255);
+}
+.ban-camping{
+position: relative;
+overflow: hidden;
+    height: 355px;
+}
+.camping1{
+    position: relative;
+        width: 40%;
+    display: inline-block;
+    margin-left: 70px;
+    bottom:275px;
+}
+.camping2{
+    position: relative;
+        width: 40%;
+    display: inline-block;
+}
+.camp-info-bis{
+position: relative;
+      height: 340px;
+}
+.camp-red-info-bis{
+position: relative;
+      height: 98px;
+}
+.autre-camp-info-bis{
+  position: relative;
+      height: 274px;
+}
+.heberg-info-bis{
+position: relative;
+      height: 254px;
+}
+.img-savoir-bis{
+background-color: rgb(243,243,243);
+}
+.ban-savoir{
+position: relative;
+overflow: hidden;
+    height: 355px;
+}
+.savoir3{
+    position: relative;
+        width: 40%;
+    display: inline-block;
+    margin-left: 70px;
+    bottom:155px;
+}
+.savoir2{
+    position: relative;
+        width: 40%;
+    display: inline-block;
+}
+.psh-info-bis{
+    position: relative;
+      height: 254px;
+}
+.distri-info-bis{
+    position: relative;
+      height: 154px;
+}
+.obj-info-bis{
+    position: relative;
+      height: 254px;
+}
+@media screen and (max-width: 1130px) {
+.cine-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+margin-left: 70px;
+        display: block;
+}
+.cafe-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+        display: block;
+        margin-left: 70px;
+}
+.mjc-info-bis{
+  position: relative;
+  width: 40%;
+  height: 140px;
+    margin-left: 70px;
+        display: block;
+}
+.espace-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+        display: block;
+        margin-left: 70px;
+}
+.tempo-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+    margin-left: 70px;
+        display: block;
+}
+.manu-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+    display: block;
+        margin-left: 70px;
+}
+.theatre-info-bis{
+  position: relative;
+  width: 40%;
+  height: 124px;
+    margin-left: 70px;
+        display: block;
+}
+    .graph-entree{
+position: relative;
+        width: 40%;
+    display: block;
+        margin-left: 70px;
+        height: 550px;
+}
+.bracelet-info-bis{
+position: relative;
+    width: 40%;
+    display: block;
+    margin-left: 70px;
+    height: 470px;
+    top:1px;
+}
+    .trsp1{
+    position: relative;
+        width: 40%;
+    display: block;
+    margin-left: 70px;
+    bottom:1px;
+}
+    .trsp2{
+    position: relative;
+        width: 40%;
+    display: block;
+            margin-left: 70px;
+}
+        .camping1{
+    position: relative;
+        width: 40%;
+    display: block;
+    margin-left: 70px;
+    bottom:1px;
+}
+    .camping2{
+    position: relative;
+        width: 40%;
+    display: block;
+            margin-left: 70px;
+        margin-top:270px;
+        height: 580px;
+}
+    .savoir3{
+    position: relative;
+        width: 40%;
+    display: block;
+    margin-left: 70px;
+    bottom:1px;
+}
+    .savoir2{
+    position: relative;
+        width: 40%;
+    display: block;
+            margin-left: 70px;
+        margin-top:30px;
+        height: 410px;
+}
+    }
