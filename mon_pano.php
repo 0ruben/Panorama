@@ -72,7 +72,7 @@
         </div>
     </div>
     <div class="share">
-        <?php echo '<a data-text="Partagez sur Facebook" class="button-hover hvr-float" href="https://www.facebook.com/sharer/sharer.php?u=http://'.$_SERVER['HTTP_HOST'].getcwd().'/mon_pano.php?image='.$imageID.'" target="_blank">Partagez sur Facebook</a>'
+        <?php echo '<a data-text="Partagez sur Facebook" class="button-hover hvr-sweep-to-right" href="https://www.facebook.com/sharer/sharer.php?u=http://'.$_SERVER['HTTP_HOST'].getcwd().'/mon_pano.php?image='.$imageID.'" target="_blank">Partagez sur Facebook</a>'
         ?>
     </div>
 </div>
@@ -99,6 +99,7 @@
 }
 .share{
     margin-top:5%;
+    color: #35BFBF;
 }
 .logo_pano{
     margin-top:5%;

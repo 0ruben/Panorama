@@ -1,8 +1,10 @@
-//TODO Disable hand click on radio and checkbox
+// TODO Disable hand click on radio and checkbox
 //Billeterie 1 correspond jour 1 sans camping 2 jour 1 avec camping
 $(window).load(function(){
   $('.nav_range').removeClass('hidden');
   $('.loader').addClass('hidden');
+  $('.art').css('visibility','visible');
+  $('.art').css('display','none');
 });
 
 $(document).ready(function(){

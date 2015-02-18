@@ -237,7 +237,7 @@ h2, h3{
     padding: 10px;
     background-color: #ffffff;
     width:850px;
-    height:150px;
+    height:170px;
 }
 
 .timeline_artists_container{
@@ -488,7 +488,6 @@ hr{
 }
 
 .generer{
-    margin-top: 10px;
     margin-left: 35%;
     position: relative;
     font-family: 'Open Sans', sans-serif;
@@ -496,6 +495,7 @@ hr{
     text-transform: uppercase;
     color: #35bfbf; 
 }
+
 /* 1er effet */
 .hvr-float {
     display: inline-block;
@@ -531,16 +531,50 @@ hr{
     -webkit-transition: 0.35s ease all;
     transition: 0.35s ease all;
 }
-
-.button-hover:hover {
-    line-height: 7.4em;
-    background-color: #35bfbf;
-    color:#ffffff;
+.hvr-sweep-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
-.button-hover:before {
-  content: attr(data-text);
+
+.hvr-sweep-to-right:before {
+  content: "";
   position: absolute;
-  top: -2.75em;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #35bfbf;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+  color: white;
+}
+
+.hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1.01);
+  transform: scaleX(1.01);
 }
 
 .bottom_btn{
@@ -692,7 +726,6 @@ hr{
     position: absolute;
     left: 200px;
     width: 100%;
-    background-color: #ffffff;
 }
 .inputs_art2{
     position: absolute;
@@ -864,7 +897,7 @@ hr{
 .info_content{
     top: 0;
     margin-left:200px;
-    width: 100%;
+    width: 1300px;
     height: 100%;
     position: absolute;
     overflow: scroll;
@@ -895,45 +928,40 @@ hr{
     top:225px;
     margin-left: 10px;
 }
+.art{
+    background-image: url("images/splashscreen.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+}    
 .img-acces{
     background-attachment: inherit;
     background-image: url(images/acce.png);
-       background-size:100%;
-    width: 100%;
-background-repeat:round;
+    background-repeat: no-repeat;
     height: 1090px;
     margin-top: 74px;
 }
 .img-entree{
     background-attachment: inherit;
     background-image: url(images/entree.png);
-       background-size:100%;
-    width: 100%;
- background-repeat:round;
+    background-repeat: no-repeat;
     height: 980px;
 }
 .img-trsp{
     background-attachment: inherit;
     background-image: url(images/trsp.png);
-       background-size:100%;
-    width: 100%;
-background-repeat:round;
+    background-repeat: no-repeat;
     height: 856px;
 }
 .img-camping{
     background-attachment: inherit;
     background-image: url(images/camping.png);
-       background-size:100%;
-    width: 100%;
-    background-repeat:round;
+    background-repeat: no-repeat;
     height: 1084px;
 }
 .img-savoir{
-    background-attachment:inherit;
+    background-attachment: inherit;
     background-image: url(images/savoir.png);
-    background-size:100%;
-    width: 100%;
-   background-repeat:round;
+    background-repeat: no-repeat;
     height: 735px;
 }
 .map-acces{
@@ -994,10 +1022,11 @@ background-repeat:round;
 
 }
 .url_pano{
-    margin-top:5px;
-    margin-left:21%;
+    margin-top:20px;
+    color:#35BFBF;
+    margin-left:18%;
     font-family:'Kelson';
-    font-weight:500;
+    font-weight:300;
 }
 
 .entree{
@@ -1070,70 +1099,73 @@ h5{
 }
 .club-info{
   position: absolute;
-    margin-left: 70px;
+  left: 80px;
   top: 420px;
   width: 490px;
   height: 124px;
 }
 .coatelan-info{
 position: absolute;
+  left: 80px;
   top: 620px;
-    margin-left: 70px;
   width: 490px;
   height: 124px;
 }
 .cine-info{
   position: absolute;
+  left: 580px;
   top: 620px;
   width: 490px;
   height: 124px;
 }
 .cafe-info{
   position: absolute;
-  margin-left: 280px;
+  left: 840px;
   top: 620px;
   width: 250px;
   height: 124px;
 }
 .mjc-info{
   position: absolute;
+  left: 580px;
   top: 760px;
   width: 490px;
   height: 124px;
 }
 .espace-info{
   position: absolute;
-  margin-left: 280px;
+  left: 840px;
   top: 760px;
   width: 250px;
   height: 124px;
 }
 .tempo-info{
   position: absolute;
+  left: 580px;
   top: 900px;
   width: 490px;
   height: 124px;
 }
 .manu-info{
   position: absolute;
- margin-left: 280px;
+  left: 840px;
   top: 900px;
   width: 250px;
   height: 124px;
 }
 .theatre-info{
   position: absolute;
+  left: 580px;
   top: 1030px;
   width: 490px;
   height: 124px;
 }
 .bracelet-info{
 position: absolute;
+  left: 620px;
   top: 1540px;
   width: 490px;
   height: 124px;
-    margin-left: 140px;
-    
 }
 .bracelet1{
   top:190px;
@@ -1149,45 +1181,45 @@ position: absolute;
 }
 .train-info{
   position: absolute;
+  left: 80px;
   top: 2540px;
   width: 490px;
   height: 124px;
-    margin-left: 70px;
 }
 .covoi-info{
   position: absolute;
+  left: 80px;
   top: 2740px;
   width: 490px;
   height: 124px;
-    margin-left: 70px;
 }
 .nav1-info{
   position: absolute;
+  left: 610px;
   top: 2540px;
   width: 490px;
   height: 124px;
-    margin-left: 70px;
 }
 .nav2-info{
   position: absolute;
+  left: 610px;
   top: 2780px;
   width: 490px;
   height: 124px;
-    margin-left: 70px;
 }
 .camp-info{
   position: absolute;
+  left: 80px;
   top: 3370px;
   width: 490px;
   height: 124px;
-    margin-left: 70px;
 }
 .camp-red-info{
   position: absolute;
+  left: 80px;
   top: 3650px;
   width: 490px;
   height: 124px;
-    margin-left: 70px;
 }
 .text-red-info{
   font-size: 20.627px;
@@ -1206,10 +1238,10 @@ position: absolute;
 }
 .autre-camp-info{
  position: absolute;
+  left: 610px;
   top: 3370px;
   width: 490px;
   height: 124px;
-    margin-left: 70px;
 }
 .autre-camp1-info{
 top:180px;
@@ -1219,10 +1251,10 @@ top:180px;
 }
 .heberg-info{
  position: absolute;
+  left: 610px;
   top: 3660px;
   width: 490px;
   height: 124px;
-    margin-left: 70px;
 }
 .heberg1-info{
 top:150px;
@@ -1232,19 +1264,21 @@ top:140px;
 }
 .psh-info{
   position: absolute;
+  left: 80px;
   top: 4460px;
   width: 490px;
   height: 124px;
-    margin-left: 70px;
 }
 .distri-info{
  position: absolute;
+  left: 600px;
   top: 4460px;
   width: 490px;
   height: 124px;
 }
 .obj-info{
  position: absolute;
+  left: 600px;
   top: 4610px;
   width: 490px;
   height: 124px;
@@ -1265,7 +1299,7 @@ top:140px;
 }
 .nav_range{
     position: absolute;
-    top: 65%;
+    top: 60%;
     left: 16%;
     width: 80%;
 }
@@ -1305,7 +1339,7 @@ top:140px;
 }
 .logo-court img{
     width: 100%;
-}
+ }   
 .container_splash{
     width:100%;
     height: 100%;
@@ -1316,170 +1350,51 @@ top:140px;
     left: 45%;
 }
 /* LOADER */
-#circularG{
-position:relative;
-width:128px;
-height:128px}
+.sk-spinner-wave.sk-spinner {
+  margin: 0 auto;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 10px; }
+.sk-spinner-wave div {
+  background-color: #ffffff;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+          animation: sk-waveStretchDelay 1.2s infinite ease-in-out; }
+.sk-spinner-wave .sk-rect2 {
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s; }
+.sk-spinner-wave .sk-rect3 {
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s; }
+.sk-spinner-wave .sk-rect4 {
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s; }
+.sk-spinner-wave .sk-rect5 {
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s; }
 
-.circularG{
-position:absolute;
-background-color:#009da1;
-width:29px;
-height:29px;
--moz-border-radius:19px;
--moz-animation-name:bounce_circularG;
--moz-animation-duration:1.04s;
--moz-animation-iteration-count:infinite;
--moz-animation-direction:linear;
--webkit-border-radius:19px;
--webkit-animation-name:bounce_circularG;
--webkit-animation-duration:1.04s;
--webkit-animation-iteration-count:infinite;
--webkit-animation-direction:linear;
--ms-border-radius:19px;
--ms-animation-name:bounce_circularG;
--ms-animation-duration:1.04s;
--ms-animation-iteration-count:infinite;
--ms-animation-direction:linear;
--o-border-radius:19px;
--o-animation-name:bounce_circularG;
--o-animation-duration:1.04s;
--o-animation-iteration-count:infinite;
--o-animation-direction:linear;
-border-radius:19px;
-animation-name:bounce_circularG;
-animation-duration:1.04s;
-animation-iteration-count:infinite;
-animation-direction:linear;
-}
+@-webkit-keyframes sk-waveStretchDelay {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4); }
 
-#circularG_1{
-left:0;
-top:50px;
--moz-animation-delay:0.39s;
--webkit-animation-delay:0.39s;
--ms-animation-delay:0.39s;
--o-animation-delay:0.39s;
-animation-delay:0.39s;
-}
+  20% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
 
-#circularG_2{
-left:14px;
-top:14px;
--moz-animation-delay:0.52s;
--webkit-animation-delay:0.52s;
--ms-animation-delay:0.52s;
--o-animation-delay:0.52s;
-animation-delay:0.52s;
-}
+@keyframes sk-waveStretchDelay {
+  0%, 40%, 100% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4); }
 
-#circularG_3{
-top:0;
-left:50px;
--moz-animation-delay:0.65s;
--webkit-animation-delay:0.65s;
--ms-animation-delay:0.65s;
--o-animation-delay:0.65s;
-animation-delay:0.65s;
-}
-
-#circularG_4{
-right:14px;
-top:14px;
--moz-animation-delay:0.78s;
--webkit-animation-delay:0.78s;
--ms-animation-delay:0.78s;
--o-animation-delay:0.78s;
-animation-delay:0.78s;
-}
-
-#circularG_5{
-right:0;
-top:50px;
--moz-animation-delay:0.91s;
--webkit-animation-delay:0.91s;
--ms-animation-delay:0.91s;
--o-animation-delay:0.91s;
-animation-delay:0.91s;
-}
-
-#circularG_6{
-right:14px;
-bottom:14px;
--moz-animation-delay:1.04s;
--webkit-animation-delay:1.04s;
--ms-animation-delay:1.04s;
--o-animation-delay:1.04s;
-animation-delay:1.04s;
-}
-
-#circularG_7{
-left:50px;
-bottom:0;
--moz-animation-delay:1.17s;
--webkit-animation-delay:1.17s;
--ms-animation-delay:1.17s;
--o-animation-delay:1.17s;
-animation-delay:1.17s;
-}
-
-#circularG_8{
-left:14px;
-bottom:14px;
--moz-animation-delay:1.3s;
--webkit-animation-delay:1.3s;
--ms-animation-delay:1.3s;
--o-animation-delay:1.3s;
-animation-delay:1.3s;
-}
-
-@-moz-keyframes bounce_circularG{
-0%{
--moz-transform:scale(1)}
-
-100%{
--moz-transform:scale(.3)}
-
-}
-
-@-webkit-keyframes bounce_circularG{
-0%{
--webkit-transform:scale(1)}
-
-100%{
--webkit-transform:scale(.3)}
-
-}
-
-@-ms-keyframes bounce_circularG{
-0%{
--ms-transform:scale(1)}
-
-100%{
--ms-transform:scale(.3)}
-
-}
-
-@-o-keyframes bounce_circularG{
-0%{
--o-transform:scale(1)}
-
-100%{
--o-transform:scale(.3)}
-
-}
-
-@keyframes bounce_circularG{
-0%{
-transform:scale(1)}
-
-100%{
-transform:scale(.3)}
-
-}
-
+  20% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1); } }
 /*Reponsive*/
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1320px) {
   .art_name{
     font-size: 40px;
     bottom: 45px
@@ -1505,44 +1420,30 @@ transform:scale(.3)}
     right:36px;
     margin-top:90px; 
   }
-
-.pass1, .pass1c{
-        width: 35%;
-        display: block;
-        margin-left: 20%;
 }
-.tickets{
+@media screen and (max-width: 1150px) {
+    .pass1, .pass1c{
+    width: 30%;
+    display: block;
+    margin-left: 8%;
+    margin-bottom: 10%;
+    }
+    .third{
+    margin-left: 25%;
+    }
+    .tickets{
     overflow: scroll;
-}
+    }
 }
 @media screen and (max-width: 1024px){
     .pass1{
-        width: 50%;
+        width: 40%;
         margin-left: 15%;
     }
-
-}
-* {
-   padding: 0;
-   -moz-box-sizing: border-box;
-   -webkit-box-sizing: border-box;
-   box-sizing: border-box;
-}
-
-.inside-info:after {
-    clear: both;
-}
-
-.inside-info > div {
-    min-height: 200px;
-    float: left;
-    width: 40%;
-}
-@media all and (max-width: 500px) {
-    .container > div {
-        float: none;
-        width: 100%;
+    .contains{
+        overflow: scroll;
     }
+
 }
 .tab{
  position: absolute;
