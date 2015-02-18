@@ -390,6 +390,12 @@ hr{
     cursor: pointer;
 }
 
+.input_container2{
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+}
+
 .input_container:hover{
     background-color: #f3f3f3;
 }
@@ -684,7 +690,7 @@ hr{
     font-weight:700;
 }
 
-.label2:before, .label3:before {
+.label2:before {
     content: "";
     margin-top: 4px;
     width: 10px;
@@ -700,6 +706,26 @@ hr{
     border-style: solid;
     border-width: 2px;
 }
+
+.label3:before {
+    content: "";
+    margin-top: 4px;
+    width: 10px;
+    height: 10px;
+    margin-left: 150px;
+    margin-top: 3px;
+    width: 12px;
+    height: 12px;
+    margin-left: 140px;
+    position: absolute;
+    background-color:#FFF;
+    border-color: #35BFBF;
+    border-style: solid;
+    border-width: 2px;
+}
+
+
+
 
 .label_verouille:before {
     content: "";
