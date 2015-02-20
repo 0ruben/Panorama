@@ -28,37 +28,9 @@
 
 </head>
 <body>
-    <!-- SIDE MENU -->
-    <nav class="nav" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
-      <a href="#" class="nav-logo"> 
-         <img src="images/icon.png" alt="Panorama 18"/>
-     </a>
-     <ul class="nav-items">
-         <li class="nav-item" id="art" data-target="art">
-            <a href="#" class="nav-iconContainer">
-               <img src="images/icon1.png" alt="nav"/>
-           </a>
-       </li>
-       <li class="nav-item" id="bte" data-target="bte">
-          <a href="#" class="nav-iconContainer">
-             <img src="images/icon2.png" alt="nav"/>
-         </a>
-     </li>
-     <li class="nav-item" id="mdl" data-target="mdl">
-      <a href="#" class="nav-iconContainer">
-         <img src="images/icon3.png" id="medley" alt="nav"/>
-     </a>
- </li>
- <li class="nav-item" id="inf" data-target="inf">
-  <a href="#" class="nav-iconContainer last">
-     <img src="images/icon4.png" id="info" alt="nav"/>
- </a>
-</li>
-</ul>   
-</nav>
-<div class="content_pano center">
-    <div>
-        <img class="logo_pano" data-target="art" src="images/logo_pano_long.png"/>
+<div class="content_pano">
+    <div class="center">
+        <a href="/"><img alt="Panorama Festival" class="grand-logo" src="images/logo_pano_long.png"/></a>
 
     </div>
     <div class="image_container" >
@@ -68,15 +40,26 @@
     <div class="url_container">
         <div class="url">
             <?php echo '<a href="http://'.$_SERVER['HTTP_HOST'].getcwd().'/mon_pano.php?image='.$imageID.'"> 
-            http://'.$_SERVER['HTTP_HOST'].getcwd().'/mon_pano.php?image='.$imageID.'</a>' ?>
+            URL : http://'.$_SERVER['HTTP_HOST'].getcwd().'/mon_pano.php?image='.$imageID.'</a>' ?>
         </div>
     </div>
-    <div class="share">
+    <div class="share center2">
         <?php echo '<a data-text="Partagez sur Facebook" class="button-hover hvr-sweep-to-right" href="https://www.facebook.com/sharer/sharer.php?u=http://'.$_SERVER['HTTP_HOST'].getcwd().'/mon_pano.php?image='.$imageID.'" target="_blank">Partagez sur Facebook</a>'
         ?>
     </div>
 </div>
 </body>
+<script>
+$(document).ready(function(){
+
+  $("#inf").click(function(){
+    window.location.replace("/#inf");
+    console.log("test");
+});
+});
+
+  </script>
+
 
 <style type="text/css">
 
@@ -88,10 +71,18 @@
     background-position: center;
 }
 
+@media screen and (min-width: 200px) and (max-width: 640px) {
+  .image {
+    display:block;
+    clear:both;
+  }
+}
+
 .image{
-    width:100%;
-    margin:0px auto;
-    margin-top:10%;
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:20%;
 /*    border-color: #35BFBF;
     border-style: solid;
     border-width: 1px;*/
@@ -101,15 +92,24 @@
     margin-top:5%;
     color: #35BFBF;
 }
-.logo_pano{
-    margin-top:5%;
-}
 
 .image_container{
     margin-top:10%;
 
 }
+
+.grand-logo{
+  margin-top:-5%;
+}
 .center{
+    top:10%;
+    left:25%;
+    width:50%;
+    height:50%;
+    position:absolute;
+    text-align:center;}
+
+    .center2{
     left:25%;
     width:50%;
     height:50%;
@@ -123,10 +123,6 @@
         font-family:'Kelson';
         font-weight:500;
     }
-
-}
-
-.url{
 
 }
 

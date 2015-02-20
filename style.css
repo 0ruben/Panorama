@@ -224,17 +224,21 @@ h2, h3{
 }
 
 .timeline_container{
-    margin-top: 10%;
-    margin-left: 5%;
     padding: 10px;
+    padding-top:25px;
     background-color: #ffffff;
     width:850px;
-    height:330px;
+    height:300px;
+}
+.all_content_pano{
+    margin-top:10%;
+    margin-left:40px;
+    margin-right:10%;
+    width:100%;
 }
 
 .generate_pano_container{
     margin-top: -3px;
-    margin-left: 5%;
     padding: 10px;
     background-color: #ffffff;
     width:850px;
@@ -248,7 +252,7 @@ h2, h3{
 
 .art_pano_container{
     float: left;
-    width: 200px;
+    width: 198px;
     height: 100px;
     display: inline-block;
 }
@@ -309,19 +313,19 @@ hr{
 }
 
 .start_timeline{
-    position: absolute;
-    left:25px;
-    top:130px;
+    position:absolute;
+    left:24px;
+    top:145px;
 }
 .end_timeline{
-    position: absolute;
-    left:805px;
-    top:130px;
+    position:absolute;
+    left:810px;
+    top:145px;
 }
-.timeline_container .logo_timeline{
+.logo_timeline{
     position: absolute;
-    left:95%;
-    top:80%;
+    left:810px;
+    top:223px;
 }
 .blue_line{
     position: absolute;
@@ -438,7 +442,8 @@ hr{
 .pano_content{
     position: absolute;
     left: 200px;
-    background-image: url(images/bg-pano.jpg);
+    background-color:#fff;
+    /*background-image: url(images/bg-pano.jpg);*/
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -594,7 +599,7 @@ hr{
     color: #a8a8a8;
 }
 .explication_pano{
-    width:300px;
+    width:285px;
     margin-left:30%;
     margin-top:-15px;
     font-family: 'Open Sans', sans-serif;
@@ -774,6 +779,14 @@ hr{
     position:relative;
     overflow:hidden;
   }
+
+ .row2 {
+    cursor:pointer;
+    width:100%;
+    height:200px;
+    position:relative;
+    overflow:hidden;
+  }
   
   .row__img__wrapper {
     position:absolute;
@@ -849,6 +862,13 @@ hr{
     font-weight: bold;
     color: #35bfbf;
   }
+
+  .time-hover{
+    margin-left:25%;
+    margin-right:25%;
+    width:50%;
+  }
+
   .art_vid{
     width: 35%;
     height: 95%;
@@ -1056,8 +1076,8 @@ position: absolute;
 }
 .jour_pano{
     position:absolute;
-    top:5px;
-    left:30%;
+    margin-top:-20px;
+    margin-left:260px;
     font-family:'Kelson';
     font-weight:500;
 
@@ -1287,6 +1307,12 @@ top:140px;
   20% {
     -webkit-transform: scaleY(1);
             transform: scaleY(1); } }
+
+
+.details_art{
+    background:transparent;
+    z-index: 10000;
+}
 /*Reponsive*/
 @media screen and (max-width: 1320px) {
   .art_name{
@@ -1791,9 +1817,9 @@ position: relative;
     .row1{
         height: 100px;
     }
-    .row__img{
+/*    .row__img{
         background-position-x:-100px;
-    }
+    }*/
     .art_name{
         width: 345px !important;
         bottom: 35px;
@@ -1844,4 +1870,11 @@ position: relative;
     .sub_menu{
         min-height: 480px;
     }
+
+.acces1{
+position: relative;
+height: 450px;
 }
+
+
+
