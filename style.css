@@ -575,11 +575,11 @@ hr{
   transition-timing-function: ease-out;
 }
 
-.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus{
   color: white;
 }
 
-.hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+.hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before{
   -webkit-transform: scaleX(1.01);
   transform: scaleX(1.01);
 }
@@ -624,7 +624,7 @@ hr{
 }
 #mation{
     text-align: left;
-    margin-left: 26px;
+    margin-left: 33px;
     position: relative;
     bottom: 20px;
 }
@@ -841,6 +841,13 @@ hr{
     border: 2px solid #35bfbf;
     width: 83px;
     font-weight: bold;
+    display: inline-block;
+  }
+  .art_name_main{
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: bold;
+    color: #35bfbf;
   }
   .art_vid{
     width: 35%;
@@ -1176,7 +1183,7 @@ top:140px;
 .splashscreen{
   position: fixed; right: 0; bottom: 0;
   min-width: 100%; min-height: 100%;
-  width: auto; height: auto; z-index: -100;
+  width: auto; height: auto; z-index: 1000;
   background: url(/images/splashscreen.jpg) no-repeat;
   background-size: cover;
 }
@@ -1323,7 +1330,7 @@ top:140px;
     }
 }
 @media screen and (max-width: 1024px){
-    .pass1{
+    .pass1, .pass1c, .pass2{
         width: 40%;
         margin-left: 15%;
     }
@@ -1569,6 +1576,7 @@ overflow: hidden;
   height: 124px;
 margin-left: 70px;
         display: block;
+        margin-bottom: 20px;
 }
 .cafe-info-bis{
   position: relative;
@@ -1576,6 +1584,7 @@ margin-left: 70px;
   height: 124px;
         display: block;
         margin-left: 70px;
+        margin-bottom: 30px;
 }
 .mjc-info-bis{
   position: relative;
@@ -1583,6 +1592,7 @@ margin-left: 70px;
   height: 140px;
     margin-left: 70px;
         display: block;
+        margin-bottom: 20px;
 }
 .espace-info-bis{
   position: relative;
@@ -1590,6 +1600,7 @@ margin-left: 70px;
   height: 124px;
         display: block;
         margin-left: 70px;
+        margin-bottom: 20px;
 }
 .tempo-info-bis{
   position: relative;
@@ -1597,6 +1608,7 @@ margin-left: 70px;
   height: 124px;
     margin-left: 70px;
         display: block;
+        margin-bottom: 20px;
 }
 .manu-info-bis{
   position: relative;
@@ -1604,6 +1616,7 @@ margin-left: 70px;
   height: 124px;
     display: block;
         margin-left: 70px;
+        margin-bottom: 20px;
 }
 .theatre-info-bis{
   position: relative;
@@ -1611,6 +1624,7 @@ margin-left: 70px;
   height: 124px;
     margin-left: 70px;
         display: block;
+        margin-bottom: 20px;
 }
     .graph-entree{
 position: relative;
@@ -1673,8 +1687,161 @@ position: relative;
     .map-acces{
     display: none;
     }
+}
+    .acces1{
+    position: relative;
+    height: 450px;
     }
-.acces1{
-position: relative;
-height: 450px;
+
+@media screen and (max-width: 768px) {
+    .contains{
+        overflow-x: visible;
+    }   
+     .contains{
+        overflow-y: scroll;
+    }
+
+    .sub_menu{
+        width: 100%;
+        min-height: 667px;
+        left:0;
+    }
+    .content{
+        overflow-x: scroll;
+        left: 60px;
+    }
+    .contains{
+        left: 100%;
+    }
+    .sub_menu h2{
+        display: inline;
+    }
+    .sub_menu hr{
+        margin-left: auto;
+    }
+    .sub_menu .subtitle{
+        text-align: center;
+    }
+    .sub_menu .arrow{
+        left:48%;
+        margin: 0;
+        top:130px;
+    }
+    #mation{
+        margin:0;
+        bottom: 1px;
+        right: 4px;
+    }
+    .inputs, .inputs_art{
+        width: 100%;
+        top:130px;
+        margin-left: 0;
+    }
+    .input_container, .infos{
+        width: 100%;
+    }
+    .billeterie .input{
+        top:200px;
+    }
+    .sub_menu .title_art{
+        font-size: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 52px;
+    }
+    .sub_menu .input_container_art {
+        width: 100%;
+        height: 30px;    
+    }
+    .sub_menu .head{
+          padding-top: 20px;
+          height: 130px;
+    }
+
+     .sub_menu .input_art{
+        padding-top:4px;
+        font-size: 16px;
+        margin-left: 15%;
+     }
+    .sub_menu input[type=radio]:checked + label:before{
+        margin-left: 65%;
+        margin-top: 5px;
+     }
+    .sub_menu .label2:before{
+        margin-left: 65%;
+        margin-top: 5px;
+     }
+    .inputs_sal{
+        width: 100%;
+        margin-left: 0;
+        top:330px;
+    }
+    .input_h{
+        top:540px;
+        width: 100%;
+        margin-left: 0;
+    }
+    .input_h .title_art{
+       width: 110px;
+    }
+    .slider{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .row1{
+        height: 100px;
+    }
+    .row__img{
+        background-position-x:-100px;
+    }
+    .art_name{
+        width: 345px !important;
+        bottom: 35px;
+        font-size: 15px;
+    }
+    .art_vid{
+        display: none;
+    }
+    .art_main{
+        width: 100%;
+        right: 0;
+        padding: 10px;
+        bottom: 100px;
+    }
+    .row_art{
+        height: auto;
+    }
+    .play_button{
+        visibility: hidden;
+    }
+    .nav{
+        position: absolute;
+    }
+    .pass1, .pass1c, .pass2{
+       width: 90%;
+       margin-left: 5%;
+    }
+    .info_content{
+        margin: 0;
+        width: auto;
+    }
+    .nav_last{
+        display: none;
+    }
+    #mdl{
+        display: none;
+    }
+    .nav_range{
+        left:28%;
+    }
+}
+@media screen and (max-width: 568px){
+    .sub_menu{
+        min-height: 568px;
+    }
+}
+@media screen and (max-width: 480px){
+    .sub_menu{
+        min-height: 480px;
+    }
 }
