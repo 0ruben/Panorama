@@ -23,7 +23,7 @@ var artistes = [
   },
   {
     'id':2,
-    'name':'THE BLOODY BEETROOTS DJ SET',
+    'name':'THE BLOODY BEETROOTS (SBCR)',
     'jour':'VENDREDI 3 AVRIL',
     'jourId':1,
     'heure':'00h35',
@@ -723,7 +723,7 @@ var artistes = [
   },
   {
     'id':37,
-    'name':'SUPER DISCOUNT 3',
+    'name':'SUPER DISCOUNT 3 LIVE',
     'jour':'SAMEDI 4 AVRIL',
     'jourId':2,
     'heure':'22h00',
@@ -894,9 +894,9 @@ app.controller("PanoCtrl",function($scope) {
 		var nbArtistes = $scope.cpt[$scope.day_pano-1];
 		var marge;
 		if(index==0)
-			marge = -90 + (390/nbArtistes);
+			marge = -90 + (400/nbArtistes);
 		else
-			marge = -210 + (840/nbArtistes);
+			marge = -208 + (850/nbArtistes);
 		return "margin-left:"+marge+"px;";
 	}
 

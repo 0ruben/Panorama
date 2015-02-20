@@ -37,7 +37,7 @@ $(document).ready(function(){
       content.show("blind",{easing:'easeInQuart'},500,function(){  
         content.addClass('opened_content');               
         if($('.active').length==0) $('.default').click(); 
-        if(target == '.mdl') showIt('.timeline_container');
+        if(target == '.mdl') showIt('.all_content_pano');
         $(target).addClass('opened');
         $('.splashscreen').hide(); 
         });
@@ -162,7 +162,7 @@ $('.nav-item').click(function(){
               $(this).removeClass('opened_content');
               content.addClass('opened_content');               
               if($('.active').length==0) $('.default').click(); 
-              if(id == 'mdl') showIt('.timeline_container');
+              if(id == 'mdl') showIt('.all_content_pano');
               if(id == 'art'){
                 if(window.location.href.indexOf('ven')>-1) $('.ven_art').click(); 
                 if(window.location.href.indexOf('sam')>-1) $('.sam_art').click(); 
@@ -237,6 +237,9 @@ $('.list').on('mouseenter', '.row1', function(e) {
 
     TweenLite.to($imgWrapper, DURATION, {x : 0, ease : EASE});
     TweenLite.to($img, DURATION, {x : 0, ease : EASE});
+    //   , onComplete:function(){
+    // TweenLite.to($(e.currentTarget).parents(".row2"), 0.5, {y:200});
+    // }});
 
   }
 });
@@ -503,7 +506,9 @@ $('.play_button').click(function(){
 
 });
 
-
+$( ".row1" ).mouseover(function() {
+   
+});
 
 });
 
