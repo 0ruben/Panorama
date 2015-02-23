@@ -30,12 +30,14 @@ $(window).resize(function() {
     
    //Splashscreen
    $('.splashscreen').height($(window).height());
+   if($(window).width()>768){
    $('.nav-item-range').mouseenter(function() {
     $(this).find('h2').css('visibility','visible');
    });
    $('.nav-item-range').mouseleave(function() {
     $(this).find('h2').css('visibility','hidden');
    });
+ }
 
    $('.nav-item-range').click(function(){
     var self = this;
@@ -567,10 +569,25 @@ $('.play_button').click(function(){
   $(this).fadeOut(500); 
 
 });
-
-$( ".row1" ).mouseover(function() {
-   
-});
-
+// Easing mobile right scrolling
+//  if($(window).width()<=768){
+//   var ableScroll = true;
+//   var isScrolled = false
+// $('.content').scroll(function(){
+//   if(ableScroll && !($(this).hasClass('inf'))){
+//   ableScroll = false;
+//   if(isScrolled){
+//     $(this).scrollTo(0,0);
+//     isScrolled = false;
+//   }
+//   else{
+//    $(this).scrollTo(100+'%',0);
+//     isScrolled = true;
+//   }
+//   setTimeout(function(){ableScroll = true},500);
+// }
+  
+// });
+// }
 });
 
