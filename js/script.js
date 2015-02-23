@@ -17,11 +17,13 @@ $(window).resize(function() {
    pos_trsp = $('.ban-trsp').position().top;
    pos_camping = $('.ban-camping').position().top;
    pos_savoir = $('.ban-savoir').position().top;
+   pos_accredi =$('.img-accredi-bis').position().top;
+   pos_parte =$('.img-parte-bis').position().top;
    if($(window).width()<=1320) bottom = [0,45];
    if($(window).width()<=768) hrow = 100;
 });
 
-  var pos_acces, pos_entree, pos_trsp, pos_camping, pos_savoir;
+  var pos_acces, pos_entree, pos_trsp, pos_camping, pos_savoir, pos_accredi, pos_parte;
 
 
   var count = 1000;
@@ -61,6 +63,8 @@ $(window).resize(function() {
                   pos_trsp = $('.ban-trsp').position().top;
                   pos_camping = $('.ban-camping').position().top;
                   pos_savoir = $('.ban-savoir').position().top;
+                  pos_accredi =$('.img-accredi-bis').position().top;
+                  pos_parte =$('.img-parte-bis').position().top;
         } 
         $(target).addClass('opened');
         $('.splashscreen').hide(); 
@@ -540,6 +544,18 @@ $('.info_content').scroll(function(e){
         $('.inf_5').addClass('active');
         $('#savoir').prop('checked',true)}
         else if ($('.sub_info_3').hasClass('hidden')) $('.sub_info_3').removeClass('hidden');
+ if ($('.img-accredi-bis').offset().top<0) {
+        $('.sub_info_4').addClass('hidden');
+        $('.active').removeClass('active');
+        $('.inf_6').addClass('active');
+        $('#accredi').prop('checked',true)}
+        else if ($('.sub_info_4').hasClass('hidden')) $('.sub_info_4').removeClass('hidden');
+if ($('.img-parte-bis').offset().top<0) {
+        $('.sub_info_5').addClass('hidden');
+        $('.active').removeClass('active');
+        $('.inf_7').addClass('active');
+        $('#parte').prop('checked',true)}
+        else if ($('.sub_info_4').hasClass('hidden')) $('.sub_info_5').removeClass('hidden');
         if (posY<1090) { $('.active').removeClass('active');
         $('.inf_1').addClass('active');
         $('#acces').prop('checked',true)}
@@ -557,6 +573,8 @@ $('.imput_container_art').click(function() {
   if (self.hasClass('input_transport')) target.scrollTo(pos_trsp+5+"px",1000);
   if (self.hasClass('input_camping')) target.scrollTo(pos_camping+5+"px",1000);
   if (self.hasClass('input_savoir')) target.scrollTo(pos_savoir+5+"px",1000);
+  if (self.hasClass('input_accredi')) target.scrollTo(pos_accredi+5+"px",1000);
+  if (self.hasClass('input_parte')) target.scrollTo(pos_parte+5+"px",1000);
 });
 
 $('.play_button').click(function(){
