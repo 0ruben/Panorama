@@ -1062,6 +1062,18 @@ position: absolute;
     top:0;
     z-index: 7;
 }
+.sub_info_5{
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 6;
+}
+.sub_info_6{
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 5;
+}
 .toHide{
     position: relative;
     height: 100%;
@@ -1866,11 +1878,49 @@ position: relative;
     .infos{
         margin-left: 0px;
     }
+    .info_content{
+    width:100%;
+    }
+    .acces{
+    width:123%;}
+    .entree{
+    width:123%;}
+    .camping{
+    width:123%;}
+    .trsp{
+    width:123%;}
+    .savoir{
+    width:123%;}
+    .accredi{
+    width:123%;}
+    .parte{
+    width:123%;}
 }
 .acces1{
 position: relative;
 height: 450px;
 }
-
-
-
+.img-accredi-bis{
+    background-color: rgb(243,243,243);
+height: auto;
+}
+.accredi1{
+margin-top: 50px;
+    width: 70%;
+    margin-left: 70px;
+}
+.accredi2{
+margin-top: 30px;
+    width: 70%;
+    margin-bottom: 30px;
+       margin-left: 70px;
+}
+.img-parte-bis{
+    background-color: rgb(243,243,243);
+height: 300px;
+}
+.parte-info-bis{
+position:relative;
+height: 180px;
+margin-left: 70px;
+top: 100px;}
