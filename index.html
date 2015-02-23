@@ -153,7 +153,7 @@
    </div>
    <div class="info_t">
     <p class="list_bte">
-      Kaytranada / The Bloody Beetroots (SBCR) / Infected Mushroom / Noisia / Boris Brejcha / Lido / Savant / Salut C’est Cool / Joke / Kink (live) / Far Too Loud / Don Rimini B2b / Surfing Leons / Stwo / Mmmmm / Midside
+      Kaytranada / The Bloody Beetroots (SBCR) / Infected Mushroom / Noisia / Boris Brejcha / Lido / Savant / Salut C’est Cool / Joke / Kink live / Far Too Loud / Don Rimini B2b / Surfing Leons / Stwo / Mmmmm / Midside
     </p>
     <p class="price">- 36,50 € -</p>
     <div class="book">
@@ -218,7 +218,7 @@
  </div>
  <div class="info_t">
   <p class="list_bte">
-   Kaytranada / The Bloody Beetroots (SBCR) / Infected Mushroom / Noisia / Boris Brejcha / Lido / Savant / Salut C’est Cool / Joke / Kink (live) / Far Too Loud / Don Rimini B2b / Surfing Leons / Stwo / Mmmmm / Midside
+   Kaytranada / The Bloody Beetroots (SBCR) / Infected Mushroom / Noisia / Boris Brejcha / Lido / Savant / Salut C’est Cool / Joke / Kink live / Far Too Loud / Don Rimini B2b / Surfing Leons / Stwo / Mmmmm / Midside
 
  </p>
  <p class="price">- 40,50 € -</p>
@@ -327,6 +327,13 @@
 </div>
 <div class="pano_content contains" style="display:none;">
   <div class="all_content_pano" style="display:none;">
+  <div class="head_pano">
+    <div class="explication_pano">
+    <img alt="Panorama Festival" class="grand-logo" src="images/logo_pano_long.png"/>
+      <strong>Sélectionnez les artistes</strong> que vous souhaitez voir afin d’optimiser votre parcours pendant le festival et partagez-le avec vos amis.
+    </div>
+  </div>
+
   <div id="tc" class="timeline_container">
     <!-- <div class="timeline_artists_container"> -->
         <div class="jour_pano">
@@ -354,10 +361,7 @@
   </div>
   <div class="generate_pano_container">
     <div class="generer">
-      <a data-text="Générer votre pano" type="submit" id="generate" onclick="capture();" class="button-hover hvr-sweep-to-right button_medley" href="#">Générer votre pano</a>
-    </div>
-    <div class="explication_pano">
-      Sélectionnez les artistes que vous souhaitez voir afin d’optimiser votre parcours pendant le festival, puis générez votre medley et partagez-le avec vos amis.
+      <a data-text="Générer votre pano" type="submit" id="generate" onclick="capture();" class="button-hover hvr-sweep-to-right button_medley" href="#">VALIDER</a>
     </div>
     <div class="url_pano">
 
@@ -382,7 +386,9 @@
                 data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
                 success: function(html) { // Je récupère la réponse du fichier PHP
                  appear('.url_pano',0,5);
-                 $('.url_pano').html('<a class="print button-hover hvr-sweep-to-right" target="_blank" href="'+html+'">IMPRIMER MON PANO</a> <a style="float:left;" class="button-hover hvr-sweep-to-right" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='+html+'">PARTAGER SUR FACEBOOK</a>' );
+                 $("#generate").css({"display":"none"});
+                 $('.url_pano').html('<a class="print button-hover hvr-sweep-to-right" target="_blank" href="'+html+'">IMPRIMER</a> <a style="float:left;" class="button-hover hvr-sweep-to-right" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='+html+'">PARTAGER</a>' );
+
                }
              });
 
@@ -509,7 +515,6 @@
   </div> 
 </div>
 <div class="art_social">
-  <a href="#" class="socicon social">a</a>
   <a href="{{artist.facebook}}" class="socicon social">b</a>  
   <a href="#" class="socicon social">n</a> 
   <img class="leave" src="images/leave.png"/>         
