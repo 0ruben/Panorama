@@ -1023,7 +1023,7 @@ hr{
     bottom: 116px;
   }
     .artiste{
-        min-height: 750px;
+        min-height: 0px;
     }
 .info_content{
     top: 0;
