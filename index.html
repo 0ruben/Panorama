@@ -36,7 +36,7 @@
       <div class="sk-rect5"></div>
     </div>
    </div>
-   <video autoplay loop poster="images/splashscreen.jpg" id="vid">
+   <video class="splashvideo" autoplay loop poster="images/splashscreen.jpg" id="vid">
     <source src="images/video/intro_720.webm" type="video/webm">
     <source src="images/video/intro_720.mp4" type="video/mp4">  
     </video>
@@ -330,6 +330,7 @@
   <div class="head_pano">
     <div class="explication_pano">
     <img alt="Panorama Festival" class="grand-logo" src="images/logo_pano_long.png"/>
+    <hr class="hr">
       <strong>Sélectionnez les artistes</strong> que vous souhaitez voir afin d’optimiser votre parcours pendant le festival et partagez-le avec vos amis.
     </div>
   </div>
@@ -385,9 +386,9 @@
                 type: $this.attr('method'), // La méthode indiquée dans le formulaire (get ou post)
                 data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
                 success: function(html) { // Je récupère la réponse du fichier PHP
-                 appear('.url_pano',0,5);
+                 appear('.url_pano',0.5);
                  $("#generate").css({"display":"none"});
-                 $('.url_pano').html('<a class="print button-hover hvr-sweep-to-right" target="_blank" href="'+html+'">IMPRIMER</a> <a style="float:left;" class="button-hover hvr-sweep-to-right" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='+html+'">PARTAGER</a>' );
+                 $('.url_pano').html('<a id="reset" class="button-reset hvr-sweep-to-right-reset">RESET</a><a style="float:left;" class="button-hover hvr-sweep-to-right" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='+html+'">PARTAGER</a><a style="float:left;"class="print button-hover hvr-sweep-to-right" target="_blank" href="'+html+'">IMPRIMER</a>'  );
 
                }
              });
@@ -505,7 +506,7 @@
           <div class="description">
             <p>{{artist.description}}</p>
           </div>
-         <div class="add_pano">
+         <div id="ajouter-pano" class="add_pano">
     <div class="input_container2 input_container_art_check">
       <div class="input2 input_art" ng-click="verouillerBox(artist) || includeArtiste(artist)" ng-disabled="verouillerBox(artist)">
         <input class="day_art" type="checkbox" ng-model="artist.isChecked"/>

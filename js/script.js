@@ -569,6 +569,11 @@ $('.play_button').click(function(){
   $(this).fadeOut(500); 
 
 });
+
+$('#reset').click(function(){
+  $('.url_pano').fadeOut(500);
+  $('.generer').fadeIn(500);
+});
 // Easing mobile right scrolling
 //  if($(window).width()<=768){
 //   var ableScroll = true;
