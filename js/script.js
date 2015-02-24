@@ -545,7 +545,7 @@ $('.info_content').scroll(function(e){
         $('.inf_5').addClass('active');
         $('#savoir').prop('checked',true)}
         else if ($('.sub_info_3').hasClass('hidden')) $('.sub_info_3').removeClass('hidden');
- if ($('.img-accredi-bis').offset().top<0) {
+ if ($('.img-accredi-bis').offset().top<100) {
         $('.sub_info_4').addClass('hidden');
         $('.active').removeClass('active');
         $('.inf_6').addClass('active');
