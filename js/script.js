@@ -320,7 +320,7 @@ $('.row1').click(function(e){
      TweenLite.to(parent.children('.row_art'),0.5,{opacity:1});
      TweenLite.to(this,0.5,{height:hrow/2+"px",ease:Quint.easeOut});
      TweenLite.to($target, 0.5, {scale:0.5,ease:Quint.easeOut,bottom:bottom[0]+"px",onComplete: function(){
-     TweenLite.to('.toHide',0.25,{opacity:0.5,position:"absolute",onComplete: function(){;
+     TweenLite.to('.toHide',0.25,{opacity:0.5,display:'block',onComplete: function(){;
      // TweenMax.to('.art_content',0.5,{,ease:Power1.easeIn});
      if(hrow==200) $('.art_content').scrollTo(hrow*position+"px",500,{ease:'easeOutQuint'})
    }});
@@ -332,7 +332,7 @@ $('.row1').click(function(e){
     }
     TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
     TweenLite.to(this,1,{height:hrow+"px",ease:Quint.easeOut});
-    TweenLite.to('.toHide',0.25,{opacity:0,position:"relative"});
+    TweenLite.to('.toHide',0.25,{opacity:0,display:'none'});
     TweenLite.to($target, 1, {scale : 1,bottom:bottom[1]+"px",ease:Quint.easeOut,onComplete: function(){
   }}); // Fix height of the div  
     rowOpen=false;      
@@ -357,13 +357,31 @@ $('.leave').click(function(){
   TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
   TweenLite.to(self,1,{height:hrow+"px",ease:Quint.easeOut});  
   parent.children('.row_art').slideToggle(500); 
-  TweenLite.to('.toHide',1,{opacity:0,position:"relative"});  
+  TweenLite.to('.toHide',1,{opacity:0,display:'none'});  
   TweenLite.to($target, 1, {scale : 1,bottom:bottom[1]+"px",ease:Quint.easeOut,onCompleteParams: function(){
   }
   });  // Fix height of the div
   rowOpen=false;         
 });
 
+$('.toHide').click(function(){
+    if(rowOpen){
+  var $target = $(rowOpen).children('.art_name');
+  var index = $(rowOpen).attr('data-position');
+  var colorRow = $(rowOpen).children('.row__img__wrapper--color');
+  var parent = $(rowOpen).parent('.repeat');
+     if(parent.find('.play_button').attr('isClicked')=='true'){
+     $('.player'+$(rowOpen).attr('data-position')).pauseYTP();
+    }
+    TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
+    TweenLite.to(rowOpen,1,{height:hrow+"px",ease:Quint.easeOut});
+    parent.children('.row_art').slideToggle(500); 
+    TweenLite.to('.toHide',1,{opacity:0,display:'none'});
+    TweenLite.to($target, 1, {scale : 1,bottom:bottom[1]+"px",ease:Quint.easeOut,onComplete: function(){      
+  }});  // Fix height of the div
+    rowOpen=false;   
+  }
+});
 
 
 //Déplacement sur artist
@@ -416,6 +434,7 @@ $('.radi_container').click(function(){
     }
     TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
     TweenLite.to(rowOpen,1,{height:hrow+"px",ease:Quint.easeOut});
+    parent.children('.row_art').slideToggle(500); 
     TweenLite.to('.toHide',1,{opacity:0,position:"relative"});
     TweenLite.to($target, 1, {scale : 1,bottom:bottom[1]+"px",ease:Quint.easeOut,onComplete: function(){      
   }});  // Fix height of the div
@@ -471,7 +490,8 @@ $('.slider').click(function(){
     }
     TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
     TweenLite.to(rowOpen,1,{height:hrow+"px",ease:Quint.easeOut});
-    TweenLite.to('.toHide',1,{opacity:0,position:"relative"});
+    parent.children('.row_art').slideToggle(500); 
+    TweenLite.to('.toHide',1,{opacity:0,display:'none'});
     TweenLite.to($target, 1, {scale : 1,bottom:bottom[1]+"px",ease:Quint.easeOut,onComplete: function(){      
   }});  // Fix height of the div
     rowOpen=false;   

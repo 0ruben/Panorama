@@ -1166,12 +1166,13 @@ position: absolute;
     z-index: 5;
 }
 .toHide{
-    position: relative;
-    height: 100%;
+    position: absolute;
     width: 100%;
+    height:8000px;
     background-color: #000000;
     opacity: 0;
     z-index: 700;
+    display: none;
 }
 .hr_billet{
     margin-left: 16px;
@@ -1369,6 +1370,7 @@ top:130px;
 }
 .logo-court img{
     width: 100%;
+    min-width: 30px;
  }   
 .container_splash{
     width:100%;
@@ -1844,6 +1846,10 @@ margin-top: 30px;
     margin-bottom: 30px;
        margin-left: 70px;
 }
+.ban-info{
+width: 100%;
+height: 350px;
+}
 @media screen and (max-width: 768px) {
     .contains{
         overflow-x: visible;
@@ -2025,6 +2031,26 @@ margin-top: 30px;
     margin-bottom: 30px;
        margin-left: 70px;
 }
+    .ban-info{
+    width: auto;
+        height: auto;
+    }
+}
+@media screen and (max-width: 480px) {
+    .artiste .head{
+        padding-top:10px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .artiste h2{
+        margin-left: -20px;
+    }
+    #mation{
+        margin-left: 24px;
+    }
+    .artiste hr{
+        margin-top: -20px;
+    }
 }
 .acces1{
 position: relative;
