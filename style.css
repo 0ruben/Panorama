@@ -1520,14 +1520,14 @@ background-color: rgb(255,255,255);
   position: absolute;
   margin-left: 70px;
 width: 80%;
-height: 160px;
+height: 360px;
 display: inline-block;
 top: 40px;
 }
 .coatelan-info-bis{
 position: absolute;
   margin-left: 70px;
-width: 80%;
+width: 35%;
 height: 195px;
 top: 220px;
 }
