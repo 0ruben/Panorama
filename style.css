@@ -1240,7 +1240,7 @@ h5{
     margin-top: 15px;
 }
 .text-info{
-  font-size: 20.627px;
+  font-size: 24px;
   font-family: 'Open Sans';
   color: rgb( 142, 142, 142 );
   line-height: 1.733;
@@ -1282,7 +1282,7 @@ h5{
   top:45px;
 }
 .autre-camp1-info{
-top:180px;
+top:190px;
 }
 .autre-camp2-info{
     top:170px;
@@ -1291,7 +1291,7 @@ top:180px;
 top:150px;
 }
 .heberg2-info{
-top:140px;
+top:130px;
 }
 .savoir1{
   top:20px;
@@ -1531,7 +1531,7 @@ margin-left: 70px;
 .cafe-info-bis{
   position: relative;
   width: 40%;
-  height: 124px;
+  height: 144px;
         display: inline-block;
 }
 .mjc-info-bis{
@@ -1614,7 +1614,7 @@ overflow: hidden;
 }
 .train-info-bis{
 position: relative;
-      height: 184px;
+      height: 200px;
 }
 .covoi-info-bis{
 position: relative;
@@ -1622,16 +1622,16 @@ position: relative;
 }
 .nav1-info-bis{
     position: relative;
-      height: 204px;
+      height: 224px;
 }
 .tab-bis{
     position: relative;
-      height: 94px;
+      height: 120px;
       width: 85%;
 }
 .nav2-info-bis{
     position: relative;
-      height: 124px;
+      height: 144px;
 bottom: 80px;
 }
 .img-camping-bis{
@@ -1664,7 +1664,7 @@ position: relative;
 }
 .autre-camp-info-bis{
   position: relative;
-      height: 274px;
+      height: 300px;
 }
 .heberg-info-bis{
 position: relative;
@@ -1692,7 +1692,7 @@ overflow: hidden;
 }
 .psh-info-bis{
     position: relative;
-      height: 254px;
+      height: 304px;
 }
 .distri-info-bis{
     position: relative;
@@ -1700,7 +1700,7 @@ overflow: hidden;
 }
 .obj-info-bis{
     position: relative;
-      height: 254px;
+      height: 234px;
 }
 @media screen and (max-width: 1130px) {
 .cine-info-bis{
@@ -1824,7 +1824,17 @@ position: relative;
     position: relative;
     height: 450px;
     }
-
+.accredi1{
+margin-top: 10px;
+    width: 50%;
+    margin-left: 70px;
+}
+.accredi2{
+margin-top: 30px;
+    width: 50%;
+    margin-bottom: 30px;
+       margin-left: 70px;
+}
 @media screen and (max-width: 768px) {
     .contains{
         overflow-x: visible;
@@ -1985,17 +1995,13 @@ position: relative;
     width:123%;}
     .parte{
     width:123%;}
+    .tab-bis{
+    position: relative;
+      height: 100px;
+      width: 150%;
 }
-.acces1{
-position: relative;
-height: 450px;
-}
-.img-accredi-bis{
-    background-color: rgb(243,243,243);
-height: auto;
-}
-.accredi1{
-margin-top: 190px;
+    .accredi1{
+margin-top: 10px;
     width: 70%;
     margin-left: 70px;
 }
@@ -2004,6 +2010,15 @@ margin-top: 30px;
     width: 70%;
     margin-bottom: 30px;
        margin-left: 70px;
+}
+}
+.acces1{
+position: relative;
+height: 450px;
+}
+.img-accredi-bis{
+    background-color: rgb(243,243,243);
+height: auto;
 }
 .img-parte-bis{
     background-color: rgb(243,243,243);
