@@ -79,10 +79,10 @@ $(document).ready(function(){
 }
 
 .image{
-    width:90%;
-    margin-left:5%;
-    margin-right:5%;
-    margin-top:20%;
+    width:80%;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top:15%;
 /*    border-color: #35BFBF;
     border-style: solid;
     border-width: 1px;*/

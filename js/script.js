@@ -29,15 +29,16 @@ $(window).resize(function() {
   var count = 1000;
   var nav_clicked = false;
   TweenLite.set('nav',{x:$(window).width()+'px'});
-    
    //Splashscreen
    $('.splashscreen').height($(window).height());
    if($(window).width()>768){
    $('.nav-item-range').mouseenter(function() {
-    $(this).find('h2').css('visibility','visible');
+    var target = $(this).find('h2');
+    TweenLite.to(target,0.5,{opacity:1});
    });
    $('.nav-item-range').mouseleave(function() {
-    $(this).find('h2').css('visibility','hidden');
+    var target = $(this).find('h2');
+    TweenLite.to(target,0.5,{opacity:0});
    });
  }
 
@@ -227,7 +228,7 @@ $("#range").ionRangeSlider({
   postfix:"h",
   grid: false,
   hide_min_max: true
-});
+}).draggable();
 
 
 //DIV to IMG
@@ -589,8 +590,14 @@ $('.play_button').click(function(){
 });
 
 $('#reset').click(function(){
-  $('.url_pano').fadeOut(500);
-  $('.generer').fadeIn(500);
+  alert("test");
+  $('#generate').removeClass('hidden');
+  $('.url_pano').addClass('hidden');
+});
+
+$( 'input[name="day_pano"]:radio' ).change(function(){
+  $('#generate').removeClass('hidden');
+  $('.url_pano').addClass('hidden');
 });
 // Easing mobile right scrolling
 //  if($(window).width()<=768){

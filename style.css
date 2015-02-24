@@ -327,17 +327,17 @@ hr{
 .start_timeline{
     position:absolute;
     left:24px;
-    top:145px;
+    top:300px;
 }
 .end_timeline{
     position:absolute;
     left:810px;
-    top:145px;
+    top:300px;
 }
 .logo_timeline{
     position: absolute;
     left:810px;
-    top:223px;
+    top:378px;
 }
 .blue_line{
     position: absolute;
@@ -512,7 +512,7 @@ hr{
 }
 
 .generer{
-    margin-left: 35%;
+    margin-left: 46%;
     position: relative;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
@@ -674,7 +674,6 @@ hr{
 }
 .explication_pano{
     width:285px;
-    margin-left:22%;
     margin-top:-15px;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
@@ -1173,7 +1172,7 @@ position: absolute;
 .url_pano{
     margin-top:20px;
     color:#35BFBF;
-    margin-left:18%;
+    margin-left:31%;
     font-family:'Kelson';
     font-weight:300;
 }
@@ -1292,7 +1291,7 @@ top:140px;
   position: fixed; right: 0; bottom: 0;
   min-width: 100%; min-height: 100%;
   width: auto; height: auto; z-index: 1000;
-  background: url(/images/bg-intro-mobile.jpg) no-repeat;
+  background: url(images/bg-intro-mobile.jpg) no-repeat;
   background-size: cover;
 }
 #vid{
@@ -1327,7 +1326,7 @@ top:140px;
     color: #ffffff;
     font-family: 'Kelson', sans-serif;
     text-align: center;
-    visibility: hidden;
+    opacity: 0;
 }
 .nav-range-img{
     width: 30px;    
@@ -1826,7 +1825,7 @@ position: relative;
     }
 
     .sub_menu{
-        width: 100%;
+        width: 90%;
         min-height: 0px;
         left:0;
     }
@@ -1836,7 +1835,7 @@ position: relative;
         -webkit-overflow-scrolling:touch;
     }
     .contains{
-        left: 100%;
+        left: 90%;
     }
     .sub_menu h2{
         display: inline;
@@ -1897,12 +1896,10 @@ position: relative;
         margin-top: 5px;
      }
     .inputs_sal{
-        width: 100%;
-        margin-left: 0;
-        top:330px;
+        display: none;
     }
     .input_h{
-        top:540px;
+        top:370px;
         width: 100%;
         margin-left: 0;
     }

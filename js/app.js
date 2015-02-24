@@ -103,7 +103,7 @@ var artistes = [
   },
   {
     'id':6,
-    'name':'BRÜLIN',
+    'name':'BRULIN',
     'jour':'DIMANCHE 5 AVRIL',
     'jourId':3,
     'heure':'21h00',
@@ -894,9 +894,9 @@ app.controller("PanoCtrl",function($scope) {
 		var nbArtistes = $scope.cpt[$scope.day_pano-1];
 		var marge;
 		if(index==0)
-			marge = -90 + (400/nbArtistes);
+			marge = -90 + (390/nbArtistes);
 		else
-			marge = -208 + (850/nbArtistes);
+			marge = -210 + (840/nbArtistes);
 		return "margin-left:"+marge+"px;";
 	}
 
