@@ -8,6 +8,7 @@
         $imageID = 0;
 
     ?>
+    <title>Festival Panorama - MON PANO</title>
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="jquery-ui.min.js"></script>
     <script type='text/javascript' src="http://documentcloud.github.com/underscore/underscore-min.js"></script>

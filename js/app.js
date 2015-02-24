@@ -814,6 +814,7 @@ app.controller("PanoCtrl",function($scope) {
 	$scope.artisteIncludes = [];
 	$scope.predicate = 'ordre_passage';
 	$scope.cpt = [0,0,0];
+    $scope.day_pano=1;
 
 
 

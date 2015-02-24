@@ -250,6 +250,7 @@ h2, h3{
     left:80%;
     color:white;
     font-size:30px;
+    opacity:0.8;
 }
 
 .generate_pano_container{
@@ -1886,6 +1887,11 @@ margin-top: 30px;
     .inputs, .inputs_art{
         width: 100%;
         top:130px;
+        margin-left: 0;
+    }
+    .inputs{
+        width: 100%;
+        top:170px;
         margin-left: 0;
     }
     .input_container, .infos{
