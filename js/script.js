@@ -589,14 +589,8 @@ $('.play_button').click(function(){
 
 });
 
-$('#reset').click(function(){
-  alert("test");
-  $('#generate').removeClass('hidden');
-  $('.url_pano').addClass('hidden');
-});
+$('input[type=radio][name=day_pano]').change(function(){
 
-$('input[name="day_pano"]:radio').change(function(){
-  alert("test");
   $('#generate').removeClass('hidden');
   $('.url_pano').addClass('hidden');
 });

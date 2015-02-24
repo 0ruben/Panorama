@@ -10,5 +10,5 @@
         $unencodedData=base64_decode($filteredData);
         //Save the image
         file_put_contents('pic_pano/img'.$imageID.'.png', $unencodedData); 
-        echo 'http://'.$_SERVER['HTTP_HOST'].'/mon_pano.php?image='.$imageID;
+        echo 'http://'.$_SERVER['HTTP_HOST'].'/dev/panorama/mon_pano.php?image='.$imageID;
         ?>

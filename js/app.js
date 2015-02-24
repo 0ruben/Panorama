@@ -806,6 +806,7 @@ var artistes = [
 
 app.controller("PanoCtrl",function($scope) {
 
+
 	$scope.artistes = artistes;
 
 	$scope.artisteNotIncludes = [];
@@ -937,6 +938,32 @@ app.controller("PanoCtrl",function($scope) {
 				return "height:44px;";
 		}
 
+        $scope.reset = function(){
+            var jour = $scope.day_pano;
+            $('.url_pano').addClass('hidden');
+            $('#generate').removeClass('hidden');
+
+            if($scope.cpt[jour-1]==0)
+                return;
+            else{
+                for(var i = ($scope.artisteIncludes.length - 1) ; i>=0;i--){
+                    if($scope.artisteIncludes[i].jourId==jour){
+                        $scope.artisteIncludes[i].isChecked=false;
+                        $scope.artisteIncludes.splice(i,1);
+                        $scope.cpt[jour-1]--;
+                    }
+
+                }
+            }
+
+
+        }
+
+        $scope.resetRadio = function(jour){
+            $scope.day_pano=jour;
+            $('.url_pano').addClass('hidden');
+            $('#generate').removeClass('hidden');   
+        }
 	});
 
 // app.controller("RandomCtrl",function($scope) {

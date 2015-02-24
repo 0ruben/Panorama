@@ -112,7 +112,7 @@
 <div class="content bte" style="display:none;">  
   <div class="sub_menu billeterie" id="menu_billetterie" style="display:none;">
    <div class="head head_billet">
-     <h2> BILLETTERIE </h2>
+     <h2 style="margin-left:7px;"> BILLETTERIE </h2>
      <hr class="hr_billet"/>
      <div class="subtitle">
        <p> Choisissez le billet qui vous convient. </p>
@@ -285,7 +285,7 @@
 <div class="content mdl" id="pano" style="display:none;">  
   <div class="sub_menu pano" id="menu_billetterie" style="display:none;">
    <div class="head">
-     <h2> MON PANO </h2>
+     <h2 style="margin-left:-10px;"> MON PANO </h2>
      <hr class="hr_pano"/>
      <div class="subtitle">
       <p> Imaginez votre soirée idéale et partagez-la à vos amis. </p>
@@ -296,17 +296,17 @@
   </div>
   <div class="inputs_j1j2j3">
     <h3 class="title_art open_sans">Jour</h3>
-    <div class="input_container input_container_art radi_container_pano" ng-click="day_pano=1">
+    <div class="input_container input_container_art radi_container_pano" ng-click="resetRadio(1)">
       <div class="input input_art">
        <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="1" id="pano1"> <label for="pano1" class="label2 radio">Ven. 3 Avril</label>
      </div>
    </div>
-   <div class="input_container input_container_art radi_container_pano" ng-click="day_pano=2">
+   <div class="input_container input_container_art radi_container_pano" ng-click="resetRadio(2)">
      <div class="input input_art">
        <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="2" id="pano2"> <label for="pano2" class="label2 radio">Sam. 4 Avril</label>
      </div>
    </div>
-   <div class="input_container input_container_art radi_container_pano" ng-click="day_pano=3">
+   <div class="input_container input_container_art radi_container_pano" ng-click="resetRadio(3)">
      <div class="input input_art">
        <input class="day_art" type="radio" ng-model="day_pano" name="day_pano" value="3" id="pano3" checked> <label for="pano3" class="label2 radio">Dim. 5 Avril</label>
      </div>
@@ -330,7 +330,7 @@
   <div class="head_pano">
     <div class="explication_pano">
     <img alt="Panorama Festival" style="margin-left:241px;" class="grand-logo" src="images/logo_pano_long.png"/>
-    <hr style="margin-left:400px;"class="hr">
+    <hr style="margin-left:400px; margin-top:20px;"class="hr">
      <p style="margin-left:298px; width:250px;"> <strong>Sélectionnez les artistes</strong> que vous souhaitez voir afin d’optimiser votre parcours pendant le festival et partagez-le avec vos amis.</p>
     </div>
   </div>
@@ -364,8 +364,10 @@
     <div class="generer">
       <a data-text="Générer votre pano" type="submit" id="generate" onclick="capture();" class="button-hover hvr-sweep-to-right button_medley" href="#">VALIDER</a>
     </div>
-    <div class="url_pano">
-
+    <div class="url_pano hidden">
+      <a id="reset" ng-click="reset()" style="cursor: pointer;" class="button-hover hvr-sweep-to-right">RESET</a>
+<a id="share" style="float:left;" class="button-hover hvr-sweep-to-right" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='+html+'">PARTAGER</a>
+<a id="print" style="float:left;"class="print button-hover hvr-sweep-to-right" target="_blank" href="'+html+'">IMPRIMER</a>
     </div>
   </div>
   </div>
@@ -389,8 +391,15 @@
                  appear('.url_pano',0.5);
                  $("#generate").addClass('hidden');
                  $(".url_pano").removeClass('hidden');
-                 $('.url_pano').html('<a id="reset" style="cursor: pointer;" class="button-hover hvr-sweep-to-right">RESET</a><a style="float:left;" class="button-hover hvr-sweep-to-right" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='+html+'">PARTAGER</a><a style="float:left;"class="print button-hover hvr-sweep-to-right" target="_blank" href="'+html+'">IMPRIMER</a>'  );
+                 $("a#print").attr('href', html);
+                 $("a#share").attr('href', 'https://www.facebook.com/sharer/sharer.php?u='+html);
 
+//                  $('#reset').click(function(){
+//   alert("test");
+//   $('#generate').removeClass('hidden');
+//   $('.url_pano').addClass('hidden');
+
+// });
                }
              });
 
@@ -400,15 +409,13 @@
 
 </script>
 
-
-
 <!-- MAIN ARTIST -->
 <div class="content art" id="artiste" style="display:none;" ng-init="init()">
   <div class="sub_menu artiste" id="menu_billetterie" style="display:none;">
    <div class="head">
-     <h2> PROGRAM</h2>
-     <h2 id="mation"> MATION</h2>
-     <hr/>
+     <h2 style="margin-left:-20px;"> PROGRAM</h2>
+     <h2 style="margin-left:24px;" id="mation"> MATION</h2>
+     <hr style="margin-top:-20px;"/>
      <div class="subtitle">
        <p> Parcourez le line-up du festival selon vos critères. </p>
      </div>
@@ -418,22 +425,22 @@
   </div>
   <form class="inputs_art">
     <h3 class="title_art open_sans">Jour</h3>
-    <div class="input_container radi_container input_container_art default" ng-click="day_art=0">
+    <div class="input_container radi_container input_container_art default marge" ng-click="day_art=0">
       <div class="input input_art">
        <input class="day_art" type="radio" name="day_art" value="0" ng-model="day_art" id="jall"> <label for="jall" id="labelt" class="label2 radio">Tous</label>
      </div>
    </div>
-   <div class="input_container radi_container ven_art input_container_art" ng-click="day_art=1">
+   <div class="input_container radi_container ven_art input_container_art marge" ng-click="day_art=1">
     <div class="input input_art">
      <input class="day_art" type="radio" name="day_art" value="1" ng-model="day_art" id="j1"> <label for="j1" class="label2 radio">Vendredi</label>
    </div>
  </div>
- <div class="input_container radi_container sam_art  input_container_art" ng-click="day_art=2">
+ <div class="input_container radi_container sam_art  input_container_art marge" ng-click="day_art=2">
   <div class="input input_art">
     <input class="day_art" type="radio" name="day_art" value="2" ng-model="day_art" id="j2"> <label for="j2" class="label2 radio">Samedi</label> 
   </div>
 </div>
-<div class="input_container radi_container dim_art input_container_art" ng-click="day_art=3">
+<div class="input_container radi_container dim_art input_container_art marge" ng-click="day_art=3">
   <div class="input input_art">
     <input class="day_art" type="radio" name="day_art" value="3" ng-model="day_art" id="j3"> <label for="j3" class="label2 radio">Dimanche</label> 
   </div>
@@ -442,28 +449,28 @@
 
 <form class="inputs_sal">
   <h3 class="title_art open_sans">Salle</h3>
-  <div class="input_container radi_container input_container_art default" ng-click="sal_art=0">
+  <div class="input_container radi_container input_container_art default marge" ng-click="sal_art=0">
     <div class="input input_art">
      <input class="sal_art" type="radio" ng-model="sal_art" value="0" name="sal_art" id="sall"> <label for="sall" class="label2 radio">Toutes</label>
    </div>
  </div>
- <div class="input_container radi_container input_container_art" ng-click="sal_art=1">
+ <div class="input_container radi_container input_container_art marge" ng-click="sal_art=1">
   <div class="input input_art">
    <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="1" id="s1"> <label for="s1" class="label2 radio">Grand Club</label>
  </div>
 </div>
-<div class="input_container radi_container input_container_art" ng-click="sal_art=3">
+<div class="input_container radi_container input_container_art marge" ng-click="sal_art=3">
   <div class="input input_art">
 
     <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="3" id="s3"> <label for="s3" class="label2 radio">Club Sesame</label> 
   </div>
 </div>
-<div class="input_container radi_container input_container_art" ng-click="sal_art=2">
+<div class="input_container radi_container input_container_art marge" ng-click="sal_art=2">
   <div class="input input_art">
     <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="2" id="s2"> <label for="s2" class="label2 radio">Le Club</label> 
   </div>
 </div>
-<div class="input_container radi_container input_container_art" ng-click="sal_art=4">
+<div class="input_container radi_container input_container_art marge" ng-click="sal_art=4">
   <div class="input input_art">
     <input class="sal_art" type="radio" name="sal_art" ng-model="sal_art" value="4" id="s4"> <label for="s4" class="label2 radio">Club Coatelan</label> 
   </div>
@@ -533,7 +540,7 @@
 <div class="content inf" style="display:none;">  
   <div class="sub_menu info " id="menu_billetterie" style="display:none;">
     <div class="head">
-      <h2> INFOS 
+      <h2 style="margin-left:-68px;"> INFOS 
       </h2>
       <hr/>
       <div class="subtitle">
