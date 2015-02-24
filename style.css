@@ -244,6 +244,14 @@ h2, h3{
     width:100%;
 }
 
+.splash-fb{
+    position :absolute;
+    top:83%;
+    left:80%;
+    color:white;
+    font-size:30px;
+}
+
 .generate_pano_container{
     margin-top: -3px;
     padding: 10px;
