@@ -595,7 +595,8 @@ $('#reset').click(function(){
   $('.url_pano').addClass('hidden');
 });
 
-$( 'input[name="day_pano"]:radio' ).change(function(){
+$('input[name="day_pano"]:radio').change(function(){
+  alert("test");
   $('#generate').removeClass('hidden');
   $('.url_pano').addClass('hidden');
 });
