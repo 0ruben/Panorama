@@ -1617,7 +1617,7 @@ position: relative;
 }
 .tab-bis{
     position: relative;
-      height: 94px;
+      height: 120px;
       width: 85%;
 }
 .nav2-info-bis{
@@ -1976,6 +1976,11 @@ position: relative;
     width:123%;}
     .parte{
     width:123%;}
+    .tab-bis{
+    position: relative;
+      height: 100px;
+      width: 150%;
+}
 }
 .acces1{
 position: relative;
