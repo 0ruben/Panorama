@@ -435,7 +435,7 @@ $('.radi_container').click(function(){
     TweenLite.to(parent.children('.row_art'),0.5,{opacity:0});
     TweenLite.to(rowOpen,1,{height:hrow+"px",ease:Quint.easeOut});
     parent.children('.row_art').slideToggle(500); 
-    TweenLite.to('.toHide',1,{opacity:0,position:"relative"});
+    TweenLite.to('.toHide',1,{opacity:0,display:'none'});
     TweenLite.to($target, 1, {scale : 1,bottom:bottom[1]+"px",ease:Quint.easeOut,onComplete: function(){      
   }});  // Fix height of the div
     rowOpen=false;   
