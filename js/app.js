@@ -800,7 +800,7 @@ var artistes = [
     'description':'En l\'espace de deux petites années et quelques sorties éparses sur des labels prestigieux comme Spinnin\' Records ou Fool\'s Gold, le parisien TCHAMI s\'est imposé comme une valeur montante de la scène électronique internationale. S\'il qualifie sa musique de « future house » c\'est surtout dans le but de s\'affranchir des codes inhérents au genre, lui insuffler une touche toute personnelle. TCHAMI se plait à injecter une forme de spiritualité dans sa musique. En rendant ainsi hommage aux légendes de la house music, le supplément d\'âme de ses productions le démarque de ses contemporains. Adoubé par Diplo et Aluna George, plébiscité par Janet Jackson et Tribe Called Quest, il a partagé la scène avec Skrillex ou Dj Snake. Bref, n\'en jetez plus ! TCHAMI met tout le monde d\'accord.',
     'pic_link_black':'images/artistes/40.jpg',
     'pic_link_color':'images/artistes/40_c.jpg'
-  }
+  },
 {
     'id':41,
     'name':'SAYCET',
@@ -817,10 +817,10 @@ var artistes = [
     'facebook':'https://www.facebook.com/iamTchami?fref=ts',
     'twitter':'',
     'soundcloud':'',
-    'description':'SAYCET est le projet de Pierre Lefeuvre, producteur parisien qui mêle avec élégance des influences allant de la musique contemporaine à l’électronica, en passant par la pop. Sur scène, Pierre est accompagné de Louise Roam (chant, violon, claviers) et de Zita Cochet (scénographie, projection video). SAYCET présentera son tout nouvel album Mirage, à l’occasion d’un spectacle dans le sous-sol du futur équipement SE/cW, avec une scénographie spécialement adaptée au site de la Manufacture.'
+    'description':'SAYCET est le projet de Pierre Lefeuvre, producteur parisien qui mêle avec élégance des influences allant de la musique contemporaine à l’électronica, en passant par la pop. Sur scène, Pierre est accompagné de Louise Roam (chant, violon, claviers) et de Zita Cochet (scénographie, projection video). SAYCET présentera son tout nouvel album Mirage, à l’occasion d’un spectacle dans le sous-sol du futur équipement SE/cW, avec une scénographie spécialement adaptée au site de la Manufacture.',
     'pic_link_black':'images/artistes/40.jpg',
     'pic_link_color':'images/artistes/40_c.jpg'
-  }
+  },
 
   {
     'id':42,
@@ -838,7 +838,7 @@ var artistes = [
     'facebook':'https://www.facebook.com/iamTchami?fref=ts',
     'twitter':'',
     'soundcloud':'',
-    'description':'Initiée l’année dernière avec un concert de Rodolphe Burger à la salle des fêtes de la Maison du Peuple, l’idée du concert dans un lieu secret est simple : inviter des musiciens à se produire dans un des lieux chargés d’histoire que recèle notre territoire. Ce faisant, il s’agit aussi d’inviter le public à découvrir ce riche patrimoine souvent méconnu. Cette année, les clés de cet endroit tenu secret seront confiées à Mansfield Tya. Pour l’occasion, le duo de chanson indie composé de Julia Lanoë et Carla Pallone, nous propose « June, ten years after ». Un retour, 10 ans après, sur leur premier album, revisité en version Lo-Fi. Ambiance intimiste et frissons garantis.'
+    'description':'Initiée l’année dernière avec un concert de Rodolphe Burger à la salle des fêtes de la Maison du Peuple, l’idée du concert dans un lieu secret est simple : inviter des musiciens à se produire dans un des lieux chargés d’histoire que recèle notre territoire. Ce faisant, il s’agit aussi d’inviter le public à découvrir ce riche patrimoine souvent méconnu. Cette année, les clés de cet endroit tenu secret seront confiées à Mansfield Tya. Pour l’occasion, le duo de chanson indie composé de Julia Lanoë et Carla Pallone, nous propose « June, ten years after ». Un retour, 10 ans après, sur leur premier album, revisité en version Lo-Fi. Ambiance intimiste et frissons garantis. • Concert uniquement sur invitation. Gagne ta place le mardi 31 Mars à 17h00 sur le facebook du festival (www.facebook.com/FestivalPanoramasMorlaix)!',
     'pic_link_black':'images/artistes/40.jpg',
     'pic_link_color':'images/artistes/40_c.jpg'
   }
