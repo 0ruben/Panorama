@@ -2079,6 +2079,9 @@ margin-top: 30px;
     .sub_info_6{
     display: none;
     }
+    .rect_info{
+    margin-top: 5px;
+    }
 }
 @media screen and (max-width: 480px) {
     .artiste .head{
