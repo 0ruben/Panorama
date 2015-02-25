@@ -1,5 +1,13 @@
 // TODO Disable hand click on radio and checkbox
 //Billeterie 1 correspond jour 1 sans camping 2 jour 1 avec camping
+
+jQuery('.sub_menu,.art_content,.info_content,.pano,.ticket,.contains').bind('mousewheel', function(event) {
+    event.preventDefault();
+    var scrollTop = this.scrollTop;
+    this.scrollTop = (scrollTop + ((event.deltaY * event.deltaFactor) * -1));
+    //console.log(event.deltaY, event.deltaFactor, event.originalEvent.deltaMode, event.originalEvent.wheelDelta);
+  });
+
 $(window).load(function(){
   $('.nav_range').removeClass('hidden');
   $('.loader').addClass('hidden');
