@@ -433,7 +433,7 @@ var artistes = [
     'isChecked':'FALSE',
     'salle':'Grand Hall',
     'salleId':1,
-    'youtube':'https://youtube.com/watch?v=MA0qWtiXFFo',
+    'youtube':'https://youtube.com/watch?v=Bj8425Ma6F8',
     'facebook':'https://www.facebook.com/laurentgarnierofficial?fref=ts',
     'twitter':'',
     'soundcloud':'',
@@ -801,6 +801,49 @@ var artistes = [
     'pic_link_black':'images/artistes/40.jpg',
     'pic_link_color':'images/artistes/40_c.jpg'
   }
+{
+    'id':41,
+    'name':'SAYCET',
+    'jour':'VENDREDI 3 AVRIL',
+    'jourId':1,
+    'heure':'18h00',
+    'heureId':18,
+    'ordre_passage':0,
+    'style':'Electro',
+    'isChecked':'FALSE',
+    'salle':'Grand Hall',
+    'salleId':1,
+    'youtube':'https://youtube.com/watch?v=z5ZdjwbQnXc',
+    'facebook':'https://www.facebook.com/iamTchami?fref=ts',
+    'twitter':'',
+    'soundcloud':'',
+    'description':'SAYCET est le projet de Pierre Lefeuvre, producteur parisien qui mêle avec élégance des influences allant de la musique contemporaine à l’électronica, en passant par la pop. Sur scène, Pierre est accompagné de Louise Roam (chant, violon, claviers) et de Zita Cochet (scénographie, projection video). SAYCET présentera son tout nouvel album Mirage, à l’occasion d’un spectacle dans le sous-sol du futur équipement SE/cW, avec une scénographie spécialement adaptée au site de la Manufacture.'
+    'pic_link_black':'images/artistes/40.jpg',
+    'pic_link_color':'images/artistes/40_c.jpg'
+  }
+
+  {
+    'id':42,
+    'name':'MANSFIELD TYA',
+    'jour':'SAMEDI 4 AVRIL',
+    'jourId':2,
+    'heure':'18h00',
+    'heureId':18,
+    'ordre_passage':0,
+    'style':'Electro',
+    'isChecked':'FALSE',
+    'salle':'Grand Hall',
+    'salleId':1,
+    'youtube':'https://youtube.com/watch?v=z5ZdjwbQnXc',
+    'facebook':'https://www.facebook.com/iamTchami?fref=ts',
+    'twitter':'',
+    'soundcloud':'',
+    'description':'Initiée l’année dernière avec un concert de Rodolphe Burger à la salle des fêtes de la Maison du Peuple, l’idée du concert dans un lieu secret est simple : inviter des musiciens à se produire dans un des lieux chargés d’histoire que recèle notre territoire. Ce faisant, il s’agit aussi d’inviter le public à découvrir ce riche patrimoine souvent méconnu. Cette année, les clés de cet endroit tenu secret seront confiées à Mansfield Tya. Pour l’occasion, le duo de chanson indie composé de Julia Lanoë et Carla Pallone, nous propose « June, ten years after ». Un retour, 10 ans après, sur leur premier album, revisité en version Lo-Fi. Ambiance intimiste et frissons garantis.'
+    'pic_link_black':'images/artistes/40.jpg',
+    'pic_link_color':'images/artistes/40_c.jpg'
+  }
+
+
 ]
 
 
