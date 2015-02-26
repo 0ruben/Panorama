@@ -1128,7 +1128,7 @@ background-repeat:round;
 .map-acces{
 display: inline-block;
 margin-left:600px;
-margin-top: 0px;
+margin-top: 40px;
 position: absolute;
 }
 .sub_info{
@@ -1598,7 +1598,6 @@ margin-left: 70px;
 }
 .ban-acces{
     position: relative;
-    height: 380px;
     overflow: hidden;
 }
 .img-entree-bis{
@@ -1607,7 +1606,6 @@ background-color: rgb(255,255,255);
 .ban-entree{
 position: relative;
 overflow: hidden;
-    height: 385px;
 }
 .graph-entree{
 position: relative;
@@ -1627,19 +1625,20 @@ background-color: rgb(243,243,243);
 .ban-trsp{
 position: relative;
 overflow: hidden;
-    height: 395px;
 }
 .trsp1{
     position: relative;
         width: 40%;
     display: inline-block;
     margin-left: 70px;
-    bottom:125px;
+    bottom:100px;
 }
 .trsp2{
     position: relative;
         width: 40%;
     display: inline-block;
+    top: 25px;
+height: 550px;
 }
 .train-info-bis{
 position: relative;
@@ -1669,19 +1668,19 @@ background-color: rgb(255,255,255);
 .ban-camping{
 position: relative;
 overflow: hidden;
-    height: 395px;
 }
 .camping1{
     position: relative;
         width: 40%;
     display: inline-block;
     margin-left: 70px;
-    bottom:300px;
+    bottom:270px;
 }
 .camping2{
     position: relative;
         width: 40%;
     display: inline-block;
+    top:30px;
 }
 .camp-info-bis{
 position: relative;
@@ -1705,19 +1704,19 @@ background-color: rgb(243,243,243);
 .ban-savoir{
 position: relative;
 overflow: hidden;
-    height: 395px;
 }
 .savoir3{
     position: relative;
         width: 40%;
     display: inline-block;
     margin-left: 70px;
-    bottom:155px;
+    bottom:125px;
 }
 .savoir2{
     position: relative;
         width: 40%;
     display: inline-block;
+    top:30px;
 }
 .psh-info-bis{
     position: relative;
@@ -1807,7 +1806,7 @@ position: relative;
         width: 40%;
     display: block;
     margin-left: 70px;
-    bottom:1px;
+    top:30px;
 }
     .trsp2{
     position: relative;
@@ -1820,7 +1819,7 @@ position: relative;
         width: 40%;
     display: block;
     margin-left: 70px;
-    bottom:1px;
+    top:30px;
 }
     .camping2{
     position: relative;
@@ -1828,14 +1827,14 @@ position: relative;
     display: block;
             margin-left: 70px;
         margin-top:270px;
-        height: 580px;
+        height: 650px;
 }
     .savoir3{
     position: relative;
         width: 40%;
     display: block;
     margin-left: 70px;
-    bottom:1px;
+    top:30px;
 }
     .savoir2{
     position: relative;
