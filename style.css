@@ -1847,6 +1847,11 @@ position: relative;
     .map-acces{
     display: none;
     }
+       .tab-bis{
+    position: relative;
+      height: 100px;
+      width: 125%;
+}
 }
     .acces1{
     position: relative;
@@ -2038,18 +2043,18 @@ width: 100%;
     .tab-bis{
     position: relative;
       height: 100px;
-      width: 150%;
+      width: 160%;
 }
     .accredi1{
 margin-top: 10px;
     width: 70%;
-    margin-left: 70px;
+    margin-left: 2px;
 }
 .accredi2{
 margin-top: 30px;
     width: 70%;
     margin-bottom: 30px;
-       margin-left: 70px;
+       margin-left: 2px;
 }
     .ban-info{
     width: auto;
@@ -2078,6 +2083,15 @@ margin-top: 30px;
     }
     .rect_info{
     margin-top: 5px;
+    }
+    .inside-info-bis > div {
+    margin-left:2px;
+    }
+    .club-info-bis{
+    margin-left:2px;
+    }
+    .coatelan-info-bis{
+    margin-left:2px;
     }
 }
 @media screen and (max-width: 480px) {
@@ -2125,7 +2139,7 @@ width: 155%;
 }
 @media screen and (max-width:400px){
 .info_content > div {
-width: 195%;
+width: 165%;
 }
 }
 @media screen and (max-width:300px){
