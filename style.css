@@ -1553,7 +1553,7 @@ top: 220px;
 .cine-info-bis{
   position: relative;
   width: 40%;
-  height: 124px;
+  height: 184px;
 margin-left: 70px;
         display: inline-block;
 }
@@ -1565,7 +1565,7 @@ margin-left: 70px;
 }
 .mjc-info-bis{
   position: relative;
-  width: 40%;
+  width: 90%;
   height: 140px;
     margin-left: 70px;
         display: inline-block;
@@ -1586,15 +1586,9 @@ margin-left: 70px;
 .manu-info-bis{
   position: relative;
   width: 40%;
-  height: 124px;
+  height: 244px;
     display: inline-block;
-}
-.theatre-info-bis{
-  position: relative;
-  width: 40%;
-  height: 124px;
-    margin-left: 70px;
-        display: inline-block;
+    margin-top: 80px;
 }
 .ban-acces{
     position: relative;
@@ -1631,7 +1625,7 @@ overflow: hidden;
         width: 40%;
     display: inline-block;
     margin-left: 70px;
-    bottom:100px;
+    bottom:50px;
 }
 .trsp2{
     position: relative;
@@ -1642,7 +1636,7 @@ height: 550px;
 }
 .train-info-bis{
 position: relative;
-      height: 200px;
+      height: 250px;
 }
 .covoi-info-bis{
 position: relative;
@@ -1742,7 +1736,7 @@ margin-left: 70px;
 .cafe-info-bis{
   position: relative;
   width: 40%;
-  height: 124px;
+  height: 324px;
         display: block;
         margin-left: 70px;
         margin-bottom: 30px;
@@ -1774,10 +1768,10 @@ margin-left: 70px;
 .manu-info-bis{
   position: relative;
   width: 40%;
-  height: 124px;
+  height: 224px;
     display: block;
         margin-left: 70px;
-        margin-bottom: 20px;
+    margin-top: 0px;
 }
 .theatre-info-bis{
   position: relative;
@@ -2151,4 +2145,29 @@ width: 255%;
 .info_content > div {
 width: 315%;
 }
+}
+.rectangle_32 {
+  border-width: 2px;
+  border-color: rgb( 213, 13, 13 );
+ border-style: solid;
+position: absolute;
+left: 100px;
+top: 200px;
+width: 143px;
+height: 28px;
+}
+.text-rect-red {
+  font-size: 20px;
+  font-family: "Open Sans";
+  color: rgb( 171, 25, 25 );
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  -moz-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+  -webkit-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+  -ms-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+ position: relative;
+width: 200.675px;
+margin:0;
+right: 30px;
 }
