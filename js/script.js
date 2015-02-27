@@ -579,12 +579,18 @@ $('.info_content').scroll(function(e){
         $('.inf_6').addClass('active');
         $('#accredi').prop('checked',true)}
         else if ($('.sub_info_4').hasClass('hidden')) $('.sub_info_4').removeClass('hidden');
-if ($('.img-parte-bis').offset().top<0) {
+if ($('.img-bene-bis').offset().top<50) {
         $('.sub_info_5').addClass('hidden');
+        $('.active').removeClass('active');
+        $('.inf_6').addClass('active');
+        $('#accredi').prop('checked',true)}
+        else if ($('.sub_info_4').hasClass('hidden')) $('.sub_info_5').removeClass('hidden');
+if ($('.img-parte-bis').offset().top<0) {
+        $('.sub_info_6').addClass('hidden');
         $('.active').removeClass('active');
         $('.inf_7').addClass('active');
         $('#parte').prop('checked',true)}
-        else if ($('.sub_info_4').hasClass('hidden')) $('.sub_info_5').removeClass('hidden');
+         else if ($('.sub_info_5').hasClass('hidden')) $('.sub_info_6').removeClass('hidden');
         if (posY<1090) { $('.active').removeClass('active');
         $('.inf_1').addClass('active');
         $('#acces').prop('checked',true)}
@@ -602,7 +608,7 @@ $('.imput_container_art').click(function() {
   if (self.hasClass('input_transport')) target.scrollTo(pos_trsp+5+"px",1000);
   if (self.hasClass('input_camping')) target.scrollTo(pos_camping+5+"px",1000);
   if (self.hasClass('input_savoir')) target.scrollTo(pos_savoir+5+"px",1000);
-  if (self.hasClass('input_accredi')) target.scrollTo(pos_accredi+5+"px",1000);
+  if (self.hasClass('input_accredi')) target.scrollTo(pos_accredi+-90+"px",1000);
   if (self.hasClass('input_parte')) target.scrollTo(pos_parte+5+"px",1000);
 });
 
