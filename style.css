@@ -1173,6 +1173,12 @@ position: absolute;
     top:0;
     z-index: 5;
 }
+.sub_info_7{
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 4;
+}
 .toHide{
     position: absolute;
     width: 100%;
@@ -1302,6 +1308,21 @@ h5{
   height: 86.381px;
   left: -200px;
   top:45px;
+}
+.text-red-info-bis{
+  font-size: 24.627px;
+  font-family: 'Open Sans';
+  color: rgb( 171, 25, 25 );
+  line-height: 1.733;
+  text-align: left;
+  -moz-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+  -webkit-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+  -ms-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+  position: absolute;
+  width: 784.359px;
+  height: 86.381px;
+  left: -200px;
+  top:125px;
 }
 .autre-camp1-info{
 top:190px;
@@ -2032,6 +2053,8 @@ width: 100%;
     width:123%;}
     .accredi{
     width:123%;}
+    .bene{
+    width:123%;}
     .parte{
     width:123%;}
     .tab-bis{
@@ -2115,10 +2138,19 @@ height: 450px;
     background-color: rgb(243,243,243);
 height: auto;
 }
+.img-bene-bis{
+    background-color: rgb(243,243,243);
+height: 300px;
+}
 .img-parte-bis{
     background-color: rgb(243,243,243);
 height: 300px;
 }
+.bene-info-bis{
+position:relative;
+height: 220px;
+margin-left: 70px;
+top: 100px;}
 .parte-info-bis{
 position:relative;
 height: 180px;
