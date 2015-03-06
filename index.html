@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/ion.rangeSlider.css">
   <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300' rel='stylesheet' type='text/css'>
+  <link href="css/lightbox.css" rel="stylesheet" />
   <title>Festival Panorama </title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <script type="text/javascript" src="jquery.min.js"></script>
@@ -23,6 +24,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
   <script src="js/jquery.ui.touch-punch.min.js"></script>
   <script src="js/jquery.mousewheel.min.js"></script>
+  <script src="js/lightbox.min.js"></script>
   <meta name="viewport" content="initial-scale=1">
   <script src="js/app.js"></script>
   
@@ -490,6 +492,9 @@
   <div class="slider"><input type="text" id="range" ng-model="range" value="" name="range"/>
   </div>
 </div>
+<div class="input_showprog">
+<a href="images/ter_speciaux.jpg" data-lightbox="image-1" data-title="SNCF - TER SPECIAUX">Voir le tableau complet</a>
+</div>
 </div>
 <div class="art_content contains" style="display:none; height:{{artistes.length*200}}+px;" >
   <div class="list" data-size="{{$artistes.length}}">
@@ -505,11 +510,11 @@
             <div class="container_img" style="background-image:url({{artist.pic_link_color}});"></div>
           </div>
         </div>
-<!--           <div class="row2 details_art" style="color:#fff;">
+         <div class="row2 details_art" style="color:#fff;">
           <p class="time-hover">{{artist.heure}}</p>
           <p class="art_day-hover">{{artist.jour}}</p>
           <p class="art_style-hover">{{artist.style}}</p>
-      </div> -->
+      </div>
       </div>  
       <div class="row_art" style="display:none;">
         <div class="art_vid dropdown">
@@ -601,6 +606,20 @@
           <div class="input input_info input_accredi">
             <input  id="accredi" class="day_art" type="radio" name="info"> 
             <label id="info6" for="accredi" class="label2 radio">Accréditation
+            </label> 
+          </div>
+        </div>
+                   <div class="input_container inf_6 imput_container_art">
+          <div class="input input_info input_accredi">
+            <input  id="accredi" class="day_art" type="radio" name="info"> 
+            <label id="info6" for="accredi" class="label2 radio">Agenda21
+            </label> 
+          </div>
+        </div>
+                   <div class="input_container inf_6 imput_container_art">
+          <div class="input input_info input_accredi">
+            <input  id="accredi" class="day_art" type="radio" name="info"> 
+            <label id="info6" for="accredi" class="label2 radio">Bénévoles
             </label> 
           </div>
         </div>
@@ -761,37 +780,44 @@
               <h4>train</h4>
               <div class="rect_info">
               </div>
-              <h5>Accès TER / TGV en gare de Morlaix</br> (à 2 minutes à pied du centre ville)</h5>
-              <p class="text-info"></br>En partenariat avec la Région Bretagne, le trajet en
-                TER aller-retour à tarif avantageux. Plus d’infos sur le site  http://www.ter.sncf.com/bretagne/
-                Sur présentation du ticket d’entrée du festival et au départ de toute la Bretagne.</p>
+              <h5>Accès TER / TGV en gare de Morlaix<br> (à 2 minutes à pied du centre ville)</h5>
+              <p class="text-info"><br>En partenariat avec la Région Bretagne, le trajet en
+  TER aller-retour à tarif avantageux. En vente sur le site SNCF TER BRETAGNE en billet imprimé. Billet d’entrée au festival à présenter lors du contrôle.<br>
+Plus d’infos sur le site <a style="text-decoration:underline;" href="http://www.ter.sncf.com/bretagne/" target="_blank">http://www.ter.sncf.com/bretagne/</a><br><br>
+<span style="color:rgb( 171, 25, 25 );">IMPORTANT : Ces tarifs sont valables UNIQUEMENT dans les 2 trains spéciaux
+« Panoramas » (le vendredi au départ Rennes, et le dimanche pour le retour vers
+Rennes).</span><br><br>
+Merci de respecter et de laisser propre les trains spéciaux « Panoramas » mis à
+disponibilité par notre partenaire SNCF TER BRETAGNE.<br><br>
+<a class="button-hover hvr-sweep-to-right button_medley" href="images/ter_speciaux.jpg" data-lightbox="image-sncf" data-title="SNCF - TER SPECIAUX">Voir les horaires</a></p>
               </div>
-              <div class="covoi-info-bis">
-                <h4>covoiturage</h4>
-                <div class="rect_info">
-                </div>
-                <h5>www.covoiturage.com</h5>
-                <p class="text-info">Sur le site du Conseil Général du Finistère, vous pouvez organiser votre trajet pour vous rendre au festival grâce au covoiturage, ce au départ de toutes les villes d’Europe.</p>
-              </div>
+
             </div>
                 <div class="trsp2">
               <div class="nav1-info-bis">
                 <h4>navette</h4>
                 <div class="rect_info">
                 </div>
-                <h5>DEpuis le centre ville</h5>
-                <p class="text-info">Des navettes régulières aller-retour sont mises en place le vendredi, samedi et dimanche pour vous 
-                  rendre sur le site du festival à Lango et le camping officiel du festival.  Départs réguliers à partir de 17h le vendredi depuis la 
-                  Place Cornic (centre ville - sous le viaduc). Il est préférable d’accéder au site du festival par ce moyen de transport puisque les 
-                  Places de parking du parc expo est limité !</p>
+                <h5>Depuis le centre ville</h5>
+                <p class="text-info">Afin de favoriser les transports en commun, le Festival Panoramas et Keolis mettent en
+place un dispositif de navettes du vendredi 3 au Dimanche 5 avril.
+Elles feront régulièrement l’aller et retour entre la Place Cornic (centre­ville ­ sous le Viaduc) et le site de Langolvas et son camping ; Le dimanche, entre Langolvas et la gare
+SNCF de Morlaix.<br><br>
+<strong><span style="color:#35BFBF;">
+Le vendredi 3 avril > de 15h05 à 06h40<br>
+Le samedi 4 avril > de 16h10 à 06h40<br>
+Le dimanche 5 avril > de 07h47 à 12h38</span></strong><br><br>
+Tarif : 2 € l’aller/retour - point de vente sous Le Viaduc. </p> 
                 </div>
-    <img src="images/tab.png" class="tab-bis">
                 <div class="nav2-info-bis">
-                  <p class="text-info">Le temps d’attente pour accéder au site varie en fonction du nombre de navettes en rotation, vous retrouverez les horaires de passage complets sur place.
-                    Le Dimanche matin, une navette fera les allers – retours depuis Langolvas vers la Gare Sncf toutes les 30 minutes à entre 8h10 et 12h. Le camping ferme ses portes à 12 le dimanche.
-                    Pour le Club Coatelan (Dimanche soir) : réservation navette > 06 32 06 74 79
-                  </p>
                 </div>
+                              <div class="covoi-info-bis">
+                <h4>covoiturage</h4>
+                <div class="rect_info">
+                </div>
+                <h5>www.covoiturage.com</h5>
+                <p class="text-info">Sur le site du Conseil Général du Finistère, vous pouvez organiser votre trajet pour vous rendre au festival grâce au covoiturage, ce au départ de toutes les villes d’Europe.</p>
+              </div>
                     </div>
 </div>
               </div>    

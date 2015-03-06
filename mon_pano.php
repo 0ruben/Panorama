@@ -8,7 +8,7 @@
         $imageID = 0;
 
     ?>
-    <title>Festival Panorama - MON PANO</title>
+    <title>Festival Panoramas - MON PANO</title>
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="jquery-ui.min.js"></script>
     <script type='text/javascript' src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
@@ -21,8 +21,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <meta charset="utf-8" lang="fr"/>
-    <meta property="og:site_name" content="Panorama Festival"/>
-    <meta property="og:description" content="Viens toi aussi créer ta soirée Panorama !" />
+    <meta property="og:site_name" content="Panoramas Festival"/>
+    <meta property="og:description" content="Viens toi aussi créer ta soirée Panoramas !" />
     <meta property="og:title" content="Mon Pano" />
     <?php echo  '<meta property="og:image" content="http://'.$_SERVER['HTTP_HOST'].'/dev/panorama/pic_pano/img'.$imageID.'.png"/>'
     ?>
@@ -31,7 +31,7 @@
 <body>
 <div class="content_pano">
     <div class="center">
-        <a href="/"><img alt="Panorama Festival" class="grand-logo" src="images/logo_pano_long.png"/></a>
+        <a href="/"><img alt="Panoramas Festival" class="grand-logo" src="images/logo_pano_long.png"/></a>
 
     </div>
     <div class="image_container" >

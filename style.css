@@ -4,8 +4,6 @@
   box-sizing: border-box;
 
 }
-html { overflow: -moz-scrollbars-none; }
-
 
 @font-face {
     font-family: 'socicon';
@@ -246,6 +244,11 @@ h2, h3{
     color:white;
     font-size:30px;
     opacity:0.8;
+}
+
+.splash-fb:hover{
+    opacity:1;
+
 }
 
 .generate_pano_container{
@@ -730,6 +733,13 @@ hr{
     margin-left: 10px;
 }
 
+.input_showprog{
+    position: absolute;
+    top:700px;
+    margin-left: 10px;
+}
+
+
 .inputs_sal{
     position: absolute;
     top:400px;
@@ -1080,6 +1090,10 @@ hr{
 .infos{
     position: absolute;
     top:225px;
+}
+.show-sncf{
+    position: absolute;
+    top:500px;
 }
 .img-acces{
     background-attachment: inherit;
@@ -1631,10 +1645,10 @@ overflow: hidden;
 }
 .trsp1{
     position: relative;
-        width: 40%;
+    width: 40%;
     display: inline-block;
     margin-left: 70px;
-    bottom:125px;
+    bottom:370px;
 }
 .trsp2{
     position: relative;
@@ -1805,6 +1819,7 @@ position: relative;
     .trsp1{
     position: relative;
         width: 40%;
+          height: 415px;
     display: block;
     margin-left: 70px;
     bottom:1px;
