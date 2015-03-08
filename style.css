@@ -89,6 +89,11 @@ p, label{
     width: 100%;
     list-style: none;
 }
+
+.pic-prog{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+}
 .nav-item {
     position: relative;
     overflow: hidden;
@@ -2160,7 +2165,7 @@ height: 300px;
 }
 .img-parte-bis{
     background-color: rgb(243,243,243);
-height: 300px;
+height: 1500px;
 }
 .bene-info-bis{
 position:relative;
