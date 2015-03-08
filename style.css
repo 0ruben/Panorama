@@ -1142,7 +1142,7 @@ background-repeat:round;
 .map-acces{
 display: inline-block;
 margin-left:600px;
-margin-top: 0px;
+margin-top: 40px;
 position: absolute;
 }
 .sub_info{
@@ -1186,6 +1186,12 @@ position: absolute;
     width: 100%;
     top:0;
     z-index: 5;
+}
+.sub_info_7{
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 4;
 }
 .toHide{
     position: absolute;
@@ -1316,6 +1322,21 @@ h5{
   height: 86.381px;
   left: -200px;
   top:45px;
+}
+.text-red-info-bis{
+  font-size: 24.627px;
+  font-family: 'Open Sans';
+  color: rgb( 171, 25, 25 );
+  line-height: 1.733;
+  text-align: left;
+  -moz-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+  -webkit-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+  -ms-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+  position: absolute;
+  width: 784.359px;
+  height: 86.381px;
+  left: -200px;
+  top:125px;
 }
 .autre-camp1-info{
 top:190px;
@@ -1567,7 +1588,7 @@ top: 220px;
 .cine-info-bis{
   position: relative;
   width: 40%;
-  height: 124px;
+  height: 184px;
 margin-left: 70px;
         display: inline-block;
 }
@@ -1579,7 +1600,7 @@ margin-left: 70px;
 }
 .mjc-info-bis{
   position: relative;
-  width: 40%;
+  width: 90%;
   height: 140px;
     margin-left: 70px;
         display: inline-block;
@@ -1600,19 +1621,12 @@ margin-left: 70px;
 .manu-info-bis{
   position: relative;
   width: 40%;
-  height: 124px;
+  height: 244px;
     display: inline-block;
-}
-.theatre-info-bis{
-  position: relative;
-  width: 40%;
-  height: 124px;
-    margin-left: 70px;
-        display: inline-block;
+    margin-top: 80px;
 }
 .ban-acces{
     position: relative;
-    height: 380px;
     overflow: hidden;
 }
 .img-entree-bis{
@@ -1621,7 +1635,6 @@ background-color: rgb(255,255,255);
 .ban-entree{
 position: relative;
 overflow: hidden;
-    height: 385px;
 }
 .graph-entree{
 position: relative;
@@ -1641,23 +1654,25 @@ background-color: rgb(243,243,243);
 .ban-trsp{
 position: relative;
 overflow: hidden;
-    height: 395px;
 }
 .trsp1{
     position: relative;
     width: 40%;
     display: inline-block;
     margin-left: 70px;
-    bottom:370px;
+    bottom: 344px;
 }
 .trsp2{
     position: relative;
         width: 40%;
     display: inline-block;
+    top: 25px;
+  height: 570px;
+
 }
 .train-info-bis{
 position: relative;
-      height: 200px;
+      height: 250px;
 }
 .covoi-info-bis{
 position: relative;
@@ -1683,19 +1698,19 @@ background-color: rgb(255,255,255);
 .ban-camping{
 position: relative;
 overflow: hidden;
-    height: 395px;
 }
 .camping1{
     position: relative;
         width: 40%;
     display: inline-block;
     margin-left: 70px;
-    bottom:300px;
+    bottom:270px;
 }
 .camping2{
     position: relative;
         width: 40%;
     display: inline-block;
+    top:30px;
 }
 .camp-info-bis{
 position: relative;
@@ -1719,19 +1734,19 @@ background-color: rgb(243,243,243);
 .ban-savoir{
 position: relative;
 overflow: hidden;
-    height: 395px;
 }
 .savoir3{
     position: relative;
         width: 40%;
     display: inline-block;
     margin-left: 70px;
-    bottom:155px;
+    bottom:125px;
 }
 .savoir2{
     position: relative;
         width: 40%;
     display: inline-block;
+    top:30px;
 }
 .psh-info-bis{
     position: relative;
@@ -1757,7 +1772,7 @@ margin-left: 70px;
 .cafe-info-bis{
   position: relative;
   width: 40%;
-  height: 124px;
+  height: 324px;
         display: block;
         margin-left: 70px;
         margin-bottom: 30px;
@@ -1789,10 +1804,10 @@ margin-left: 70px;
 .manu-info-bis{
   position: relative;
   width: 40%;
-  height: 124px;
+  height: 224px;
     display: block;
         margin-left: 70px;
-        margin-bottom: 20px;
+    margin-top: 0px;
 }
 .theatre-info-bis{
   position: relative;
@@ -1822,7 +1837,7 @@ position: relative;
           height: 415px;
     display: block;
     margin-left: 70px;
-    bottom:1px;
+    top:30px;
 }
     .trsp2{
     position: relative;
@@ -1835,7 +1850,7 @@ position: relative;
         width: 40%;
     display: block;
     margin-left: 70px;
-    bottom:1px;
+    top:30px;
 }
     .camping2{
     position: relative;
@@ -1843,14 +1858,14 @@ position: relative;
     display: block;
             margin-left: 70px;
         margin-top:270px;
-        height: 580px;
+        height: 650px;
 }
     .savoir3{
     position: relative;
         width: 40%;
     display: block;
     margin-left: 70px;
-    bottom:1px;
+    top:30px;
 }
     .savoir2{
     position: relative;
@@ -1863,6 +1878,11 @@ position: relative;
     .map-acces{
     display: none;
     }
+       .tab-bis{
+    position: relative;
+      height: 100px;
+      width: 125%;
+}
 }
     .acces1{
     position: relative;
@@ -1881,7 +1901,6 @@ margin-top: 30px;
 }
 .ban-info{
 width: 100%;
-height: 350px;
 }
 @media screen and (max-width: 768px) {
     .contains{
@@ -2050,23 +2069,25 @@ height: 350px;
     width:123%;}
     .accredi{
     width:123%;}
+    .bene{
+    width:123%;}
     .parte{
     width:123%;}
     .tab-bis{
     position: relative;
       height: 100px;
-      width: 150%;
+      width: 160%;
 }
     .accredi1{
 margin-top: 10px;
     width: 70%;
-    margin-left: 70px;
+    margin-left: 2px;
 }
 .accredi2{
 margin-top: 30px;
     width: 70%;
     margin-bottom: 30px;
-       margin-left: 70px;
+       margin-left: 2px;
 }
     .ban-info{
     width: auto;
@@ -2096,6 +2117,15 @@ margin-top: 30px;
     .rect_info{
     margin-top: 5px;
     }
+    .inside-info-bis > div {
+    margin-left:2px;
+    }
+    .club-info-bis{
+    margin-left:2px;
+    }
+    .coatelan-info-bis{
+    margin-left:2px;
+    }
 }
 @media screen and (max-width: 480px) {
     .artiste .head{
@@ -2124,10 +2154,19 @@ height: 450px;
     background-color: rgb(243,243,243);
 height: auto;
 }
+.img-bene-bis{
+    background-color: rgb(243,243,243);
+height: 300px;
+}
 .img-parte-bis{
     background-color: rgb(243,243,243);
 height: 300px;
 }
+.bene-info-bis{
+position:relative;
+height: 220px;
+margin-left: 70px;
+top: 100px;}
 .parte-info-bis{
 position:relative;
 height: 180px;
@@ -2142,7 +2181,7 @@ width: 155%;
 }
 @media screen and (max-width:400px){
 .info_content > div {
-width: 185%;
+width: 165%;
 }
 }
 @media screen and (max-width:300px){
@@ -2154,4 +2193,29 @@ width: 255%;
 .info_content > div {
 width: 315%;
 }
+}
+.rectangle_32 {
+  border-width: 2px;
+  border-color: rgb( 213, 13, 13 );
+ border-style: solid;
+position: absolute;
+left: 100px;
+top: 200px;
+width: 143px;
+height: 28px;
+}
+.text-rect-red {
+  font-size: 20px;
+  font-family: "Open Sans";
+  color: rgb( 171, 25, 25 );
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  -moz-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+  -webkit-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+  -ms-transform: matrix( 0.48450252743198,0,0,0.48477761768103,0,0);
+ position: relative;
+width: 200.675px;
+margin:0;
+right: 30px;
 }
