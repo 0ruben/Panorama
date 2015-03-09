@@ -1498,6 +1498,7 @@ top:190px;
     background:transparent;
     z-index: 10000;
 }
+}
 /*Reponsive*/
 
 @media screen and (max-width: 768px) {
@@ -2115,6 +2116,7 @@ width: 100%;
         right: 0;
         padding: 10px;
         bottom: 100px;
+        background-color: #fff;
     }
     .row_art{
         height: auto;
@@ -2222,10 +2224,33 @@ margin-top: 30px;
     .coatelan-info-bis{
     margin-left:2px;
     }
+    .ban-info{
+    width: 100%
+    } 
+    .title-line{
+        display: none;
+    }
+    .arrow_grey{
+        display: none;
+    }
+    .content_inf .arrow_grey{
+        display: none;
+    }
+    .splash-fb{
+        top:92%;
+        left: 43%;
+    }
+    .splash-fb .socicon{
+        font-size: 22px;
+    }
 }
 @media screen and (max-width: 480px) {
     .artiste .head{
         padding-top:10px;
+    }
+    .splash-fb{
+        top:92%;
+        left: 40%;
     }
 }
 @media screen and (min-width: 768px) {
