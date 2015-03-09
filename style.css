@@ -1194,13 +1194,19 @@ position: absolute;
     position:fixed;
     width: 100%;
     top:0;
-    z-index: 5;
+    z-index: 4;
 }
 .sub_info_7{
     position:fixed;
     width: 100%;
     top:0;
-    z-index: 4;
+    z-index: 3;
+}
+.sub_info_8{
+    position:fixed;
+    width: 100%;
+    top:0;
+    z-index: 5;
 }
 .toHide{
     position: absolute;
@@ -1749,7 +1755,6 @@ overflow: hidden;
         width: 40%;
     display: inline-block;
     margin-left: 70px;
-    bottom:125px;
 }
 .savoir2{
     position: relative;
@@ -1757,9 +1762,35 @@ overflow: hidden;
     display: inline-block;
     top:30px;
 }
+.a21-1{ position: relative;
+        width: 40%;
+    display: inline-block;
+    margin-left: 70px;
+height: 1180Px;}
+.a21-2{
+      width: 40%;
+    display: inline-block;
+    margin-bottom:415px;
+}
 .psh-info-bis{
     position: relative;
-      height: 304px;
+      height: 344px;
+}
+.transport{
+ position: relative;
+    height: 140px;
+}
+.tag{
+ position: relative;
+    height: 210px;
+}
+.vol{
+    position: relative;
+    height: 140px;
+}
+.mineurs{
+    position: relative;
+    height: 190px;
 }
 .distri-info-bis{
     position: relative;
@@ -1767,7 +1798,7 @@ overflow: hidden;
 }
 .obj-info-bis{
     position: relative;
-      height: 234px;
+      height: 214px;
 }
 @media screen and (max-width: 1130px) {
 .cine-info-bis{
@@ -1876,13 +1907,29 @@ position: relative;
     margin-left: 70px;
     top:30px;
 }
+    .a21-2{
+    position: relative;
+        width: 40%;
+    display: block;
+            margin-left: 70px;
+        margin-top:30px;
+     height: 900px;
+	margin-bottom:0px;
+}
+        .a21-1{
+    position: relative;
+        width: 40%;
+    display: block;
+    margin-left: 70px;
+    top:30px;
+}
     .savoir2{
     position: relative;
         width: 40%;
     display: block;
             margin-left: 70px;
         margin-top:30px;
-        height: 410px;
+        height: 670px;
 }
     .map-acces{
     display: none;
@@ -1910,6 +1957,18 @@ margin-top: 30px;
 }
 .ban-info{
 width: 100%;
+}
+.dev-durable{
+  position: relative;
+    height: 250px;
+}
+.conseils{
+ position: relative;
+    height: 900px;
+}
+.tri{
+    position: relative;
+    height: 720px;
 }
 @media screen and (max-width: 768px) {
     .contains{
@@ -2078,6 +2137,8 @@ width: 100%;
     width:123%;}
     .accredi{
     width:123%;}
+    .a21{
+    width:123%;}
     .bene{
     width:123%;}
     .parte{
@@ -2123,6 +2184,9 @@ margin-top: 30px;
     .sub_info_6{
     display: none;
     }
+    .sub_info_8{
+    display: none;
+    }
     .rect_info{
     margin-top: 5px;
     }
@@ -2166,6 +2230,9 @@ height: auto;
 .img-bene-bis{
     background-color: rgb(243,243,243);
 height: 300px;
+}
+.img-21-bis{
+background-color: rgb(243,243,243);
 }
 .img-parte-bis{
     background-color: white;
