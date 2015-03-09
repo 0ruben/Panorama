@@ -92,7 +92,9 @@ p, label{
 
 .pic-prog{
     font-family: 'Open Sans', sans-serif;
-    font-weight: 500;
+    font-weight: 700;
+    font-size:14px;
+    color:#35BFBF;
 }
 .nav-item {
     position: relative;
@@ -246,14 +248,16 @@ h2, h3{
     position :absolute;
     top:83%;
     left:80%;
+}
+
+.socicon:hover{
+    opacity:1;
+}
+
+.socicon{
     color:white;
     font-size:30px;
     opacity:0.8;
-}
-
-.splash-fb:hover{
-    opacity:1;
-
 }
 
 .generate_pano_container{
@@ -2164,8 +2168,8 @@ height: auto;
 height: 300px;
 }
 .img-parte-bis{
-    background-color: rgb(243,243,243);
-height: 1500px;
+    background-color: white;
+height: 1630px;
 }
 .bene-info-bis{
 position:relative;
@@ -2176,7 +2180,7 @@ top: 100px;}
 position:relative;
 height: 180px;
 margin-left: 70px;
-top: 100px;}
+top: 60px;}
 
 
 @media screen and (max-width:500px){
