@@ -1997,6 +1997,7 @@ width: 100%;
     .content{
         overflow-x: scroll;
         left: 60px;
+        -webkit-overflow-scrolling:touch;
     }
     .contains{
         left: 90%;
