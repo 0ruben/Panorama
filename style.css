@@ -1359,12 +1359,7 @@ top:190px;
 .autre-camp2-info{
     top:170px;
 }
-.heberg1-info{
-top:150px;
-}
-.heberg2-info{
-top:130px;
-}
+
 .savoir1{
   top:20px;
 }
@@ -1741,7 +1736,7 @@ position: relative;
 }
 .heberg-info-bis{
 position: relative;
-      height: 254px;
+      height: 214px;
 }
 .img-savoir-bis{
 background-color: rgb(243,243,243);
