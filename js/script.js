@@ -52,8 +52,7 @@ $(window).resize(function() {
 
    $('.nav-item-range').click(function(){
     var self = this;
-    TweenLite.to('nav',1,{x:0+'px',opacity:1,ease:Quint.easeOut});
-    setTimeout(function(){
+    TweenLite.to('nav',0.5,{x:0+'px',opacity:1,ease:Quint.easeOut});
      var target = '.'+$(self).attr('data-target');
      var sub_menu= $(target).find('.sub_menu');
      var content = $(target).find('.contains'); 
@@ -79,7 +78,6 @@ $(window).resize(function() {
         $('.splashscreen').hide(); 
         });
       });  
-    },1500);  
    });
 
 	var id_b= 0;
@@ -330,7 +328,7 @@ $('.row1').click(function(e){
      TweenLite.to($target, 0.5, {scale:0.5,ease:Quint.easeOut,bottom:bottom[0]+"px",onComplete: function(){
      TweenLite.to('.toHide',0.25,{opacity:0.5,display:'block',onComplete: function(){;
      // TweenMax.to('.art_content',0.5,{,ease:Power1.easeIn});
-     if(hrow==200) $('.art_content').scrollTo(hrow*position+"px",500,{ease:'easeOutQuint'})
+     if(hrow==200&&position>0) $('.art_content').scrollTo(hrow*position+"px",500,{ease:'easeOutQuint'})
    }});
    }});
    }
@@ -608,7 +606,7 @@ $('.imput_container_art').click(function() {
   if (self.hasClass('input_transport')) target.scrollTo(pos_trsp+5+"px",1000);
   if (self.hasClass('input_camping')) target.scrollTo(pos_camping+5+"px",1000);
   if (self.hasClass('input_savoir')) target.scrollTo(pos_savoir+5+"px",1000);
-  if (self.hasClass('input_accredi')) target.scrollTo(pos_accredi+-90+"px",1000);
+  if (self.hasClass('input_accredi')) target.scrollTo(pos_accredi+5+"px",1000);
   if (self.hasClass('input_parte')) target.scrollTo(pos_parte+5+"px",1000);
 });
 
