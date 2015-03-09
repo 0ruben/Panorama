@@ -263,6 +263,7 @@ var setDefault = function(){
 }
  setDefault();
 
+ if($(window).width>768){
 
 $('.list').on('mouseenter', '.row1', function(e) {
   if(rowOpen==false){
@@ -293,8 +294,7 @@ $('.list').on('mouseleave', '.row1', function(e) {
       TweenLite.to($img, DURATION, {x : widthImg, ease : Power4.easeOut});
     }
   });
-
-
+}
 
 
 //Dropdown artist
