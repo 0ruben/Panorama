@@ -1745,7 +1745,6 @@ overflow: hidden;
         width: 40%;
     display: inline-block;
     margin-left: 70px;
-    bottom:125px;
 }
 .savoir2{
     position: relative;
@@ -1755,7 +1754,23 @@ overflow: hidden;
 }
 .psh-info-bis{
     position: relative;
-      height: 304px;
+      height: 344px;
+}
+.transport{
+ position: relative;
+    height: 140px;
+}
+.tag{
+ position: relative;
+    height: 210px;
+}
+.vol{
+    position: relative;
+    height: 140px;
+}
+.mineurs{
+    position: relative;
+    height: 190px;
 }
 .distri-info-bis{
     position: relative;
@@ -1763,7 +1778,7 @@ overflow: hidden;
 }
 .obj-info-bis{
     position: relative;
-      height: 234px;
+      height: 214px;
 }
 @media screen and (max-width: 1130px) {
 .cine-info-bis{
@@ -1878,7 +1893,7 @@ position: relative;
     display: block;
             margin-left: 70px;
         margin-top:30px;
-        height: 410px;
+        height: 670px;
 }
     .map-acces{
     display: none;
