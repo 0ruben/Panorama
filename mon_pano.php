@@ -24,7 +24,7 @@
     <meta property="og:site_name" content="Panoramas Festival"/>
     <meta property="og:description" content="Viens toi aussi créer ta soirée Panoramas !" />
     <meta property="og:title" content="Mon Pano" />
-    <?php echo  '<meta property="og:image" content="http://'.$_SERVER['HTTP_HOST'].'/dev/panorama/pic_pano/img'.$imageID.'.png"/>'
+    <?php echo  '<meta property="og:image" content="http://'.$_SERVER['HTTP_HOST'].'/pic_pano/img'.$imageID.'.png"/>'
     ?>
 
 </head>
@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="share center2">
-        <?php echo '<a data-text="Partagez sur Facebook" class="button-hover hvr-sweep-to-right" href="https://www.facebook.com/sharer/sharer.php?u=http://'.$_SERVER['HTTP_HOST'].getcwd().'/mon_pano.php?image='.$imageID.'" target="_blank">Partagez sur Facebook</a>'
+        <?php echo '<a data-text="Partagez sur Facebook" class="button-hover hvr-sweep-to-right" href="https://www.facebook.com/sharer/sharer.php?u=http://'.$_SERVER['HTTP_HOST'].'/mon_pano.php?image='.$imageID.'" target="_blank">Partagez sur Facebook</a>'
         ?>
     </div>
 </div>
