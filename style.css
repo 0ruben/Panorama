@@ -1634,18 +1634,18 @@ margin-left: 70px;
 }
 .tempo-info-bis{
   position: relative;
-  width: 90%;
+  width: 40%;
   height: 124px;
   margin-left: 70px;
   display: inline-block;
+  margin-top: 30px;
 }
 .manu-info-bis{
   position: relative;
   width: 40%;
-  height: 244px;
+  height: auto;
   display: inline-block;
-  margin-top: 80px;
-  margin-left: 70px;
+  margin-top: 50px;
 }
 .ban-acces{
     position: relative;
