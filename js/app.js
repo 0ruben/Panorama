@@ -26,7 +26,7 @@ var artistes =
   {
     'id':2,
     'Order':2,
-    'name':'THE BLOODY BEETROOTS DJ SET',
+    'name':'THE BLOODY BEETROOTS (SBCR)',
     'jour':'VENDREDI 3 AVRIL',
     'jourId':1,
     'heure':'00h35',
@@ -110,7 +110,7 @@ var artistes =
   {
     'id':6,
     'Order':6,
-    'name':'BRÜLIN',
+    'name':'BRULIN',
     'jour':'DIMANCHE 5 AVRIL',
     'jourId':3,
     'heure':'21h00',

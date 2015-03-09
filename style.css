@@ -745,7 +745,8 @@ hr{
 .input_showprog{
     position: absolute;
     top:700px;
-    margin-left: 10px;
+    width:100%;
+    margin-left:0;
 }
 
 
@@ -1498,6 +1499,21 @@ top:190px;
     z-index: 10000;
 }
 /*Reponsive*/
+
+@media screen and (max-width: 768px) {
+.socicon{
+    color:white;
+    font-size:20px;
+    opacity:0.8;
+}
+.input_showprog{
+    position: absolute;
+    top:525px;
+    width:100%;
+    margin-left:0;
+}
+    }
+
 @media screen and (max-width: 1320px) {
   .art_name{
     font-size: 40px;

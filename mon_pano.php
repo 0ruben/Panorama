@@ -41,7 +41,7 @@
     <div class="url_container">
         <div class="url">
             <?php echo '<a href="http://'.$_SERVER['HTTP_HOST'].getcwd().'/mon_pano.php?image='.$imageID.'"> 
-            URL : http://'.$_SERVER['HTTP_HOST'].getcwd().'/mon_pano.php?image='.$imageID.'</a>' ?>
+            URL : http://'.$_SERVER['HTTP_HOST'].'/mon_pano.php?image='.$imageID.'</a>' ?>
         </div>
     </div>
     <div class="share center2">
