@@ -40,7 +40,7 @@
     </div>
     <div class="url_container">
         <div class="url">
-            <?php echo '<a href="http://'.$_SERVER['HTTP_HOST'].getcwd().'/mon_pano.php?image='.$imageID.'"> 
+            <?php echo '<a href="http://'.$_SERVER['HTTP_HOST'].'/mon_pano.php?image='.$imageID.'"> 
             URL : http://'.$_SERVER['HTTP_HOST'].'/mon_pano.php?image='.$imageID.'</a>' ?>
         </div>
     </div>
@@ -50,16 +50,6 @@
     </div>
 </div>
 </body>
-<script>
-$(document).ready(function(){
-
-  $("#inf").click(function(){
-    window.location.replace("/#inf");
-    console.log("test");
-});
-});
-
-  </script>
 
 
 <style type="text/css">
