@@ -110,7 +110,7 @@ var artistes =
   {
     'id':6,
     'Order':6,
-    'name':'BRÜLIN',
+    'name':'BRULIN',
     'jour':'DIMANCHE 5 AVRIL',
     'jourId':3,
     'heure':'21h00',
