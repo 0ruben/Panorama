@@ -54,7 +54,6 @@ window.open("https://embed.spotify.com/?uri=spotify%3Auser%3Afestivalpanoramas%3
 });
 
 $('#share').click(function(){
-  alert("test");
   var url = 'https://www.facebook.com/sharer/sharer.php?u='+urlpano;
 window.open(url, "Facebook", "width=360, height=560");
 });
