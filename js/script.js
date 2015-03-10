@@ -263,7 +263,7 @@ var setDefault = function(){
 }
  setDefault();
 
- if($(window).width>768){
+ if($(window).width()>768){
 
 $('.list').on('mouseenter', '.row1', function(e) {
   if(rowOpen==false){
