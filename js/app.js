@@ -540,7 +540,7 @@ var artistes =
     'isChecked':'FALSE',
     'salle':'Lieu secret',
     'salleId':null,
-    'youtube':'',
+    'youtube':'Rl8GbFmBG3w',
     'facebook':'',
     'twitter':'',
     'soundcloud':'',
@@ -803,7 +803,7 @@ var artistes =
   {
     'id':37,
     'Order':39,
-    'name':'SUPER DISCOUNT 3',
+    'name':'SUPER DISCOUNT 3 LIVE',
     'jour':'SAMEDI 4 AVRIL',
     'jourId':2,
     'heure':'21h25',

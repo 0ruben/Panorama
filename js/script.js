@@ -1,5 +1,38 @@
 // TODO Disable hand click on radio and checkbox
 //Billeterie 1 correspond jour 1 sans camping 2 jour 1 avec camping
+        var urlpano;
+
+  function capture() {
+    $('#tc').html2canvas({
+      onrendered: function (canvas) {
+        $('#img_val').val(canvas.toDataURL("image/png"));
+
+        var $this = $('#myForm'); 
+
+
+        $.ajax({
+                url: $this.attr('action'), // Le nom du fichier indiqué dans le formulaire
+                type: $this.attr('method'), // La méthode indiquée dans le formulaire (get ou post)
+                data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
+                success: function(html) { // Je récupère la réponse du fichier PHP
+                 appear('.url_pano',0.5);
+                 $("#generate").addClass('hidden');
+                 $(".url_pano").removeClass('hidden');
+                 $("a#print").attr('href', html);
+                 //$("a#share").attr('href',('https://www.facebook.com/sharer/sharer.php?u='+html).replace(/\s+/g, ''));
+                 urlpano = html;
+//                  $('#reset').click(function(){
+//   alert("test");
+//   $('#generate').removeClass('hidden');
+//   $('.url_pano').addClass('hidden');
+
+// });
+               }
+             });
+
+      }
+    });
+  }
 
 jQuery('.sub_menu,.art_content,.info_content,.pano,.ticket,.contains').bind('mousewheel', function(event) {
     event.preventDefault();
@@ -13,8 +46,18 @@ $(window).load(function(){
   $('.loader').addClass('hidden');
 });
 
+
 $(document).ready(function(){
 
+$('#spotify').click(function(){
+window.open("https://embed.spotify.com/?uri=spotify%3Auser%3Afestivalpanoramas%3Aplaylist%3A2dkPkLFBuJw0VvlPFn698p", "Playlist Spotify", "width=300, height=380");
+});
+
+$('#share').click(function(){
+  alert("test");
+  var url = 'https://www.facebook.com/sharer/sharer.php?u='+urlpano;
+window.open(url, "Facebook", "width=360, height=560");
+});
 
 $(window).resize(function() {
   widthImg = (window.innerWidth);

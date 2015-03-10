@@ -96,6 +96,9 @@ p, label{
     font-size:14px;
     color:#35BFBF;
 }
+.pic-prog:hover{
+    opacity:0.5;
+}
 .nav-item {
     position: relative;
     overflow: hidden;

@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="share center2">
-        <?php echo '<a data-text="Partagez sur Facebook" class="button-hover hvr-sweep-to-right" href="https://www.facebook.com/sharer/sharer.php?u=http://'.$_SERVER['HTTP_HOST'].'/mon_pano.php?image='.$imageID.'" target="_blank">Partagez sur Facebook</a>'
+        <?php echo '<a id="share" data-text="Partagez sur Facebook" class="button-hover hvr-sweep-to-right" href="#">Partagez sur Facebook</a>'
         ?>
     </div>
 </div>

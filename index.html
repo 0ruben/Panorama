@@ -80,7 +80,7 @@
 <div class="splash-fb">
 <a href="https://fr-fr.facebook.com/FestivalPanoramasMorlaix" class="socicon" target="_blank">b</a>
 <a href="https://twitter.com/FestPanoramas" class="socicon" target="_blank">a</a>
-<a href="#" class="socicon" target="_blank">x</a>
+<a href="https://instagram.com/festpanoramas/" class="socicon" target="_blank">x</a>
 </div>
 <div class="logo-court">
   <img src="images/pano18.png"/>
@@ -141,7 +141,7 @@
     <input type="radio" name="day" id="d2" class="day"><label for ="d2" class="label2 radio">Pass 2 jours </label>
   </div>
 </div>
-<div id="camp" class="input_container default">
+<div id="camp" class="input_container">
   <div class="input2">
     <input id="c1" type="checkbox" name="camp" class ="cmp"><label class="label2" for="camp">Camping</label> 
   </div>
@@ -379,7 +379,7 @@
     </div>
     <div class="url_pano hidden">
       <a id="reset" ng-click="reset()" style="cursor: pointer;" class="button-hover hvr-sweep-to-right">RESET</a>
-<a id="share" style="float:left;" class="button-hover hvr-sweep-to-right" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='+html+'">PARTAGER</a>
+<a id="share" style="float:left;" class="button-hover hvr-sweep-to-right" href="#">PARTAGER</a>
 <a id="print" style="float:left;"class="print button-hover hvr-sweep-to-right" target="_blank" href="'+html+'">IMPRIMER</a>
     </div>
   </div>
@@ -387,40 +387,6 @@
 </div>
 </div>
 
-<script type="text/javascript">
-
-  function capture() {
-    $('#tc').html2canvas({
-      onrendered: function (canvas) {
-        $('#img_val').val(canvas.toDataURL("image/png"));
-
-        var $this = $('#myForm'); 
-
-        $.ajax({
-                url: $this.attr('action'), // Le nom du fichier indiqué dans le formulaire
-                type: $this.attr('method'), // La méthode indiquée dans le formulaire (get ou post)
-                data: $this.serialize(), // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
-                success: function(html) { // Je récupère la réponse du fichier PHP
-                 appear('.url_pano',0.5);
-                 $("#generate").addClass('hidden');
-                 $(".url_pano").removeClass('hidden');
-                 $("a#print").attr('href', html);
-                 $("a#share").attr('href', 'https://www.facebook.com/sharer/sharer.php?u='+html);
-
-//                  $('#reset').click(function(){
-//   alert("test");
-//   $('#generate').removeClass('hidden');
-//   $('.url_pano').addClass('hidden');
-
-// });
-               }
-             });
-
-      }
-    });
-  }
-
-</script>
 
 <!-- MAIN ARTIST -->
 <div class="content art" id="artiste" style="display:none;" ng-init="init()">
@@ -495,7 +461,10 @@
   </div>
 </div>
 <div class="input_showprog">
-<a href="images/prog-pano.png" class="pic-prog" data-lightbox="image-1" data-title="Programmation complète - Panoramas 18">Voir programme complet</a>
+
+<a href="images/prog-pano.jpg" class="pic-prog" data-lightbox="image-1" data-title="Programmation complète - Panoramas 18">Voir programme complet</a>
+<a href="images/resi-concert.jpg" class="pic-prog" data-lightbox="image-2" data-title="Résidence & De Concert! - Panoramas 18">Résidence & De Concert!</a>
+<a href="#" id="spotify" class="pic-prog">Playlist Spotify</a>
 </div>
 </div>
 <div class="art_content contains" style="display:none; height:{{artistes.length*200}}+px;" >
