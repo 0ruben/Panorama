@@ -1201,19 +1201,19 @@ margin-bottom: 40px;
     position:fixed;
     width: 100%;
     top:0;
-    z-index: 4;
+    z-index: 5;
 }
 .sub_info_7{
     position:fixed;
     width: 100%;
     top:0;
-    z-index: 3;
+    z-index: 4;
 }
 .sub_info_8{
     position:fixed;
     width: 100%;
     top:0;
-    z-index: 5;
+    z-index: 3;
 }
 .toHide{
     position: absolute;
@@ -2294,7 +2294,7 @@ top: 100px;}
 position:relative;
 height: 180px;
 margin-left: 70px;
-top:70px;
+top:110px;
 }
 
 
