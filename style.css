@@ -95,6 +95,9 @@ p, label{
     font-weight: 700;
     font-size:14px;
     color:#35BFBF;
+    position: relative;
+    display: block;
+    text-align: center;
 }
 .pic-prog:hover{
     opacity:0.5;
