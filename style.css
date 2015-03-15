@@ -1595,6 +1595,7 @@ top:190px;
     float: left;
     width: 40%;
 }
+
 @media all and (max-width: 500px) {
     .container > div {
         float: none;
@@ -2350,3 +2351,12 @@ width: 200.675px;
 margin:0;
 right: 30px;
 }
+.kro{
+width: 100px;
+    height: 100px;
+    margin-top: 20px;
+}
+.kro1{
+position: absolute;
+display: inline-block;
+bottom: 170px;}
